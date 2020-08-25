@@ -12,7 +12,7 @@ bash FELINE_pyclone_model.cp.sh
 echo "tumor size changes"
 bash FELINE_clinical_response.sh
 
-echo "run fishplot, need to finish FEL025"
+echo "run fishplot"
 ls FEL0*_pyclone_analysis_*20_5_0.05_1_10000_none.clonevol_ccf.clonevol_figure4_fishplot.RData | sed 's/clonevol_figure4_fishplot.RData/txt/' > FELINE_clonevol_ccf.list
 bash FELINE_Step4_run_fishplot.sh
 
@@ -20,3 +20,6 @@ echo "merge fishplot into one figure"
 cut -f1,2,3,4,5 FELINE_patient_info.sorted.txt > FELINE_patient_info.sorted.revised.txt
 bash FELINE_fishplot.sh
 
+echo "Extract cluster frequency for Jason"
+#output file: FELINE_WES_cluster_frequency.txt
+bash FELINE_Step6_cluster_frequency.sh
