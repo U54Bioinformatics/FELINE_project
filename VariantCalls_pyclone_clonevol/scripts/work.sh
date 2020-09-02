@@ -1,4 +1,4 @@
-##################Run commend below to reproduce results##################
+##################Run command below to reproduce results##################
 ### Run 24 patients with sequenza and facets cnv
 
 export R_LIBS=/home/jichen/software/BETSY/install/envs/DNA_analysis_cloevol_R/lib/R/library
