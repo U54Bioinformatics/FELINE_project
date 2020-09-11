@@ -1,0 +1,649 @@
+CPU: 16
+N: 59
+Step1: Analyze spliced and unspliced reads and genrate a loom file for velocityR
+Run velocyto to generate loom file
+2020-08-27 19:22:58,145 - DEBUG - Using logic: Default
+2020-08-27 19:22:58,170 - INFO - Read 134 cell barcodes from /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH057/feline_p29_40_mRNA/cell_ranger/FEL032_E/outs/filtered_feature_bc_matrix/barcodes.tsv.gz
+2020-08-27 19:22:58,170 - DEBUG - Example of barcode: AACCCAATCACTGTTT and cell_id: FEL032_E:AACCCAATCACTGTTT-1
+2020-08-27 19:22:58,188 - DEBUG - Peeking into /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH057/feline_p29_40_mRNA/cell_ranger/FEL032_E/outs/possorted_genome_bam.bam
+2020-08-27 19:22:58,278 - WARNING - Not found cell and umi barcode in entry 284 of the bam file
+2020-08-27 19:22:58,278 - WARNING - Not found cell and umi barcode in entry 285 of the bam file
+2020-08-27 19:22:58,278 - WARNING - Not found cell and umi barcode in entry 286 of the bam file
+2020-08-27 19:22:58,278 - WARNING - Not found cell and umi barcode in entry 287 of the bam file
+2020-08-27 19:22:58,278 - WARNING - Not found cell and umi barcode in entry 288 of the bam file
+2020-08-27 19:22:58,278 - WARNING - Not found cell and umi barcode in entry 289 of the bam file
+2020-08-27 19:22:58,278 - WARNING - Not found cell and umi barcode in entry 290 of the bam file
+2020-08-27 19:22:58,279 - WARNING - Not found cell and umi barcode in entry 291 of the bam file
+2020-08-27 19:22:58,279 - WARNING - Not found cell and umi barcode in entry 292 of the bam file
+2020-08-27 19:22:58,280 - WARNING - Not found cell and umi barcode in entry 460 of the bam file
+2020-08-27 19:22:58,280 - WARNING - Not found cell and umi barcode in entry 470 of the bam file
+2020-08-27 19:22:58,281 - WARNING - Not found cell and umi barcode in entry 575 of the bam file
+2020-08-27 19:22:58,281 - WARNING - Not found cell and umi barcode in entry 576 of the bam file
+2020-08-27 19:22:58,281 - WARNING - Not found cell and umi barcode in entry 577 of the bam file
+2020-08-27 19:22:58,281 - WARNING - Not found cell and umi barcode in entry 578 of the bam file
+2020-08-27 19:22:58,281 - WARNING - Not found cell and umi barcode in entry 579 of the bam file
+2020-08-27 19:22:58,281 - WARNING - Not found cell and umi barcode in entry 580 of the bam file
+2020-08-27 19:22:58,281 - WARNING - Not found cell and umi barcode in entry 581 of the bam file
+2020-08-27 19:22:58,282 - WARNING - Not found cell and umi barcode in entry 582 of the bam file
+2020-08-27 19:22:58,282 - WARNING - Not found cell and umi barcode in entry 583 of the bam file
+2020-08-27 19:22:58,282 - WARNING - Not found cell and umi barcode in entry 584 of the bam file
+2020-08-27 19:22:58,282 - WARNING - Not found cell and umi barcode in entry 585 of the bam file
+2020-08-27 19:22:58,282 - WARNING - Not found cell and umi barcode in entry 586 of the bam file
+2020-08-27 19:22:58,282 - WARNING - Not found cell and umi barcode in entry 587 of the bam file
+2020-08-27 19:22:58,282 - WARNING - Not found cell and umi barcode in entry 588 of the bam file
+2020-08-27 19:22:58,282 - WARNING - Not found cell and umi barcode in entry 589 of the bam file
+2020-08-27 19:22:58,282 - WARNING - Not found cell and umi barcode in entry 590 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 591 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 592 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 593 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 594 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 595 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 596 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 597 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 598 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 599 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 600 of the bam file
+2020-08-27 19:22:58,283 - WARNING - Not found cell and umi barcode in entry 601 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 602 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 603 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 604 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 605 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 606 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 608 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 609 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 610 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 611 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 612 of the bam file
+2020-08-27 19:22:58,284 - WARNING - Not found cell and umi barcode in entry 613 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 614 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 615 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 616 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 617 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 618 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 619 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 620 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 621 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 622 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 623 of the bam file
+2020-08-27 19:22:58,285 - WARNING - Not found cell and umi barcode in entry 624 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 625 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 626 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 627 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 628 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 629 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 630 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 631 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 632 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 633 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 634 of the bam file
+2020-08-27 19:22:58,286 - WARNING - Not found cell and umi barcode in entry 635 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 636 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 637 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 638 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 639 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 640 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 641 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 642 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 643 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 644 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 645 of the bam file
+2020-08-27 19:22:58,287 - WARNING - Not found cell and umi barcode in entry 646 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 647 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 648 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 649 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 650 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 651 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 652 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 653 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 654 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 655 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 656 of the bam file
+2020-08-27 19:22:58,288 - WARNING - Not found cell and umi barcode in entry 657 of the bam file
+2020-08-27 19:22:58,289 - WARNING - Not found cell and umi barcode in entry 658 of the bam file
+2020-08-27 19:22:58,289 - WARNING - Not found cell and umi barcode in entry 659 of the bam file
+2020-08-27 19:22:58,289 - WARNING - Not found cell and umi barcode in entry 714 of the bam file
+2020-08-27 19:22:58,289 - WARNING - Not found cell and umi barcode in entry 715 of the bam file
+2020-08-27 19:22:58,289 - WARNING - Not found cell and umi barcode in entry 716 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 717 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 718 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 719 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 720 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 721 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 722 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 723 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 724 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 725 of the bam file
+2020-08-27 19:22:58,290 - WARNING - Not found cell and umi barcode in entry 776 of the bam file
+2020-08-27 19:22:58,291 - WARNING - Not found cell and umi barcode in entry 777 of the bam file
+2020-08-27 19:22:58,291 - WARNING - Not found cell and umi barcode in entry 830 of the bam file
+2020-08-27 19:22:58,291 - WARNING - Not found cell and umi barcode in entry 831 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 916 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 917 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 918 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 919 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 920 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 921 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 922 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 923 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 924 of the bam file
+2020-08-27 19:22:58,292 - WARNING - Not found cell and umi barcode in entry 925 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 926 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 927 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 928 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 929 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 930 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 931 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 932 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 933 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 934 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 945 of the bam file
+2020-08-27 19:22:58,293 - WARNING - Not found cell and umi barcode in entry 946 of the bam file
+2020-08-27 19:22:58,294 - WARNING - Not found cell and umi barcode in entry 948 of the bam file
+2020-08-27 19:22:58,294 - WARNING - Not found cell and umi barcode in entry 949 of the bam file
+2020-08-27 19:22:58,294 - WARNING - Not found cell and umi barcode in entry 950 of the bam file
+2020-08-27 19:22:58,294 - WARNING - Not found cell and umi barcode in entry 951 of the bam file
+2020-08-27 19:22:58,294 - WARNING - Not found cell and umi barcode in entry 964 of the bam file
+2020-08-27 19:22:58,294 - WARNING - Not found cell and umi barcode in entry 965 of the bam file
+2020-08-27 19:22:58,294 - WARNING - Not found cell and umi barcode in entry 966 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 967 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 968 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 969 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 970 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 971 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 972 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 973 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 974 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 975 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 976 of the bam file
+2020-08-27 19:22:58,295 - WARNING - Not found cell and umi barcode in entry 977 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 978 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 979 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 980 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 981 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 982 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 983 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 984 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 985 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 986 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 987 of the bam file
+2020-08-27 19:22:58,296 - WARNING - Not found cell and umi barcode in entry 988 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 989 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 990 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 991 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 992 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 993 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 994 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 995 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 1004 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 1005 of the bam file
+2020-08-27 19:22:58,297 - WARNING - Not found cell and umi barcode in entry 1020 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1021 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1022 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1023 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1024 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1025 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1026 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1027 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1033 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1034 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1035 of the bam file
+2020-08-27 19:22:58,298 - WARNING - Not found cell and umi barcode in entry 1036 of the bam file
+2020-08-27 19:22:58,299 - WARNING - Not found cell and umi barcode in entry 1037 of the bam file
+2020-08-27 19:22:58,299 - WARNING - Not found cell and umi barcode in entry 1038 of the bam file
+2020-08-27 19:22:58,299 - WARNING - Not found cell and umi barcode in entry 1039 of the bam file
+2020-08-27 19:22:58,299 - WARNING - Not found cell and umi barcode in entry 1040 of the bam file
+2020-08-27 19:22:58,299 - WARNING - Not found cell and umi barcode in entry 1041 of the bam file
+2020-08-27 19:22:58,299 - WARNING - Not found cell and umi barcode in entry 1042 of the bam file
+2020-08-27 19:22:58,299 - WARNING - Not found cell and umi barcode in entry 1043 of the bam file
+2020-08-27 19:22:58,299 - WARNING - Not found cell and umi barcode in entry 1044 of the bam file
+2020-08-27 19:22:58,299 - WARNING - Not found cell and umi barcode in entry 1045 of the bam file
+2020-08-27 19:22:58,300 - WARNING - Not found cell and umi barcode in entry 1046 of the bam file
+2020-08-27 19:22:58,300 - WARNING - Not found cell and umi barcode in entry 1047 of the bam file
+2020-08-27 19:22:58,300 - WARNING - Not found cell and umi barcode in entry 1056 of the bam file
+2020-08-27 19:22:58,300 - WARNING - Not found cell and umi barcode in entry 1088 of the bam file
+2020-08-27 19:22:58,300 - WARNING - Not found cell and umi barcode in entry 1089 of the bam file
+2020-08-27 19:22:58,300 - WARNING - Not found cell and umi barcode in entry 1090 of the bam file
+2020-08-27 19:22:58,300 - WARNING - Not found cell and umi barcode in entry 1091 of the bam file
+2020-08-27 19:22:58,300 - WARNING - Not found cell and umi barcode in entry 1092 of the bam file
+2020-08-27 19:22:58,307 - WARNING - The file /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH057/feline_p29_40_mRNA/cell_ranger/FEL032_E/outs/cellsorted_possorted_genome_bam.bam already exists. The sorting step will be skipped and the existing file will be used.
+2020-08-27 19:22:58,307 - INFO - Load the annotation from /net/isi-dcnl/ifs/user_data/abild/Genomes/refdata-cellranger-GRCh38-3.0.0/genes/genes.gtf
+2020-08-27 19:23:06,227 - DEBUG - Parsing Chromosome 1 strand - [line 0]
+2020-08-27 19:23:06,865 - DEBUG - Done with 1- [line 108728]
+2020-08-27 19:23:06,865 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:06,875 - DEBUG - Seen 1561 genes until now
+2020-08-27 19:23:06,875 - DEBUG - Parsing Chromosome 1 strand + [line 108729]
+2020-08-27 19:23:07,594 - DEBUG - Done with 1+ [line 232515]
+2020-08-27 19:23:07,595 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:07,606 - DEBUG - Seen 3154 genes until now
+2020-08-27 19:23:07,606 - DEBUG - Parsing Chromosome 10 strand - [line 232516]
+2020-08-27 19:23:08,031 - DEBUG - Done with 10- [line 279343]
+2020-08-27 19:23:08,031 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:08,034 - DEBUG - Seen 3737 genes until now
+2020-08-27 19:23:08,034 - DEBUG - Parsing Chromosome 10 strand + [line 279344]
+2020-08-27 19:23:08,220 - DEBUG - Done with 10+ [line 323872]
+2020-08-27 19:23:08,221 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:08,224 - DEBUG - Seen 4384 genes until now
+2020-08-27 19:23:08,224 - DEBUG - Parsing Chromosome 11 strand - [line 323873]
+2020-08-27 19:23:08,818 - DEBUG - Done with 11- [line 402908]
+2020-08-27 19:23:08,818 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:08,825 - DEBUG - Seen 5320 genes until now
+2020-08-27 19:23:08,825 - DEBUG - Parsing Chromosome 11 strand + [line 402909]
+2020-08-27 19:23:09,152 - DEBUG - Done with 11+ [line 482591]
+2020-08-27 19:23:09,153 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:09,160 - DEBUG - Seen 6305 genes until now
+2020-08-27 19:23:09,160 - DEBUG - Parsing Chromosome 12 strand - [line 482592]
+2020-08-27 19:23:09,738 - DEBUG - Done with 12- [line 559278]
+2020-08-27 19:23:09,739 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:09,745 - DEBUG - Seen 7177 genes until now
+2020-08-27 19:23:09,745 - DEBUG - Parsing Chromosome 12 strand + [line 559279]
+2020-08-27 19:23:10,053 - DEBUG - Done with 12+ [line 635173]
+2020-08-27 19:23:10,054 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:10,060 - DEBUG - Seen 8070 genes until now
+2020-08-27 19:23:10,060 - DEBUG - Parsing Chromosome 13 strand - [line 635174]
+2020-08-27 19:23:10,137 - DEBUG - Done with 13- [line 653523]
+2020-08-27 19:23:10,137 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:10,138 - DEBUG - Seen 8400 genes until now
+2020-08-27 19:23:10,138 - DEBUG - Parsing Chromosome 13 strand + [line 653524]
+2020-08-27 19:23:10,506 - DEBUG - Done with 13+ [line 673091]
+2020-08-27 19:23:10,506 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:10,508 - DEBUG - Seen 8736 genes until now
+2020-08-27 19:23:10,508 - DEBUG - Parsing Chromosome 14 strand - [line 673092]
+2020-08-27 19:23:10,688 - DEBUG - Done with 14- [line 716831]
+2020-08-27 19:23:10,689 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:10,692 - DEBUG - Seen 9452 genes until now
+2020-08-27 19:23:10,692 - DEBUG - Parsing Chromosome 14 strand + [line 716832]
+2020-08-27 19:23:10,888 - DEBUG - Done with 14+ [line 764942]
+2020-08-27 19:23:10,888 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:10,892 - DEBUG - Seen 10121 genes until now
+2020-08-27 19:23:10,892 - DEBUG - Parsing Chromosome 15 strand - [line 764943]
+2020-08-27 19:23:11,096 - DEBUG - Done with 15- [line 813803]
+2020-08-27 19:23:11,096 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:11,099 - DEBUG - Seen 10698 genes until now
+2020-08-27 19:23:11,099 - DEBUG - Parsing Chromosome 15 strand + [line 813804]
+2020-08-27 19:23:11,280 - DEBUG - Done with 15+ [line 857859]
+2020-08-27 19:23:11,280 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:11,284 - DEBUG - Seen 11256 genes until now
+2020-08-27 19:23:11,284 - DEBUG - Parsing Chromosome 16 strand - [line 857860]
+2020-08-27 19:23:11,824 - DEBUG - Done with 16- [line 911118]
+2020-08-27 19:23:11,825 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:11,829 - DEBUG - Seen 11998 genes until now
+2020-08-27 19:23:11,829 - DEBUG - Parsing Chromosome 16 strand + [line 911119]
+2020-08-27 19:23:12,115 - DEBUG - Done with 16+ [line 981663]
+2020-08-27 19:23:12,115 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:12,121 - DEBUG - Seen 12787 genes until now
+2020-08-27 19:23:12,121 - DEBUG - Parsing Chromosome 17 strand - [line 981664]
+2020-08-27 19:23:12,470 - DEBUG - Done with 17- [line 1066635]
+2020-08-27 19:23:12,471 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:12,478 - DEBUG - Seen 13775 genes until now
+2020-08-27 19:23:12,478 - DEBUG - Parsing Chromosome 17 strand + [line 1066636]
+2020-08-27 19:23:13,201 - DEBUG - Done with 17+ [line 1143834]
+2020-08-27 19:23:13,201 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:13,209 - DEBUG - Seen 14681 genes until now
+2020-08-27 19:23:13,209 - DEBUG - Parsing Chromosome 18 strand - [line 1143835]
+2020-08-27 19:23:13,311 - DEBUG - Done with 18- [line 1168496]
+2020-08-27 19:23:13,311 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:13,313 - DEBUG - Seen 15006 genes until now
+2020-08-27 19:23:13,313 - DEBUG - Parsing Chromosome 18 strand + [line 1168497]
+2020-08-27 19:23:13,399 - DEBUG - Done with 18+ [line 1189691]
+2020-08-27 19:23:13,400 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:13,401 - DEBUG - Seen 15343 genes until now
+2020-08-27 19:23:13,402 - DEBUG - Parsing Chromosome 19 strand - [line 1189692]
+2020-08-27 19:23:13,719 - DEBUG - Done with 19- [line 1268854]
+2020-08-27 19:23:13,719 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:13,726 - DEBUG - Seen 16352 genes until now
+2020-08-27 19:23:13,726 - DEBUG - Parsing Chromosome 19 strand + [line 1268855]
+2020-08-27 19:23:14,053 - DEBUG - Done with 19+ [line 1351833]
+2020-08-27 19:23:14,053 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:14,060 - DEBUG - Seen 17347 genes until now
+2020-08-27 19:23:14,060 - DEBUG - Parsing Chromosome 2 strand - [line 1351834]
+2020-08-27 19:23:14,466 - DEBUG - Done with 2- [line 1448710]
+2020-08-27 19:23:14,467 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:14,474 - DEBUG - Seen 18472 genes until now
+2020-08-27 19:23:14,474 - DEBUG - Parsing Chromosome 2 strand + [line 1448711]
+2020-08-27 19:23:15,284 - DEBUG - Done with 2+ [line 1542602]
+2020-08-27 19:23:15,285 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:15,293 - DEBUG - Seen 19632 genes until now
+2020-08-27 19:23:15,293 - DEBUG - Parsing Chromosome 20 strand - [line 1542603]
+2020-08-27 19:23:15,402 - DEBUG - Done with 20- [line 1569195]
+2020-08-27 19:23:15,402 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:15,404 - DEBUG - Seen 20079 genes until now
+2020-08-27 19:23:15,404 - DEBUG - Parsing Chromosome 20 strand + [line 1569196]
+2020-08-27 19:23:15,531 - DEBUG - Done with 20+ [line 1600541]
+2020-08-27 19:23:15,531 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:15,534 - DEBUG - Seen 20527 genes until now
+2020-08-27 19:23:15,534 - DEBUG - Parsing Chromosome 21 strand - [line 1600542]
+2020-08-27 19:23:15,590 - DEBUG - Done with 21- [line 1614106]
+2020-08-27 19:23:15,590 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:15,591 - DEBUG - Seen 20795 genes until now
+2020-08-27 19:23:15,591 - DEBUG - Parsing Chromosome 21 strand + [line 1614107]
+2020-08-27 19:23:15,653 - DEBUG - Done with 21+ [line 1628392]
+2020-08-27 19:23:15,653 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:15,654 - DEBUG - Seen 21029 genes until now
+2020-08-27 19:23:15,654 - DEBUG - Parsing Chromosome 22 strand - [line 1628393]
+2020-08-27 19:23:15,758 - DEBUG - Done with 22- [line 1653805]
+2020-08-27 19:23:15,758 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:15,760 - DEBUG - Seen 21391 genes until now
+2020-08-27 19:23:15,760 - DEBUG - Parsing Chromosome 22 strand + [line 1653806]
+2020-08-27 19:23:15,885 - DEBUG - Done with 22+ [line 1684245]
+2020-08-27 19:23:15,885 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:15,889 - DEBUG - Seen 21866 genes until now
+2020-08-27 19:23:15,889 - DEBUG - Parsing Chromosome 3 strand - [line 1684246]
+2020-08-27 19:23:16,220 - DEBUG - Done with 3- [line 1763939]
+2020-08-27 19:23:16,220 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:16,226 - DEBUG - Seen 22713 genes until now
+2020-08-27 19:23:16,226 - DEBUG - Parsing Chromosome 3 strand + [line 1763940]
+2020-08-27 19:23:16,558 - DEBUG - Done with 3+ [line 1844840]
+2020-08-27 19:23:16,558 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:16,564 - DEBUG - Seen 23585 genes until now
+2020-08-27 19:23:16,564 - DEBUG - Parsing Chromosome 4 strand - [line 1844841]
+2020-08-27 19:23:17,277 - DEBUG - Done with 4- [line 1898665]
+2020-08-27 19:23:17,277 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:17,282 - DEBUG - Seen 24246 genes until now
+2020-08-27 19:23:17,282 - DEBUG - Parsing Chromosome 4 strand + [line 1898666]
+2020-08-27 19:23:17,480 - DEBUG - Done with 4+ [line 1947617]
+2020-08-27 19:23:17,480 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:17,484 - DEBUG - Seen 24938 genes until now
+2020-08-27 19:23:17,484 - DEBUG - Parsing Chromosome 5 strand - [line 1947618]
+2020-08-27 19:23:17,706 - DEBUG - Done with 5- [line 2001140]
+2020-08-27 19:23:17,707 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:17,712 - DEBUG - Seen 25741 genes until now
+2020-08-27 19:23:17,712 - DEBUG - Parsing Chromosome 5 strand + [line 2001141]
+2020-08-27 19:23:17,960 - DEBUG - Done with 5+ [line 2062165]
+2020-08-27 19:23:17,960 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:17,965 - DEBUG - Seen 26599 genes until now
+2020-08-27 19:23:17,965 - DEBUG - Parsing Chromosome 6 strand - [line 2062166]
+2020-08-27 19:23:18,208 - DEBUG - Done with 6- [line 2121425]
+2020-08-27 19:23:18,208 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:18,212 - DEBUG - Seen 27435 genes until now
+2020-08-27 19:23:18,213 - DEBUG - Parsing Chromosome 6 strand + [line 2121426]
+2020-08-27 19:23:18,430 - DEBUG - Done with 6+ [line 2176078]
+2020-08-27 19:23:18,430 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:18,435 - DEBUG - Seen 28231 genes until now
+2020-08-27 19:23:18,435 - DEBUG - Parsing Chromosome 7 strand - [line 2176079]
+2020-08-27 19:23:18,673 - DEBUG - Done with 7- [line 2233605]
+2020-08-27 19:23:18,673 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:18,677 - DEBUG - Seen 28953 genes until now
+2020-08-27 19:23:18,677 - DEBUG - Parsing Chromosome 7 strand + [line 2233606]
+2020-08-27 19:23:18,928 - DEBUG - Done with 7+ [line 2295513]
+2020-08-27 19:23:18,928 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:18,933 - DEBUG - Seen 29770 genes until now
+2020-08-27 19:23:18,933 - DEBUG - Parsing Chromosome 8 strand - [line 2295514]
+2020-08-27 19:23:19,127 - DEBUG - Done with 8- [line 2343289]
+2020-08-27 19:23:19,127 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:19,131 - DEBUG - Seen 30442 genes until now
+2020-08-27 19:23:19,131 - DEBUG - Parsing Chromosome 8 strand + [line 2343290]
+2020-08-27 19:23:19,308 - DEBUG - Done with 8+ [line 2386793]
+2020-08-27 19:23:19,308 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:19,312 - DEBUG - Seen 31090 genes until now
+2020-08-27 19:23:19,312 - DEBUG - Parsing Chromosome 9 strand - [line 2386794]
+2020-08-27 19:23:20,106 - DEBUG - Done with 9- [line 2430389]
+2020-08-27 19:23:20,106 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,109 - DEBUG - Seen 31710 genes until now
+2020-08-27 19:23:20,109 - DEBUG - Parsing Chromosome 9 strand + [line 2430390]
+2020-08-27 19:23:20,303 - DEBUG - Done with 9+ [line 2477312]
+2020-08-27 19:23:20,303 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,306 - DEBUG - Seen 32318 genes until now
+2020-08-27 19:23:20,306 - DEBUG - Parsing Chromosome GL000009.2 strand - [line 2477313]
+2020-08-27 19:23:20,306 - DEBUG - Done with GL000009.2- [line 2477320]
+2020-08-27 19:23:20,306 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,306 - DEBUG - Seen 32319 genes until now
+2020-08-27 19:23:20,306 - DEBUG - Parsing Chromosome GL000194.1 strand - [line 2477321]
+2020-08-27 19:23:20,306 - DEBUG - Done with GL000194.1- [line 2477346]
+2020-08-27 19:23:20,306 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,307 - DEBUG - Seen 32321 genes until now
+2020-08-27 19:23:20,307 - DEBUG - Parsing Chromosome GL000195.1 strand - [line 2477347]
+2020-08-27 19:23:20,307 - DEBUG - Done with GL000195.1- [line 2477356]
+2020-08-27 19:23:20,307 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,307 - DEBUG - Seen 32322 genes until now
+2020-08-27 19:23:20,307 - DEBUG - Parsing Chromosome GL000195.1 strand + [line 2477357]
+2020-08-27 19:23:20,307 - DEBUG - Done with GL000195.1+ [line 2477370]
+2020-08-27 19:23:20,307 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,307 - DEBUG - Seen 32323 genes until now
+2020-08-27 19:23:20,307 - DEBUG - Parsing Chromosome GL000205.2 strand - [line 2477371]
+2020-08-27 19:23:20,307 - DEBUG - Done with GL000205.2- [line 2477384]
+2020-08-27 19:23:20,307 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,307 - DEBUG - Seen 32324 genes until now
+2020-08-27 19:23:20,307 - DEBUG - Parsing Chromosome GL000213.1 strand - [line 2477385]
+2020-08-27 19:23:20,307 - DEBUG - Done with GL000213.1- [line 2477433]
+2020-08-27 19:23:20,307 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,307 - DEBUG - Seen 32325 genes until now
+2020-08-27 19:23:20,308 - DEBUG - Parsing Chromosome GL000218.1 strand - [line 2477434]
+2020-08-27 19:23:20,308 - DEBUG - Done with GL000218.1- [line 2477441]
+2020-08-27 19:23:20,308 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,308 - DEBUG - Seen 32326 genes until now
+2020-08-27 19:23:20,308 - DEBUG - Parsing Chromosome GL000219.1 strand - [line 2477442]
+2020-08-27 19:23:20,308 - DEBUG - Done with GL000219.1- [line 2477453]
+2020-08-27 19:23:20,308 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,308 - DEBUG - Seen 32327 genes until now
+2020-08-27 19:23:20,308 - DEBUG - Parsing Chromosome KI270711.1 strand - [line 2477454]
+2020-08-27 19:23:20,309 - DEBUG - Done with KI270711.1- [line 2477604]
+2020-08-27 19:23:20,309 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,309 - DEBUG - Seen 32328 genes until now
+2020-08-27 19:23:20,309 - DEBUG - Parsing Chromosome KI270713.1 strand - [line 2477605]
+2020-08-27 19:23:20,309 - DEBUG - Done with KI270713.1- [line 2477612]
+2020-08-27 19:23:20,309 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,309 - DEBUG - Seen 32329 genes until now
+2020-08-27 19:23:20,309 - DEBUG - Parsing Chromosome KI270713.1 strand + [line 2477613]
+2020-08-27 19:23:20,309 - DEBUG - Done with KI270713.1+ [line 2477618]
+2020-08-27 19:23:20,309 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,309 - DEBUG - Seen 32330 genes until now
+2020-08-27 19:23:20,309 - DEBUG - Parsing Chromosome KI270721.1 strand + [line 2477619]
+2020-08-27 19:23:20,309 - DEBUG - Done with KI270721.1+ [line 2477634]
+2020-08-27 19:23:20,309 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,309 - DEBUG - Seen 32331 genes until now
+2020-08-27 19:23:20,309 - DEBUG - Parsing Chromosome KI270726.1 strand + [line 2477635]
+2020-08-27 19:23:20,309 - DEBUG - Done with KI270726.1+ [line 2477645]
+2020-08-27 19:23:20,309 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,309 - DEBUG - Seen 32333 genes until now
+2020-08-27 19:23:20,309 - DEBUG - Parsing Chromosome KI270727.1 strand - [line 2477646]
+2020-08-27 19:23:20,310 - DEBUG - Done with KI270727.1- [line 2477704]
+2020-08-27 19:23:20,310 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,310 - DEBUG - Seen 32335 genes until now
+2020-08-27 19:23:20,310 - DEBUG - Parsing Chromosome KI270727.1 strand + [line 2477705]
+2020-08-27 19:23:20,310 - DEBUG - Done with KI270727.1+ [line 2477719]
+2020-08-27 19:23:20,310 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,310 - DEBUG - Seen 32337 genes until now
+2020-08-27 19:23:20,310 - DEBUG - Parsing Chromosome KI270728.1 strand - [line 2477720]
+2020-08-27 19:23:20,310 - DEBUG - Done with KI270728.1- [line 2477796]
+2020-08-27 19:23:20,310 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,310 - DEBUG - Seen 32339 genes until now
+2020-08-27 19:23:20,310 - DEBUG - Parsing Chromosome KI270728.1 strand + [line 2477797]
+2020-08-27 19:23:20,311 - DEBUG - Done with KI270728.1+ [line 2477833]
+2020-08-27 19:23:20,311 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,311 - DEBUG - Seen 32343 genes until now
+2020-08-27 19:23:20,311 - DEBUG - Parsing Chromosome KI270731.1 strand - [line 2477834]
+2020-08-27 19:23:20,311 - DEBUG - Done with KI270731.1- [line 2477840]
+2020-08-27 19:23:20,311 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,311 - DEBUG - Seen 32344 genes until now
+2020-08-27 19:23:20,311 - DEBUG - Parsing Chromosome KI270734.1 strand - [line 2477841]
+2020-08-27 19:23:20,311 - DEBUG - Done with KI270734.1- [line 2477909]
+2020-08-27 19:23:20,311 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,311 - DEBUG - Seen 32345 genes until now
+2020-08-27 19:23:20,311 - DEBUG - Parsing Chromosome KI270734.1 strand + [line 2477910]
+2020-08-27 19:23:20,311 - DEBUG - Done with KI270734.1+ [line 2477932]
+2020-08-27 19:23:20,312 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,312 - DEBUG - Seen 32347 genes until now
+2020-08-27 19:23:20,312 - DEBUG - Parsing Chromosome MT strand - [line 2477933]
+2020-08-27 19:23:20,312 - DEBUG - Done with MT- [line 2477938]
+2020-08-27 19:23:20,312 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,312 - DEBUG - Seen 32348 genes until now
+2020-08-27 19:23:20,312 - DEBUG - Parsing Chromosome MT strand + [line 2477939]
+2020-08-27 19:23:20,312 - DEBUG - Done with MT+ [line 2478004]
+2020-08-27 19:23:20,312 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,312 - DEBUG - Seen 32360 genes until now
+2020-08-27 19:23:20,312 - DEBUG - Parsing Chromosome X strand - [line 2478005]
+2020-08-27 19:23:20,476 - DEBUG - Done with X- [line 2518937]
+2020-08-27 19:23:20,476 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,479 - DEBUG - Seen 32876 genes until now
+2020-08-27 19:23:20,479 - DEBUG - Parsing Chromosome X strand + [line 2518938]
+2020-08-27 19:23:20,642 - DEBUG - Done with X+ [line 2560301]
+2020-08-27 19:23:20,642 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,645 - DEBUG - Seen 33438 genes until now
+2020-08-27 19:23:20,645 - DEBUG - Parsing Chromosome Y strand - [line 2560302]
+2020-08-27 19:23:20,655 - DEBUG - Done with Y- [line 2562446]
+2020-08-27 19:23:20,655 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,655 - DEBUG - Seen 33485 genes until now
+2020-08-27 19:23:20,655 - DEBUG - Parsing Chromosome Y strand + [line 2562447]
+2020-08-27 19:23:20,666 - DEBUG - Assigning indexes to genes
+2020-08-27 19:23:20,666 - DEBUG - Done with Y+ [line 2565059]
+2020-08-27 19:23:20,666 - DEBUG - Fixing corner cases of transcript models containg intron longer than 1000Kbp
+2020-08-27 19:23:22,374 - DEBUG - Generated 2165800 features corresponding to 172912 transcript models from /net/isi-dcnl/ifs/user_data/abild/Genomes/refdata-cellranger-GRCh38-3.0.0/genes/genes.gtf
+2020-08-27 19:23:22,402 - INFO - Scan /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH057/feline_p29_40_mRNA/cell_ranger/FEL032_E/outs/possorted_genome_bam.bam to validate intron intervals
+2020-08-27 19:23:26,297 - DEBUG - Reading /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH057/feline_p29_40_mRNA/cell_ranger/FEL032_E/outs/possorted_genome_bam.bam
+2020-08-27 19:23:26,309 - DEBUG - Read first 0 million reads
+2020-08-27 19:23:26,310 - DEBUG - Marking up chromosome 1
+2020-08-27 19:24:17,124 - DEBUG - Marking up chromosome 10
+2020-08-27 19:24:43,763 - DEBUG - Marking up chromosome 11
+2020-08-27 19:25:29,399 - DEBUG - Read first 10 million reads
+2020-08-27 19:25:41,986 - DEBUG - Marking up chromosome 12
+2020-08-27 19:26:13,349 - DEBUG - Marking up chromosome 13
+2020-08-27 19:26:24,311 - DEBUG - Marking up chromosome 14
+2020-08-27 19:26:44,003 - DEBUG - Marking up chromosome 15
+2020-08-27 19:27:03,814 - DEBUG - Marking up chromosome 16
+2020-08-27 19:27:20,553 - DEBUG - Read first 20 million reads
+2020-08-27 19:27:23,626 - DEBUG - Marking up chromosome 17
+2020-08-27 19:27:50,650 - DEBUG - Marking up chromosome 18
+2020-08-27 19:28:04,025 - DEBUG - Marking up chromosome 19
+2020-08-27 19:28:25,653 - DEBUG - Marking up chromosome 2
+2020-08-27 19:29:08,268 - DEBUG - Marking up chromosome 20
+2020-08-27 19:29:12,640 - DEBUG - Read first 30 million reads
+2020-08-27 19:29:20,049 - DEBUG - Marking up chromosome 21
+2020-08-27 19:29:38,447 - DEBUG - Read first 40 million reads
+2020-08-27 19:29:51,541 - DEBUG - Marking up chromosome 22
+2020-08-27 19:30:01,512 - DEBUG - Marking up chromosome 3
+2020-08-27 19:30:42,652 - DEBUG - Marking up chromosome 4
+2020-08-27 19:31:03,477 - DEBUG - Read first 50 million reads
+2020-08-27 19:31:09,370 - DEBUG - Marking up chromosome 5
+2020-08-27 19:31:39,995 - DEBUG - Marking up chromosome 6
+2020-08-27 19:32:11,726 - DEBUG - Marking up chromosome 7
+2020-08-27 19:32:39,898 - DEBUG - Marking up chromosome 8
+2020-08-27 19:32:53,422 - DEBUG - Read first 60 million reads
+2020-08-27 19:33:03,049 - DEBUG - Marking up chromosome 9
+2020-08-27 19:33:23,554 - DEBUG - Marking up chromosome MT
+2020-08-27 19:33:36,766 - DEBUG - Marking up chromosome X
+2020-08-27 19:33:54,943 - DEBUG - Marking up chromosome Y
+2020-08-27 19:33:54,990 - DEBUG - Marking up chromosome KI270728.1
+2020-08-27 19:33:55,000 - DEBUG - Marking up chromosome KI270727.1
+2020-08-27 19:33:55,012 - DEBUG - Marking up chromosome KI270442.1
+2020-08-27 19:33:55,013 - WARNING - The .bam file refers to a chromosome 'KI270442.1+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,013 - WARNING - The .bam file refers to a chromosome 'KI270442.1-' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,014 - DEBUG - Marking up chromosome GL000225.1
+2020-08-27 19:33:55,014 - WARNING - The .bam file refers to a chromosome 'GL000225.1+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,014 - WARNING - The .bam file refers to a chromosome 'GL000225.1-' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,014 - DEBUG - Marking up chromosome KI270743.1
+2020-08-27 19:33:55,014 - WARNING - The .bam file refers to a chromosome 'KI270743.1+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,014 - WARNING - The .bam file refers to a chromosome 'KI270743.1-' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,017 - DEBUG - Marking up chromosome GL000008.2
+2020-08-27 19:33:55,017 - WARNING - The .bam file refers to a chromosome 'GL000008.2+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,017 - WARNING - The .bam file refers to a chromosome 'GL000008.2-' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,022 - DEBUG - Marking up chromosome GL000009.2
+2020-08-27 19:33:55,022 - WARNING - The .bam file refers to a chromosome 'GL000009.2+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,024 - DEBUG - Marking up chromosome KI270722.1
+2020-08-27 19:33:55,024 - WARNING - The .bam file refers to a chromosome 'KI270722.1+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,024 - WARNING - The .bam file refers to a chromosome 'KI270722.1-' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,024 - DEBUG - Marking up chromosome GL000194.1
+2020-08-27 19:33:55,024 - WARNING - The .bam file refers to a chromosome 'GL000194.1+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,068 - DEBUG - Marking up chromosome KI270742.1
+2020-08-27 19:33:55,068 - WARNING - The .bam file refers to a chromosome 'KI270742.1+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,068 - WARNING - The .bam file refers to a chromosome 'KI270742.1-' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,081 - DEBUG - Marking up chromosome GL000205.2
+2020-08-27 19:33:55,081 - WARNING - The .bam file refers to a chromosome 'GL000205.2+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,101 - DEBUG - Marking up chromosome GL000195.1
+2020-08-27 19:33:55,131 - DEBUG - Marking up chromosome KI270733.1
+2020-08-27 19:33:55,131 - WARNING - The .bam file refers to a chromosome 'KI270733.1+' not present in the annotation (.gtf) file
+2020-08-27 19:33:55,131 - WARNING - The .bam file refers to a chromosome 'KI270733.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:02,082 - DEBUG - Read first 70 million reads
+2020-08-27 19:34:08,210 - DEBUG - Marking up chromosome GL000224.1
+2020-08-27 19:34:08,210 - WARNING - The .bam file refers to a chromosome 'GL000224.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,210 - WARNING - The .bam file refers to a chromosome 'GL000224.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,220 - DEBUG - Marking up chromosome GL000219.1
+2020-08-27 19:34:08,220 - WARNING - The .bam file refers to a chromosome 'GL000219.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,296 - DEBUG - Marking up chromosome KI270719.1
+2020-08-27 19:34:08,296 - WARNING - The .bam file refers to a chromosome 'KI270719.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,296 - WARNING - The .bam file refers to a chromosome 'KI270719.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,302 - DEBUG - Marking up chromosome KI270712.1
+2020-08-27 19:34:08,302 - WARNING - The .bam file refers to a chromosome 'KI270712.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,302 - WARNING - The .bam file refers to a chromosome 'KI270712.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,305 - DEBUG - Marking up chromosome KI270706.1
+2020-08-27 19:34:08,305 - WARNING - The .bam file refers to a chromosome 'KI270706.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,305 - WARNING - The .bam file refers to a chromosome 'KI270706.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,307 - DEBUG - Marking up chromosome KI270744.1
+2020-08-27 19:34:08,307 - WARNING - The .bam file refers to a chromosome 'KI270744.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,307 - WARNING - The .bam file refers to a chromosome 'KI270744.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,312 - DEBUG - Marking up chromosome KI270734.1
+2020-08-27 19:34:08,320 - DEBUG - Marking up chromosome GL000213.1
+2020-08-27 19:34:08,320 - WARNING - The .bam file refers to a chromosome 'GL000213.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,323 - DEBUG - Marking up chromosome GL000220.1
+2020-08-27 19:34:08,323 - WARNING - The .bam file refers to a chromosome 'GL000220.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:08,323 - WARNING - The .bam file refers to a chromosome 'GL000220.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,423 - DEBUG - Marking up chromosome GL000218.1
+2020-08-27 19:34:21,423 - WARNING - The .bam file refers to a chromosome 'GL000218.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,439 - DEBUG - Marking up chromosome KI270749.1
+2020-08-27 19:34:21,439 - WARNING - The .bam file refers to a chromosome 'KI270749.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,439 - WARNING - The .bam file refers to a chromosome 'KI270749.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,441 - DEBUG - Marking up chromosome KI270741.1
+2020-08-27 19:34:21,441 - WARNING - The .bam file refers to a chromosome 'KI270741.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,441 - WARNING - The .bam file refers to a chromosome 'KI270741.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,442 - DEBUG - Marking up chromosome GL000221.1
+2020-08-27 19:34:21,442 - WARNING - The .bam file refers to a chromosome 'GL000221.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,442 - WARNING - The .bam file refers to a chromosome 'GL000221.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,456 - DEBUG - Marking up chromosome KI270731.1
+2020-08-27 19:34:21,456 - WARNING - The .bam file refers to a chromosome 'KI270731.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,465 - DEBUG - Marking up chromosome KI270721.1
+2020-08-27 19:34:21,465 - WARNING - The .bam file refers to a chromosome 'KI270721.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,472 - DEBUG - Marking up chromosome KI270589.1
+2020-08-27 19:34:21,472 - WARNING - The .bam file refers to a chromosome 'KI270589.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,472 - WARNING - The .bam file refers to a chromosome 'KI270589.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,473 - DEBUG - Marking up chromosome KI270711.1
+2020-08-27 19:34:21,473 - WARNING - The .bam file refers to a chromosome 'KI270711.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,489 - DEBUG - Marking up chromosome KI270714.1
+2020-08-27 19:34:21,489 - WARNING - The .bam file refers to a chromosome 'KI270714.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,489 - WARNING - The .bam file refers to a chromosome 'KI270714.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,490 - DEBUG - Marking up chromosome KI270713.1
+2020-08-27 19:34:21,491 - DEBUG - Marking up chromosome KI270717.1
+2020-08-27 19:34:21,491 - WARNING - The .bam file refers to a chromosome 'KI270717.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,491 - WARNING - The .bam file refers to a chromosome 'KI270717.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,492 - DEBUG - Marking up chromosome KI270720.1
+2020-08-27 19:34:21,492 - WARNING - The .bam file refers to a chromosome 'KI270720.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,492 - WARNING - The .bam file refers to a chromosome 'KI270720.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,497 - DEBUG - Marking up chromosome KI270718.1
+2020-08-27 19:34:21,497 - WARNING - The .bam file refers to a chromosome 'KI270718.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,497 - WARNING - The .bam file refers to a chromosome 'KI270718.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,498 - DEBUG - Marking up chromosome KI270330.1
+2020-08-27 19:34:21,498 - WARNING - The .bam file refers to a chromosome 'KI270330.1+' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,498 - WARNING - The .bam file refers to a chromosome 'KI270330.1-' not present in the annotation (.gtf) file
+2020-08-27 19:34:21,561 - DEBUG - Read first 80 million reads
+2020-08-27 19:34:38,581 - DEBUG - Read first 90 million reads
+2020-08-27 19:34:45,253 - DEBUG - End of file. Reset index: start scanning from initial position.
+2020-08-27 19:34:45,254 - DEBUG - 1309694 reads were skipped because no apropiate cell or umi barcode was found
+2020-08-27 19:34:45,254 - DEBUG - Start molecule counting!
+2020-08-27 19:34:49,269 - DEBUG - Features available for chromosomes : ['1-', '1+', '10-', '10+', '11-', '11+', '12-', '12+', '13-', '13+', '14-', '14+', '15-', '15+', '16-', '16+', '17-', '17+', '18-', '18+', '19-', '19+', '2-', '2+', '20-', '20+', '21-', '21+', '22-', '22+', '3-', '3+', '4-', '4+', '5-', '5+', '6-', '6+', '7-', '7+', '8-', '8+', '9-', '9+', 'GL000009.2-', 'GL000194.1-', 'GL000195.1-', 'GL000195.1+', 'GL000205.2-', 'GL000213.1-', 'GL000218.1-', 'GL000219.1-', 'KI270711.1-', 'KI270713.1-', 'KI270713.1+', 'KI270721.1+', 'KI270726.1+', 'KI270727.1-', 'KI270727.1+', 'KI270728.1-', 'KI270728.1+', 'KI270731.1-', 'KI270734.1-', 'KI270734.1+', 'MT-', 'MT+', 'X-', 'X+', 'Y-', 'Y+']
+2020-08-27 19:34:49,269 - DEBUG - Mask available for chromosomes : []
+2020-08-27 19:34:49,269 - DEBUG - Summarizing the results of intron validation.
+2020-08-27 19:34:49,812 - DEBUG - Validated 67597 introns (of which unique intervals 22262) out of 996444 total possible introns (considering each possible transcript models).
+2020-08-27 19:34:49,813 - DEBUG - Reading /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH057/feline_p29_40_mRNA/cell_ranger/FEL032_E/outs/cellsorted_possorted_genome_bam.bam
+2020-08-27 19:34:49,867 - DEBUG - Read first 0 million reads
+2020-08-27 19:35:17,306 - DEBUG - Read first 10 million reads
+2020-08-27 19:36:06,725 - DEBUG - Read first 20 million reads
+2020-08-27 19:37:00,388 - DEBUG - Read first 30 million reads
+2020-08-27 19:37:52,638 - DEBUG - Read first 40 million reads
+2020-08-27 19:38:55,592 - DEBUG - Read first 50 million reads
+2020-08-27 19:39:57,426 - DEBUG - Read first 60 million reads
+2020-08-27 19:41:04,982 - DEBUG - Read first 70 million reads
+2020-08-27 19:41:43,700 - DEBUG - Counting for batch 1, containing 100 cells and 24137958 reads
+2020-08-27 19:52:31,475 - DEBUG - 0 reads not considered because fully enclosed in repeat masked regions
+2020-08-27 19:54:22,249 - DEBUG - Read first 80 million reads
+2020-08-27 19:55:02,175 - DEBUG - Read first 90 million reads
+2020-08-27 19:55:17,772 - DEBUG - Counting for batch 2, containing 34 cells and 5868430 reads
+2020-08-27 19:57:58,439 - DEBUG - 0 reads not considered because fully enclosed in repeat masked regions
+2020-08-27 19:58:14,189 - DEBUG - 1309694 reads were skipped because no apropiate cell or umi barcode was found
+2020-08-27 19:58:14,190 - DEBUG - Counting done!
+2020-08-27 19:58:14,212 - DEBUG - Generating output file /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH057/feline_p29_40_mRNA/cell_ranger/FEL032_E/velocyto/FEL032_E.loom
+2020-08-27 19:58:14,212 - DEBUG - Collecting row attributes
+2020-08-27 19:58:14,367 - DEBUG - Generating data table
+2020-08-27 19:58:14,406 - DEBUG - Writing loom file
+2020-08-27 19:58:15,368 - DEBUG - Terminated Succesfully!
+Start: 1598581369
+End: 1598583498
+Run time: 2129
+Done

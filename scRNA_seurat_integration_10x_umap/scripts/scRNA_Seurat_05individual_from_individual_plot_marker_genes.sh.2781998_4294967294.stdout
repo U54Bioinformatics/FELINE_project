@@ -1,0 +1,232 @@
+CPU: 1
+N: 1
+plot marker genes: epithelial, immune and stromal
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘SeuratWrappers’
+
+The following objects are masked from ‘package:Seurat’:
+
+    ALRAChooseKPlot, RunALRA
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+[1] "Default assay before setting"
+[1] "integrated"
+[1] "Default assay after setting"
+[1] "RNA"
+[1] "counts"        "data"          "scale.data"    "key"          
+[5] "assay.orig"    "var.features"  "meta.features" "misc"         
+[1] "before normalization"
+[1] "counts"        "data"          "scale.data"    "key"          
+[5] "assay.orig"    "var.features"  "meta.features" "misc"         
+5 x 5 sparse Matrix of class "dgCMatrix"
+        ATGCCAGAACGACT CATGGCCTGTGCAT GAACCTGATGAACC TGACTGGATTCTCA
+MS4A1                .              .              .              .
+CD79B                1              .              .              .
+CD79A                .              .              .              .
+HLA-DRA              .              1              .              .
+TCL1A                .              .              .              .
+        AGTCAGACTGCACA
+MS4A1                .
+CD79B                .
+CD79A                .
+HLA-DRA              1
+TCL1A                .
+5 x 5 sparse Matrix of class "dgCMatrix"
+        ATGCCAGAACGACT CATGGCCTGTGCAT GAACCTGATGAACC TGACTGGATTCTCA
+MS4A1         .              .                     .              .
+CD79B         4.968821       .                     .              .
+CD79A         .              .                     .              .
+HLA-DRA       .              4.776153              .              .
+TCL1A         .              .                     .              .
+        AGTCAGACTGCACA
+MS4A1         .       
+CD79B         .       
+CD79A         .       
+HLA-DRA       4.074201
+TCL1A         .       
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+[1] "after normalization"
+[1] "counts"        "data"          "scale.data"    "key"          
+[5] "assay.orig"    "var.features"  "meta.features" "misc"         
+5 x 5 sparse Matrix of class "dgCMatrix"
+        ATGCCAGAACGACT CATGGCCTGTGCAT GAACCTGATGAACC TGACTGGATTCTCA
+MS4A1                .              .              .              .
+CD79B                1              .              .              .
+CD79A                .              .              .              .
+HLA-DRA              .              1              .              .
+TCL1A                .              .              .              .
+        AGTCAGACTGCACA
+MS4A1                .
+CD79B                .
+CD79A                .
+HLA-DRA              1
+TCL1A                .
+5 x 5 sparse Matrix of class "dgCMatrix"
+        ATGCCAGAACGACT CATGGCCTGTGCAT GAACCTGATGAACC TGACTGGATTCTCA
+MS4A1         .              .                     .              .
+CD79B         4.968821       .                     .              .
+CD79A         .              .                     .              .
+HLA-DRA       .              4.776153              .              .
+TCL1A         .              .                     .              .
+        AGTCAGACTGCACA
+MS4A1         .       
+CD79B         .       
+CD79A         .       
+HLA-DRA       4.074201
+TCL1A         .       
+[1] "seurat object"
+An object of class Seurat 
+48178 features across 173160 samples within 3 assays 
+Active assay: RNA (21279 features)
+ 2 other assays present: SCT, integrated
+ 3 dimensional reductions calculated: pca, tsne, umap
+[1] "meta"
+                          orig.ident nCount_RNA nFeature_RNA     Sample
+FEL011_M_AAACGAACACAAGTGG     FEL011       5390         2361 FEL011P138
+FEL011_M_AAACGCTGTTAAGAAC     FEL011       5394         2123 FEL011P138
+FEL011_M_AAAGGTATCAGCCTCT     FEL011       4270         2178 FEL011P138
+FEL011_M_AAAGTCCCAGCGAGTA     FEL011       5929         2730 FEL011P138
+FEL011_M_AAAGTGAAGAGGACTC     FEL011       3544         1795 FEL011P138
+FEL011_M_AAAGTGAAGGGAGGGT     FEL011       4061         2253 FEL011P138
+                          Total.Reads Total.Reads..Thousands.
+FEL011_M_AAACGAACACAAGTGG        5390                   5.390
+FEL011_M_AAACGCTGTTAAGAAC        5396                   5.396
+FEL011_M_AAAGGTATCAGCCTCT        4272                   4.272
+FEL011_M_AAAGTCCCAGCGAGTA        5931                   5.931
+FEL011_M_AAAGTGAAGAGGACTC        3545                   3.545
+FEL011_M_AAAGTGAAGGGAGGGT        4063                   4.063
+                          Total.Non.Mitochondria.Reads
+FEL011_M_AAACGAACACAAGTGG                         5282
+FEL011_M_AAACGCTGTTAAGAAC                         5325
+FEL011_M_AAAGGTATCAGCCTCT                         4267
+FEL011_M_AAAGTCCCAGCGAGTA                         5920
+FEL011_M_AAAGTGAAGAGGACTC                         3464
+FEL011_M_AAAGTGAAGGGAGGGT                         4033
+                          Total.Non.Mitochondria.Reads..Thousands.
+FEL011_M_AAACGAACACAAGTGG                                    5.282
+FEL011_M_AAACGCTGTTAAGAAC                                    5.325
+FEL011_M_AAAGGTATCAGCCTCT                                    4.267
+FEL011_M_AAAGTCCCAGCGAGTA                                    5.920
+FEL011_M_AAAGTGAAGAGGACTC                                    3.464
+FEL011_M_AAAGTGAAGGGAGGGT                                    4.033
+                          Expressed.Features            S          G2M Phase
+FEL011_M_AAACGAACACAAGTGG               2361  0.008156021 -0.045663230     S
+FEL011_M_AAACGCTGTTAAGAAC               2125  0.039785140 -0.006212551     S
+FEL011_M_AAAGGTATCAGCCTCT               2180  0.029707010  0.012526290    G1
+FEL011_M_AAAGTCCCAGCGAGTA               2732 -0.087745360 -0.016397370    G1
+FEL011_M_AAAGTGAAGAGGACTC               1796 -0.002635753 -0.036574540    G1
+FEL011_M_AAAGTGAAGGGAGGGT               2255 -0.001085201 -0.004310116    G1
+                          Percent.Mitochondria                 Cell.orig
+FEL011_M_AAACGAACACAAGTGG                  2.0 FEL011_M_AAACGAACACAAGTGG
+FEL011_M_AAACGCTGTTAAGAAC                  1.3 FEL011_M_AAACGCTGTTAAGAAC
+FEL011_M_AAAGGTATCAGCCTCT                  0.1 FEL011_M_AAAGGTATCAGCCTCT
+FEL011_M_AAAGTCCCAGCGAGTA                  0.2 FEL011_M_AAAGTCCCAGCGAGTA
+FEL011_M_AAAGTGAAGAGGACTC                  2.3 FEL011_M_AAAGTGAAGAGGACTC
+FEL011_M_AAAGTGAAGGGAGGGT                  0.7 FEL011_M_AAAGTGAAGGGAGGGT
+                          percent.mt                   Cell.ID    Celltype1
+FEL011_M_AAACGAACACAAGTGG  2.0037106 FEL011_M_AAACGAACACAAGTGG Cancer cells
+FEL011_M_AAACGCTGTTAAGAAC  1.3162773 FEL011_M_AAACGCTGTTAAGAAC Cancer cells
+FEL011_M_AAAGGTATCAGCCTCT  0.1170960 FEL011_M_AAAGGTATCAGCCTCT  Macrophages
+FEL011_M_AAAGTCCCAGCGAGTA  0.1855288 FEL011_M_AAAGTCCCAGCGAGTA  Fibroblasts
+FEL011_M_AAAGTGAAGAGGACTC  2.2855530 FEL011_M_AAAGTGAAGAGGACTC Cancer cells
+FEL011_M_AAAGTGAAGGGAGGGT  0.7387343 FEL011_M_AAAGTGAAGGGAGGGT  Fibroblasts
+                             Celltype2      S.Score   G2M.Score old.ident
+FEL011_M_AAACGAACACAAGTGG Cancer cells  0.021221532 -0.07288746    FEL011
+FEL011_M_AAACGCTGTTAAGAAC Cancer cells  0.038733609 -0.02311482    FEL011
+FEL011_M_AAAGGTATCAGCCTCT  Macrophages -0.007418910 -0.05462296    FEL011
+FEL011_M_AAAGTCCCAGCGAGTA  Fibroblasts -0.128364389 -0.04132247    FEL011
+FEL011_M_AAAGTGAAGAGGACTC Cancer cells -0.007936508 -0.05123153    FEL011
+FEL011_M_AAAGTGAAGGGAGGGT  Fibroblasts -0.027001380 -0.03196286    FEL011
+                          nCount_SCT nFeature_SCT integrated_snn_res.2
+FEL011_M_AAACGAACACAAGTGG       5486         2356                   33
+FEL011_M_AAACGCTGTTAAGAAC       5510         2120                    1
+FEL011_M_AAAGGTATCAGCCTCT       4997         2160                   20
+FEL011_M_AAAGTCCCAGCGAGTA       5906         2722                    2
+FEL011_M_AAAGTGAAGAGGACTC       5070         1793                    1
+FEL011_M_AAAGTGAAGGGAGGGT       4942         2241                    7
+                          integrated_snn_res.1.2 integrated_snn_res.0.5
+FEL011_M_AAACGAACACAAGTGG                     28                     16
+FEL011_M_AAACGCTGTTAAGAAC                      3                      3
+FEL011_M_AAAGGTATCAGCCTCT                      6                      4
+FEL011_M_AAAGTCCCAGCGAGTA                      1                      1
+FEL011_M_AAAGTGAAGAGGACTC                      3                      3
+FEL011_M_AAAGTGAAGGGAGGGT                      7                      1
+                          integrated_snn_res.0.8 seurat_clusters Timepoint Day
+FEL011_M_AAACGAACACAAGTGG                     23              23         M  14
+FEL011_M_AAACGCTGTTAAGAAC                      3               3         M  14
+FEL011_M_AAAGGTATCAGCCTCT                      5               5         M  14
+FEL011_M_AAAGTCCCAGCGAGTA                      2               2         M  14
+FEL011_M_AAAGTGAAGAGGACTC                      3               3         M  14
+FEL011_M_AAAGTGAAGGGAGGGT                      7               7         M  14
+                               Celltype Celltype_subtype Platform ARM
+FEL011_M_AAACGAACACAAGTGG  Cancer cells     Cancer cells      10x   B
+FEL011_M_AAACGCTGTTAAGAAC  Cancer cells     Cancer cells      10x   B
+FEL011_M_AAAGGTATCAGCCTCT  Immune cells      Macrophages      10x   B
+FEL011_M_AAAGTCCCAGCGAGTA Stromal cells      Fibroblasts      10x   B
+FEL011_M_AAAGTGAAGAGGACTC  Cancer cells     Cancer cells      10x   B
+FEL011_M_AAAGTGAAGGGAGGGT Stromal cells      Fibroblasts      10x   B
+                                 Treatment Ki67_Response
+FEL011_M_AAACGAACACAAGTGG letrozole + ribo     Sensitive
+FEL011_M_AAACGCTGTTAAGAAC letrozole + ribo     Sensitive
+FEL011_M_AAAGGTATCAGCCTCT letrozole + ribo     Sensitive
+FEL011_M_AAAGTCCCAGCGAGTA letrozole + ribo     Sensitive
+FEL011_M_AAAGTGAAGAGGACTC letrozole + ribo     Sensitive
+FEL011_M_AAAGTGAAGGGAGGGT letrozole + ribo     Sensitive
+                                         Response_v3b      Response
+FEL011_M_AAACGAACACAAGTGG Rebound/Progressive disease Non-responder
+FEL011_M_AAACGCTGTTAAGAAC Rebound/Progressive disease Non-responder
+FEL011_M_AAAGGTATCAGCCTCT Rebound/Progressive disease Non-responder
+FEL011_M_AAAGTCCCAGCGAGTA Rebound/Progressive disease Non-responder
+FEL011_M_AAAGTGAAGAGGACTC Rebound/Progressive disease Non-responder
+FEL011_M_AAAGTGAAGGGAGGGT Rebound/Progressive disease Non-responder
+                          Celltype_orig
+FEL011_M_AAACGAACACAAGTGG  Cancer cells
+FEL011_M_AAACGCTGTTAAGAAC  Cancer cells
+FEL011_M_AAAGGTATCAGCCTCT   Macrophages
+FEL011_M_AAAGTCCCAGCGAGTA   Fibroblasts
+FEL011_M_AAAGTGAAGAGGACTC  Cancer cells
+FEL011_M_AAAGTGAAGGGAGGGT   Fibroblasts
+Warning message:
+Using `as.character()` on a quosure is deprecated as of rlang 0.3.0.
+Please use `as_label()` or `as_name()` instead.
+This warning is displayed once per session. 
+null device 
+          1 
+null device 
+          1 
+There were 18 warnings (use warnings() to see them)
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+null device 
+          1 
+Warning messages:
+1: In FetchData(object = object, vars = c(dims, "ident", features),  :
+  The following requested variables were not found: NK, CD56, CD94, NKP46
+2: In FetchData(object = object, vars = features, slot = slot) :
+  The following requested variables were not found: NK, CD56, CD94, NKP46
+null device 
+          1 
+Start: 1599597994
+End: 1599599405
+Run time: 1411
+Done

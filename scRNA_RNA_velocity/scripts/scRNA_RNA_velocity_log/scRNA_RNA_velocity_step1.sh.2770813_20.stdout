@@ -1,0 +1,602 @@
+CPU: 16
+N: 20
+Step1: Analyze spliced and unspliced reads and genrate a loom file for velocityR
+Run velocyto to generate loom file
+2020-08-27 16:31:02,997 - DEBUG - Using logic: Default
+2020-08-27 16:31:03,000 - INFO - Read 484 cell barcodes from /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH049/FEL017022.mRNA/feline_p1722.10x.counts/FEL017_M/outs/filtered_feature_bc_matrix/barcodes.tsv.gz
+2020-08-27 16:31:03,000 - DEBUG - Example of barcode: AAACCCAAGGTACATA and cell_id: FEL017_M:AAACCCAAGGTACATA-1
+2020-08-27 16:31:03,019 - DEBUG - Peeking into /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH049/FEL017022.mRNA/feline_p1722.10x.counts/FEL017_M/outs/possorted_genome_bam.bam
+2020-08-27 16:31:03,052 - WARNING - Not found cell and umi barcode in entry 9 of the bam file
+2020-08-27 16:31:03,052 - WARNING - Not found cell and umi barcode in entry 10 of the bam file
+2020-08-27 16:31:03,052 - WARNING - Not found cell and umi barcode in entry 11 of the bam file
+2020-08-27 16:31:03,052 - WARNING - Not found cell and umi barcode in entry 12 of the bam file
+2020-08-27 16:31:03,052 - WARNING - Not found cell and umi barcode in entry 13 of the bam file
+2020-08-27 16:31:03,053 - WARNING - Not found cell and umi barcode in entry 14 of the bam file
+2020-08-27 16:31:03,053 - WARNING - Not found cell and umi barcode in entry 15 of the bam file
+2020-08-27 16:31:03,053 - WARNING - Not found cell and umi barcode in entry 72 of the bam file
+2020-08-27 16:31:03,053 - WARNING - Not found cell and umi barcode in entry 73 of the bam file
+2020-08-27 16:31:03,053 - WARNING - Not found cell and umi barcode in entry 74 of the bam file
+2020-08-27 16:31:03,053 - WARNING - Not found cell and umi barcode in entry 123 of the bam file
+2020-08-27 16:31:03,053 - WARNING - Not found cell and umi barcode in entry 124 of the bam file
+2020-08-27 16:31:03,054 - WARNING - Not found cell and umi barcode in entry 211 of the bam file
+2020-08-27 16:31:03,054 - WARNING - Not found cell and umi barcode in entry 212 of the bam file
+2020-08-27 16:31:03,054 - WARNING - Not found cell and umi barcode in entry 213 of the bam file
+2020-08-27 16:31:03,055 - WARNING - Not found cell and umi barcode in entry 534 of the bam file
+2020-08-27 16:31:03,056 - WARNING - Not found cell and umi barcode in entry 729 of the bam file
+2020-08-27 16:31:03,066 - WARNING - The file /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH049/FEL017022.mRNA/feline_p1722.10x.counts/FEL017_M/outs/cellsorted_possorted_genome_bam.bam already exists. The sorting step will be skipped and the existing file will be used.
+2020-08-27 16:31:03,066 - INFO - Load the annotation from /net/isi-dcnl/ifs/user_data/abild/Genomes/refdata-cellranger-GRCh38-3.0.0/genes/genes.gtf
+2020-08-27 16:31:11,533 - DEBUG - Parsing Chromosome 1 strand - [line 0]
+2020-08-27 16:31:12,248 - DEBUG - Done with 1- [line 108728]
+2020-08-27 16:31:12,248 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:12,259 - DEBUG - Seen 1561 genes until now
+2020-08-27 16:31:12,259 - DEBUG - Parsing Chromosome 1 strand + [line 108729]
+2020-08-27 16:31:13,065 - DEBUG - Done with 1+ [line 232515]
+2020-08-27 16:31:13,066 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:13,079 - DEBUG - Seen 3154 genes until now
+2020-08-27 16:31:13,079 - DEBUG - Parsing Chromosome 10 strand - [line 232516]
+2020-08-27 16:31:13,589 - DEBUG - Done with 10- [line 279343]
+2020-08-27 16:31:13,589 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:13,592 - DEBUG - Seen 3737 genes until now
+2020-08-27 16:31:13,592 - DEBUG - Parsing Chromosome 10 strand + [line 279344]
+2020-08-27 16:31:13,789 - DEBUG - Done with 10+ [line 323872]
+2020-08-27 16:31:13,789 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:13,792 - DEBUG - Seen 4384 genes until now
+2020-08-27 16:31:13,793 - DEBUG - Parsing Chromosome 11 strand - [line 323873]
+2020-08-27 16:31:14,439 - DEBUG - Done with 11- [line 402908]
+2020-08-27 16:31:14,439 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:14,446 - DEBUG - Seen 5320 genes until now
+2020-08-27 16:31:14,446 - DEBUG - Parsing Chromosome 11 strand + [line 402909]
+2020-08-27 16:31:14,799 - DEBUG - Done with 11+ [line 482591]
+2020-08-27 16:31:14,800 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:15,131 - DEBUG - Seen 6305 genes until now
+2020-08-27 16:31:15,131 - DEBUG - Parsing Chromosome 12 strand - [line 482592]
+2020-08-27 16:31:15,479 - DEBUG - Done with 12- [line 559278]
+2020-08-27 16:31:15,479 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:15,486 - DEBUG - Seen 7177 genes until now
+2020-08-27 16:31:15,486 - DEBUG - Parsing Chromosome 12 strand + [line 559279]
+2020-08-27 16:31:15,816 - DEBUG - Done with 12+ [line 635173]
+2020-08-27 16:31:15,816 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:15,822 - DEBUG - Seen 8070 genes until now
+2020-08-27 16:31:15,822 - DEBUG - Parsing Chromosome 13 strand - [line 635174]
+2020-08-27 16:31:16,270 - DEBUG - Done with 13- [line 653523]
+2020-08-27 16:31:16,270 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:16,273 - DEBUG - Seen 8400 genes until now
+2020-08-27 16:31:16,273 - DEBUG - Parsing Chromosome 13 strand + [line 653524]
+2020-08-27 16:31:16,359 - DEBUG - Done with 13+ [line 673091]
+2020-08-27 16:31:16,359 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:16,361 - DEBUG - Seen 8736 genes until now
+2020-08-27 16:31:16,361 - DEBUG - Parsing Chromosome 14 strand - [line 673092]
+2020-08-27 16:31:16,553 - DEBUG - Done with 14- [line 716831]
+2020-08-27 16:31:16,553 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:16,557 - DEBUG - Seen 9452 genes until now
+2020-08-27 16:31:16,557 - DEBUG - Parsing Chromosome 14 strand + [line 716832]
+2020-08-27 16:31:16,767 - DEBUG - Done with 14+ [line 764942]
+2020-08-27 16:31:16,768 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:16,772 - DEBUG - Seen 10121 genes until now
+2020-08-27 16:31:16,772 - DEBUG - Parsing Chromosome 15 strand - [line 764943]
+2020-08-27 16:31:16,993 - DEBUG - Done with 15- [line 813803]
+2020-08-27 16:31:16,993 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:16,997 - DEBUG - Seen 10698 genes until now
+2020-08-27 16:31:16,997 - DEBUG - Parsing Chromosome 15 strand + [line 813804]
+2020-08-27 16:31:17,188 - DEBUG - Done with 15+ [line 857859]
+2020-08-27 16:31:17,189 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:17,192 - DEBUG - Seen 11256 genes until now
+2020-08-27 16:31:17,192 - DEBUG - Parsing Chromosome 16 strand - [line 857860]
+2020-08-27 16:31:17,821 - DEBUG - Done with 16- [line 911118]
+2020-08-27 16:31:17,822 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:17,826 - DEBUG - Seen 11998 genes until now
+2020-08-27 16:31:17,826 - DEBUG - Parsing Chromosome 16 strand + [line 911119]
+2020-08-27 16:31:18,132 - DEBUG - Done with 16+ [line 981663]
+2020-08-27 16:31:18,132 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:18,138 - DEBUG - Seen 12787 genes until now
+2020-08-27 16:31:18,138 - DEBUG - Parsing Chromosome 17 strand - [line 981664]
+2020-08-27 16:31:18,513 - DEBUG - Done with 17- [line 1066635]
+2020-08-27 16:31:18,513 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:18,521 - DEBUG - Seen 13775 genes until now
+2020-08-27 16:31:18,522 - DEBUG - Parsing Chromosome 17 strand + [line 1066636]
+2020-08-27 16:31:19,306 - DEBUG - Done with 17+ [line 1143834]
+2020-08-27 16:31:19,307 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:19,316 - DEBUG - Seen 14681 genes until now
+2020-08-27 16:31:19,316 - DEBUG - Parsing Chromosome 18 strand - [line 1143835]
+2020-08-27 16:31:19,426 - DEBUG - Done with 18- [line 1168496]
+2020-08-27 16:31:19,426 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:19,428 - DEBUG - Seen 15006 genes until now
+2020-08-27 16:31:19,428 - DEBUG - Parsing Chromosome 18 strand + [line 1168497]
+2020-08-27 16:31:19,520 - DEBUG - Done with 18+ [line 1189691]
+2020-08-27 16:31:19,520 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:19,521 - DEBUG - Seen 15343 genes until now
+2020-08-27 16:31:19,521 - DEBUG - Parsing Chromosome 19 strand - [line 1189692]
+2020-08-27 16:31:19,862 - DEBUG - Done with 19- [line 1268854]
+2020-08-27 16:31:19,862 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:19,869 - DEBUG - Seen 16352 genes until now
+2020-08-27 16:31:19,869 - DEBUG - Parsing Chromosome 19 strand + [line 1268855]
+2020-08-27 16:31:20,219 - DEBUG - Done with 19+ [line 1351833]
+2020-08-27 16:31:20,219 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:20,227 - DEBUG - Seen 17347 genes until now
+2020-08-27 16:31:20,227 - DEBUG - Parsing Chromosome 2 strand - [line 1351834]
+2020-08-27 16:31:20,665 - DEBUG - Done with 2- [line 1448710]
+2020-08-27 16:31:20,665 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:20,674 - DEBUG - Seen 18472 genes until now
+2020-08-27 16:31:20,674 - DEBUG - Parsing Chromosome 2 strand + [line 1448711]
+2020-08-27 16:31:21,662 - DEBUG - Done with 2+ [line 1542602]
+2020-08-27 16:31:21,663 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:21,672 - DEBUG - Seen 19632 genes until now
+2020-08-27 16:31:21,673 - DEBUG - Parsing Chromosome 20 strand - [line 1542603]
+2020-08-27 16:31:21,790 - DEBUG - Done with 20- [line 1569195]
+2020-08-27 16:31:21,790 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:21,792 - DEBUG - Seen 20079 genes until now
+2020-08-27 16:31:21,792 - DEBUG - Parsing Chromosome 20 strand + [line 1569196]
+2020-08-27 16:31:21,929 - DEBUG - Done with 20+ [line 1600541]
+2020-08-27 16:31:21,929 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:21,932 - DEBUG - Seen 20527 genes until now
+2020-08-27 16:31:21,932 - DEBUG - Parsing Chromosome 21 strand - [line 1600542]
+2020-08-27 16:31:21,993 - DEBUG - Done with 21- [line 1614106]
+2020-08-27 16:31:21,993 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:21,995 - DEBUG - Seen 20795 genes until now
+2020-08-27 16:31:21,995 - DEBUG - Parsing Chromosome 21 strand + [line 1614107]
+2020-08-27 16:31:22,059 - DEBUG - Done with 21+ [line 1628392]
+2020-08-27 16:31:22,059 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:22,061 - DEBUG - Seen 21029 genes until now
+2020-08-27 16:31:22,061 - DEBUG - Parsing Chromosome 22 strand - [line 1628393]
+2020-08-27 16:31:22,174 - DEBUG - Done with 22- [line 1653805]
+2020-08-27 16:31:22,174 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:22,176 - DEBUG - Seen 21391 genes until now
+2020-08-27 16:31:22,176 - DEBUG - Parsing Chromosome 22 strand + [line 1653806]
+2020-08-27 16:31:22,310 - DEBUG - Done with 22+ [line 1684245]
+2020-08-27 16:31:22,310 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:22,314 - DEBUG - Seen 21866 genes until now
+2020-08-27 16:31:22,314 - DEBUG - Parsing Chromosome 3 strand - [line 1684246]
+2020-08-27 16:31:22,665 - DEBUG - Done with 3- [line 1763939]
+2020-08-27 16:31:22,665 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:22,672 - DEBUG - Seen 22713 genes until now
+2020-08-27 16:31:22,672 - DEBUG - Parsing Chromosome 3 strand + [line 1763940]
+2020-08-27 16:31:23,021 - DEBUG - Done with 3+ [line 1844840]
+2020-08-27 16:31:23,021 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:23,028 - DEBUG - Seen 23585 genes until now
+2020-08-27 16:31:23,028 - DEBUG - Parsing Chromosome 4 strand - [line 1844841]
+2020-08-27 16:31:23,886 - DEBUG - Done with 4- [line 1898665]
+2020-08-27 16:31:23,886 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:23,891 - DEBUG - Seen 24246 genes until now
+2020-08-27 16:31:23,891 - DEBUG - Parsing Chromosome 4 strand + [line 1898666]
+2020-08-27 16:31:24,100 - DEBUG - Done with 4+ [line 1947617]
+2020-08-27 16:31:24,100 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:24,104 - DEBUG - Seen 24938 genes until now
+2020-08-27 16:31:24,104 - DEBUG - Parsing Chromosome 5 strand - [line 1947618]
+2020-08-27 16:31:24,340 - DEBUG - Done with 5- [line 2001140]
+2020-08-27 16:31:24,340 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:24,345 - DEBUG - Seen 25741 genes until now
+2020-08-27 16:31:24,345 - DEBUG - Parsing Chromosome 5 strand + [line 2001141]
+2020-08-27 16:31:24,607 - DEBUG - Done with 5+ [line 2062165]
+2020-08-27 16:31:24,607 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:24,612 - DEBUG - Seen 26599 genes until now
+2020-08-27 16:31:24,612 - DEBUG - Parsing Chromosome 6 strand - [line 2062166]
+2020-08-27 16:31:24,883 - DEBUG - Done with 6- [line 2121425]
+2020-08-27 16:31:24,883 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:24,889 - DEBUG - Seen 27435 genes until now
+2020-08-27 16:31:24,889 - DEBUG - Parsing Chromosome 6 strand + [line 2121426]
+2020-08-27 16:31:25,117 - DEBUG - Done with 6+ [line 2176078]
+2020-08-27 16:31:25,117 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:25,122 - DEBUG - Seen 28231 genes until now
+2020-08-27 16:31:25,122 - DEBUG - Parsing Chromosome 7 strand - [line 2176079]
+2020-08-27 16:31:25,372 - DEBUG - Done with 7- [line 2233605]
+2020-08-27 16:31:25,372 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:25,377 - DEBUG - Seen 28953 genes until now
+2020-08-27 16:31:25,377 - DEBUG - Parsing Chromosome 7 strand + [line 2233606]
+2020-08-27 16:31:25,641 - DEBUG - Done with 7+ [line 2295513]
+2020-08-27 16:31:25,641 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:25,647 - DEBUG - Seen 29770 genes until now
+2020-08-27 16:31:25,647 - DEBUG - Parsing Chromosome 8 strand - [line 2295514]
+2020-08-27 16:31:25,856 - DEBUG - Done with 8- [line 2343289]
+2020-08-27 16:31:25,856 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:25,860 - DEBUG - Seen 30442 genes until now
+2020-08-27 16:31:25,860 - DEBUG - Parsing Chromosome 8 strand + [line 2343290]
+2020-08-27 16:31:26,048 - DEBUG - Done with 8+ [line 2386793]
+2020-08-27 16:31:26,048 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:26,052 - DEBUG - Seen 31090 genes until now
+2020-08-27 16:31:26,052 - DEBUG - Parsing Chromosome 9 strand - [line 2386794]
+2020-08-27 16:31:27,060 - DEBUG - Done with 9- [line 2430389]
+2020-08-27 16:31:27,060 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,064 - DEBUG - Seen 31710 genes until now
+2020-08-27 16:31:27,064 - DEBUG - Parsing Chromosome 9 strand + [line 2430390]
+2020-08-27 16:31:27,270 - DEBUG - Done with 9+ [line 2477312]
+2020-08-27 16:31:27,270 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,273 - DEBUG - Seen 32318 genes until now
+2020-08-27 16:31:27,273 - DEBUG - Parsing Chromosome GL000009.2 strand - [line 2477313]
+2020-08-27 16:31:27,273 - DEBUG - Done with GL000009.2- [line 2477320]
+2020-08-27 16:31:27,273 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,273 - DEBUG - Seen 32319 genes until now
+2020-08-27 16:31:27,274 - DEBUG - Parsing Chromosome GL000194.1 strand - [line 2477321]
+2020-08-27 16:31:27,274 - DEBUG - Done with GL000194.1- [line 2477346]
+2020-08-27 16:31:27,274 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,274 - DEBUG - Seen 32321 genes until now
+2020-08-27 16:31:27,274 - DEBUG - Parsing Chromosome GL000195.1 strand - [line 2477347]
+2020-08-27 16:31:27,274 - DEBUG - Done with GL000195.1- [line 2477356]
+2020-08-27 16:31:27,274 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,274 - DEBUG - Seen 32322 genes until now
+2020-08-27 16:31:27,274 - DEBUG - Parsing Chromosome GL000195.1 strand + [line 2477357]
+2020-08-27 16:31:27,274 - DEBUG - Done with GL000195.1+ [line 2477370]
+2020-08-27 16:31:27,274 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,274 - DEBUG - Seen 32323 genes until now
+2020-08-27 16:31:27,274 - DEBUG - Parsing Chromosome GL000205.2 strand - [line 2477371]
+2020-08-27 16:31:27,274 - DEBUG - Done with GL000205.2- [line 2477384]
+2020-08-27 16:31:27,274 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,274 - DEBUG - Seen 32324 genes until now
+2020-08-27 16:31:27,274 - DEBUG - Parsing Chromosome GL000213.1 strand - [line 2477385]
+2020-08-27 16:31:27,275 - DEBUG - Done with GL000213.1- [line 2477433]
+2020-08-27 16:31:27,275 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,275 - DEBUG - Seen 32325 genes until now
+2020-08-27 16:31:27,275 - DEBUG - Parsing Chromosome GL000218.1 strand - [line 2477434]
+2020-08-27 16:31:27,275 - DEBUG - Done with GL000218.1- [line 2477441]
+2020-08-27 16:31:27,275 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,275 - DEBUG - Seen 32326 genes until now
+2020-08-27 16:31:27,275 - DEBUG - Parsing Chromosome GL000219.1 strand - [line 2477442]
+2020-08-27 16:31:27,275 - DEBUG - Done with GL000219.1- [line 2477453]
+2020-08-27 16:31:27,275 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,276 - DEBUG - Seen 32327 genes until now
+2020-08-27 16:31:27,276 - DEBUG - Parsing Chromosome KI270711.1 strand - [line 2477454]
+2020-08-27 16:31:27,276 - DEBUG - Done with KI270711.1- [line 2477604]
+2020-08-27 16:31:27,276 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,276 - DEBUG - Seen 32328 genes until now
+2020-08-27 16:31:27,276 - DEBUG - Parsing Chromosome KI270713.1 strand - [line 2477605]
+2020-08-27 16:31:27,277 - DEBUG - Done with KI270713.1- [line 2477612]
+2020-08-27 16:31:27,277 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,277 - DEBUG - Seen 32329 genes until now
+2020-08-27 16:31:27,277 - DEBUG - Parsing Chromosome KI270713.1 strand + [line 2477613]
+2020-08-27 16:31:27,277 - DEBUG - Done with KI270713.1+ [line 2477618]
+2020-08-27 16:31:27,277 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,277 - DEBUG - Seen 32330 genes until now
+2020-08-27 16:31:27,277 - DEBUG - Parsing Chromosome KI270721.1 strand + [line 2477619]
+2020-08-27 16:31:27,277 - DEBUG - Done with KI270721.1+ [line 2477634]
+2020-08-27 16:31:27,277 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,277 - DEBUG - Seen 32331 genes until now
+2020-08-27 16:31:27,277 - DEBUG - Parsing Chromosome KI270726.1 strand + [line 2477635]
+2020-08-27 16:31:27,277 - DEBUG - Done with KI270726.1+ [line 2477645]
+2020-08-27 16:31:27,277 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,277 - DEBUG - Seen 32333 genes until now
+2020-08-27 16:31:27,277 - DEBUG - Parsing Chromosome KI270727.1 strand - [line 2477646]
+2020-08-27 16:31:27,278 - DEBUG - Done with KI270727.1- [line 2477704]
+2020-08-27 16:31:27,278 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,278 - DEBUG - Seen 32335 genes until now
+2020-08-27 16:31:27,278 - DEBUG - Parsing Chromosome KI270727.1 strand + [line 2477705]
+2020-08-27 16:31:27,278 - DEBUG - Done with KI270727.1+ [line 2477719]
+2020-08-27 16:31:27,278 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,278 - DEBUG - Seen 32337 genes until now
+2020-08-27 16:31:27,278 - DEBUG - Parsing Chromosome KI270728.1 strand - [line 2477720]
+2020-08-27 16:31:27,278 - DEBUG - Done with KI270728.1- [line 2477796]
+2020-08-27 16:31:27,278 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,278 - DEBUG - Seen 32339 genes until now
+2020-08-27 16:31:27,278 - DEBUG - Parsing Chromosome KI270728.1 strand + [line 2477797]
+2020-08-27 16:31:27,279 - DEBUG - Done with KI270728.1+ [line 2477833]
+2020-08-27 16:31:27,279 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,279 - DEBUG - Seen 32343 genes until now
+2020-08-27 16:31:27,279 - DEBUG - Parsing Chromosome KI270731.1 strand - [line 2477834]
+2020-08-27 16:31:27,279 - DEBUG - Done with KI270731.1- [line 2477840]
+2020-08-27 16:31:27,279 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,279 - DEBUG - Seen 32344 genes until now
+2020-08-27 16:31:27,279 - DEBUG - Parsing Chromosome KI270734.1 strand - [line 2477841]
+2020-08-27 16:31:27,279 - DEBUG - Done with KI270734.1- [line 2477909]
+2020-08-27 16:31:27,279 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,279 - DEBUG - Seen 32345 genes until now
+2020-08-27 16:31:27,279 - DEBUG - Parsing Chromosome KI270734.1 strand + [line 2477910]
+2020-08-27 16:31:27,279 - DEBUG - Done with KI270734.1+ [line 2477932]
+2020-08-27 16:31:27,280 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,280 - DEBUG - Seen 32347 genes until now
+2020-08-27 16:31:27,280 - DEBUG - Parsing Chromosome MT strand - [line 2477933]
+2020-08-27 16:31:27,280 - DEBUG - Done with MT- [line 2477938]
+2020-08-27 16:31:27,280 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,280 - DEBUG - Seen 32348 genes until now
+2020-08-27 16:31:27,280 - DEBUG - Parsing Chromosome MT strand + [line 2477939]
+2020-08-27 16:31:27,280 - DEBUG - Done with MT+ [line 2478004]
+2020-08-27 16:31:27,280 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,280 - DEBUG - Seen 32360 genes until now
+2020-08-27 16:31:27,280 - DEBUG - Parsing Chromosome X strand - [line 2478005]
+2020-08-27 16:31:27,452 - DEBUG - Done with X- [line 2518937]
+2020-08-27 16:31:27,453 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,456 - DEBUG - Seen 32876 genes until now
+2020-08-27 16:31:27,456 - DEBUG - Parsing Chromosome X strand + [line 2518938]
+2020-08-27 16:31:27,627 - DEBUG - Done with X+ [line 2560301]
+2020-08-27 16:31:27,627 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,630 - DEBUG - Seen 33438 genes until now
+2020-08-27 16:31:27,631 - DEBUG - Parsing Chromosome Y strand - [line 2560302]
+2020-08-27 16:31:27,640 - DEBUG - Done with Y- [line 2562446]
+2020-08-27 16:31:27,640 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,641 - DEBUG - Seen 33485 genes until now
+2020-08-27 16:31:27,641 - DEBUG - Parsing Chromosome Y strand + [line 2562447]
+2020-08-27 16:31:27,652 - DEBUG - Assigning indexes to genes
+2020-08-27 16:31:27,652 - DEBUG - Done with Y+ [line 2565059]
+2020-08-27 16:31:27,652 - DEBUG - Fixing corner cases of transcript models containg intron longer than 1000Kbp
+2020-08-27 16:31:29,734 - DEBUG - Generated 2165800 features corresponding to 172912 transcript models from /net/isi-dcnl/ifs/user_data/abild/Genomes/refdata-cellranger-GRCh38-3.0.0/genes/genes.gtf
+2020-08-27 16:31:29,771 - INFO - Scan /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH049/FEL017022.mRNA/feline_p1722.10x.counts/FEL017_M/outs/possorted_genome_bam.bam to validate intron intervals
+2020-08-27 16:31:33,806 - DEBUG - Reading /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH049/FEL017022.mRNA/feline_p1722.10x.counts/FEL017_M/outs/possorted_genome_bam.bam
+2020-08-27 16:31:33,823 - DEBUG - Read first 0 million reads
+2020-08-27 16:31:33,823 - DEBUG - Marking up chromosome 1
+2020-08-27 16:33:00,978 - DEBUG - Marking up chromosome 10
+2020-08-27 16:33:04,901 - DEBUG - Read first 10 million reads
+2020-08-27 16:33:41,934 - DEBUG - Marking up chromosome 11
+2020-08-27 16:35:03,295 - DEBUG - Read first 20 million reads
+2020-08-27 16:35:11,066 - DEBUG - Marking up chromosome 12
+2020-08-27 16:35:52,206 - DEBUG - Read first 30 million reads
+2020-08-27 16:36:24,293 - DEBUG - Marking up chromosome 13
+2020-08-27 16:36:42,371 - DEBUG - Marking up chromosome 14
+2020-08-27 16:36:48,356 - DEBUG - Read first 40 million reads
+2020-08-27 16:37:18,377 - DEBUG - Marking up chromosome 15
+2020-08-27 16:37:52,261 - DEBUG - Marking up chromosome 16
+2020-08-27 16:38:26,732 - DEBUG - Read first 50 million reads
+2020-08-27 16:38:30,479 - DEBUG - Marking up chromosome 17
+2020-08-27 16:39:19,367 - DEBUG - Marking up chromosome 18
+2020-08-27 16:39:37,761 - DEBUG - Marking up chromosome 19
+2020-08-27 16:40:16,174 - DEBUG - Marking up chromosome 2
+2020-08-27 16:40:19,223 - DEBUG - Read first 60 million reads
+2020-08-27 16:41:35,702 - DEBUG - Marking up chromosome 20
+2020-08-27 16:41:58,767 - DEBUG - Marking up chromosome 21
+2020-08-27 16:41:59,531 - DEBUG - Read first 70 million reads
+2020-08-27 16:42:19,122 - DEBUG - Read first 80 million reads
+2020-08-27 16:42:39,178 - DEBUG - Read first 90 million reads
+2020-08-27 16:42:58,811 - DEBUG - Read first 100 million reads
+2020-08-27 16:43:18,890 - DEBUG - Read first 110 million reads
+2020-08-27 16:43:38,501 - DEBUG - Read first 120 million reads
+2020-08-27 16:43:58,547 - DEBUG - Read first 130 million reads
+2020-08-27 16:44:18,229 - DEBUG - Read first 140 million reads
+2020-08-27 16:44:38,376 - DEBUG - Read first 150 million reads
+2020-08-27 16:44:58,018 - DEBUG - Read first 160 million reads
+2020-08-27 16:45:11,671 - DEBUG - Marking up chromosome 22
+2020-08-27 16:45:32,818 - DEBUG - Marking up chromosome 3
+2020-08-27 16:46:33,553 - DEBUG - Marking up chromosome 4
+2020-08-27 16:46:37,657 - DEBUG - Read first 170 million reads
+2020-08-27 16:47:12,842 - DEBUG - Marking up chromosome 5
+2020-08-27 16:48:01,767 - DEBUG - Marking up chromosome 6
+2020-08-27 16:48:18,781 - DEBUG - Read first 180 million reads
+2020-08-27 16:48:48,571 - DEBUG - Marking up chromosome 7
+2020-08-27 16:49:35,759 - DEBUG - Marking up chromosome 8
+2020-08-27 16:49:49,225 - DEBUG - Read first 190 million reads
+2020-08-27 16:50:12,650 - DEBUG - Marking up chromosome 9
+2020-08-27 16:50:44,050 - DEBUG - Marking up chromosome MT
+2020-08-27 16:50:48,683 - DEBUG - Marking up chromosome X
+2020-08-27 16:51:11,654 - DEBUG - Marking up chromosome Y
+2020-08-27 16:51:11,730 - DEBUG - Marking up chromosome KI270728.1
+2020-08-27 16:51:11,741 - DEBUG - Marking up chromosome KI270727.1
+2020-08-27 16:51:11,747 - DEBUG - Marking up chromosome KI270442.1
+2020-08-27 16:51:11,747 - WARNING - The .bam file refers to a chromosome 'KI270442.1+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,747 - WARNING - The .bam file refers to a chromosome 'KI270442.1-' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,750 - DEBUG - Marking up chromosome KI270729.1
+2020-08-27 16:51:11,750 - WARNING - The .bam file refers to a chromosome 'KI270729.1+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,750 - WARNING - The .bam file refers to a chromosome 'KI270729.1-' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,751 - DEBUG - Marking up chromosome KI270743.1
+2020-08-27 16:51:11,751 - WARNING - The .bam file refers to a chromosome 'KI270743.1+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,751 - WARNING - The .bam file refers to a chromosome 'KI270743.1-' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,755 - DEBUG - Marking up chromosome GL000008.2
+2020-08-27 16:51:11,755 - WARNING - The .bam file refers to a chromosome 'GL000008.2+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,755 - WARNING - The .bam file refers to a chromosome 'GL000008.2-' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,758 - DEBUG - Marking up chromosome GL000009.2
+2020-08-27 16:51:11,758 - WARNING - The .bam file refers to a chromosome 'GL000009.2+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,763 - DEBUG - Marking up chromosome KI270747.1
+2020-08-27 16:51:11,763 - WARNING - The .bam file refers to a chromosome 'KI270747.1+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,763 - WARNING - The .bam file refers to a chromosome 'KI270747.1-' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,763 - DEBUG - Marking up chromosome KI270722.1
+2020-08-27 16:51:11,763 - WARNING - The .bam file refers to a chromosome 'KI270722.1+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,763 - WARNING - The .bam file refers to a chromosome 'KI270722.1-' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,764 - DEBUG - Marking up chromosome GL000194.1
+2020-08-27 16:51:11,764 - WARNING - The .bam file refers to a chromosome 'GL000194.1+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,801 - DEBUG - Marking up chromosome KI270742.1
+2020-08-27 16:51:11,801 - WARNING - The .bam file refers to a chromosome 'KI270742.1+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,802 - WARNING - The .bam file refers to a chromosome 'KI270742.1-' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,810 - DEBUG - Marking up chromosome GL000205.2
+2020-08-27 16:51:11,810 - WARNING - The .bam file refers to a chromosome 'GL000205.2+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,869 - DEBUG - Marking up chromosome GL000195.1
+2020-08-27 16:51:11,894 - DEBUG - Marking up chromosome KI270733.1
+2020-08-27 16:51:11,894 - WARNING - The .bam file refers to a chromosome 'KI270733.1+' not present in the annotation (.gtf) file
+2020-08-27 16:51:11,894 - WARNING - The .bam file refers to a chromosome 'KI270733.1-' not present in the annotation (.gtf) file
+2020-08-27 16:51:13,478 - DEBUG - Read first 200 million reads
+2020-08-27 16:51:33,161 - DEBUG - Read first 210 million reads
+2020-08-27 16:51:53,153 - DEBUG - Read first 220 million reads
+2020-08-27 16:52:13,300 - DEBUG - Read first 230 million reads
+2020-08-27 16:52:33,267 - DEBUG - Read first 240 million reads
+2020-08-27 16:52:42,795 - DEBUG - Marking up chromosome GL000224.1
+2020-08-27 16:52:42,795 - WARNING - The .bam file refers to a chromosome 'GL000224.1+' not present in the annotation (.gtf) file
+2020-08-27 16:52:42,796 - WARNING - The .bam file refers to a chromosome 'GL000224.1-' not present in the annotation (.gtf) file
+2020-08-27 16:52:42,801 - DEBUG - Marking up chromosome GL000219.1
+2020-08-27 16:52:42,801 - WARNING - The .bam file refers to a chromosome 'GL000219.1+' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,006 - DEBUG - Marking up chromosome KI270719.1
+2020-08-27 16:52:43,007 - WARNING - The .bam file refers to a chromosome 'KI270719.1+' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,007 - WARNING - The .bam file refers to a chromosome 'KI270719.1-' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,012 - DEBUG - Marking up chromosome KI270712.1
+2020-08-27 16:52:43,012 - WARNING - The .bam file refers to a chromosome 'KI270712.1+' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,013 - WARNING - The .bam file refers to a chromosome 'KI270712.1-' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,016 - DEBUG - Marking up chromosome KI270706.1
+2020-08-27 16:52:43,016 - WARNING - The .bam file refers to a chromosome 'KI270706.1+' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,016 - WARNING - The .bam file refers to a chromosome 'KI270706.1-' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,026 - DEBUG - Marking up chromosome KI270725.1
+2020-08-27 16:52:43,026 - WARNING - The .bam file refers to a chromosome 'KI270725.1+' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,026 - WARNING - The .bam file refers to a chromosome 'KI270725.1-' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,027 - DEBUG - Marking up chromosome KI270744.1
+2020-08-27 16:52:43,027 - WARNING - The .bam file refers to a chromosome 'KI270744.1+' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,027 - WARNING - The .bam file refers to a chromosome 'KI270744.1-' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,036 - DEBUG - Marking up chromosome KI270734.1
+2020-08-27 16:52:43,042 - DEBUG - Marking up chromosome GL000213.1
+2020-08-27 16:52:43,042 - WARNING - The .bam file refers to a chromosome 'GL000213.1+' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,042 - DEBUG - Marking up chromosome GL000220.1
+2020-08-27 16:52:43,042 - WARNING - The .bam file refers to a chromosome 'GL000220.1+' not present in the annotation (.gtf) file
+2020-08-27 16:52:43,042 - WARNING - The .bam file refers to a chromosome 'GL000220.1-' not present in the annotation (.gtf) file
+2020-08-27 16:52:53,487 - DEBUG - Read first 250 million reads
+2020-08-27 16:53:13,393 - DEBUG - Read first 260 million reads
+2020-08-27 16:53:33,635 - DEBUG - Read first 270 million reads
+2020-08-27 16:53:53,552 - DEBUG - Read first 280 million reads
+2020-08-27 16:54:13,566 - DEBUG - Read first 290 million reads
+2020-08-27 16:54:14,165 - DEBUG - Marking up chromosome GL000218.1
+2020-08-27 16:54:14,165 - WARNING - The .bam file refers to a chromosome 'GL000218.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,179 - DEBUG - Marking up chromosome KI270749.1
+2020-08-27 16:54:14,180 - WARNING - The .bam file refers to a chromosome 'KI270749.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,180 - WARNING - The .bam file refers to a chromosome 'KI270749.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,184 - DEBUG - Marking up chromosome GL000221.1
+2020-08-27 16:54:14,184 - WARNING - The .bam file refers to a chromosome 'GL000221.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,184 - WARNING - The .bam file refers to a chromosome 'GL000221.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,192 - DEBUG - Marking up chromosome KI270716.1
+2020-08-27 16:54:14,192 - WARNING - The .bam file refers to a chromosome 'KI270716.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,192 - WARNING - The .bam file refers to a chromosome 'KI270716.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,193 - DEBUG - Marking up chromosome KI270731.1
+2020-08-27 16:54:14,193 - WARNING - The .bam file refers to a chromosome 'KI270731.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,197 - DEBUG - Marking up chromosome KI270751.1
+2020-08-27 16:54:14,197 - WARNING - The .bam file refers to a chromosome 'KI270751.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,197 - WARNING - The .bam file refers to a chromosome 'KI270751.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,198 - DEBUG - Marking up chromosome KI270750.1
+2020-08-27 16:54:14,198 - WARNING - The .bam file refers to a chromosome 'KI270750.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,198 - WARNING - The .bam file refers to a chromosome 'KI270750.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,200 - DEBUG - Marking up chromosome GL000214.1
+2020-08-27 16:54:14,200 - WARNING - The .bam file refers to a chromosome 'GL000214.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,201 - WARNING - The .bam file refers to a chromosome 'GL000214.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,204 - DEBUG - Marking up chromosome KI270438.1
+2020-08-27 16:54:14,204 - WARNING - The .bam file refers to a chromosome 'KI270438.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,204 - WARNING - The .bam file refers to a chromosome 'KI270438.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,237 - DEBUG - Marking up chromosome KI270737.1
+2020-08-27 16:54:14,238 - WARNING - The .bam file refers to a chromosome 'KI270737.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,238 - WARNING - The .bam file refers to a chromosome 'KI270737.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,238 - DEBUG - Marking up chromosome KI270721.1
+2020-08-27 16:54:14,238 - WARNING - The .bam file refers to a chromosome 'KI270721.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,244 - DEBUG - Marking up chromosome KI270738.1
+2020-08-27 16:54:14,244 - WARNING - The .bam file refers to a chromosome 'KI270738.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,244 - WARNING - The .bam file refers to a chromosome 'KI270738.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,246 - DEBUG - Marking up chromosome KI270748.1
+2020-08-27 16:54:14,246 - WARNING - The .bam file refers to a chromosome 'KI270748.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,246 - WARNING - The .bam file refers to a chromosome 'KI270748.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,248 - DEBUG - Marking up chromosome KI270435.1
+2020-08-27 16:54:14,248 - WARNING - The .bam file refers to a chromosome 'KI270435.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,248 - WARNING - The .bam file refers to a chromosome 'KI270435.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,249 - DEBUG - Marking up chromosome GL000208.1
+2020-08-27 16:54:14,249 - WARNING - The .bam file refers to a chromosome 'GL000208.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,249 - WARNING - The .bam file refers to a chromosome 'GL000208.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,250 - DEBUG - Marking up chromosome KI270709.1
+2020-08-27 16:54:14,250 - WARNING - The .bam file refers to a chromosome 'KI270709.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,250 - WARNING - The .bam file refers to a chromosome 'KI270709.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,253 - DEBUG - Marking up chromosome KI270753.1
+2020-08-27 16:54:14,253 - WARNING - The .bam file refers to a chromosome 'KI270753.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,253 - WARNING - The .bam file refers to a chromosome 'KI270753.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,253 - DEBUG - Marking up chromosome KI270726.1
+2020-08-27 16:54:14,253 - WARNING - The .bam file refers to a chromosome 'KI270726.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,261 - DEBUG - Marking up chromosome KI270711.1
+2020-08-27 16:54:14,261 - WARNING - The .bam file refers to a chromosome 'KI270711.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,286 - DEBUG - Marking up chromosome KI270745.1
+2020-08-27 16:54:14,286 - WARNING - The .bam file refers to a chromosome 'KI270745.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,286 - WARNING - The .bam file refers to a chromosome 'KI270745.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,296 - DEBUG - Marking up chromosome KI270714.1
+2020-08-27 16:54:14,296 - WARNING - The .bam file refers to a chromosome 'KI270714.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,296 - WARNING - The .bam file refers to a chromosome 'KI270714.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,298 - DEBUG - Marking up chromosome KI270713.1
+2020-08-27 16:54:14,302 - DEBUG - Marking up chromosome KI270710.1
+2020-08-27 16:54:14,302 - WARNING - The .bam file refers to a chromosome 'KI270710.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,302 - WARNING - The .bam file refers to a chromosome 'KI270710.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,303 - DEBUG - Marking up chromosome KI270717.1
+2020-08-27 16:54:14,303 - WARNING - The .bam file refers to a chromosome 'KI270717.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,303 - WARNING - The .bam file refers to a chromosome 'KI270717.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,305 - DEBUG - Marking up chromosome KI270724.1
+2020-08-27 16:54:14,305 - WARNING - The .bam file refers to a chromosome 'KI270724.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,306 - WARNING - The .bam file refers to a chromosome 'KI270724.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,306 - DEBUG - Marking up chromosome KI270720.1
+2020-08-27 16:54:14,306 - WARNING - The .bam file refers to a chromosome 'KI270720.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,306 - WARNING - The .bam file refers to a chromosome 'KI270720.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,308 - DEBUG - Marking up chromosome KI270718.1
+2020-08-27 16:54:14,308 - WARNING - The .bam file refers to a chromosome 'KI270718.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,308 - WARNING - The .bam file refers to a chromosome 'KI270718.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,322 - DEBUG - Marking up chromosome KI270755.1
+2020-08-27 16:54:14,322 - WARNING - The .bam file refers to a chromosome 'KI270755.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,322 - WARNING - The .bam file refers to a chromosome 'KI270755.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,323 - DEBUG - Marking up chromosome KI270707.1
+2020-08-27 16:54:14,323 - WARNING - The .bam file refers to a chromosome 'KI270707.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,323 - WARNING - The .bam file refers to a chromosome 'KI270707.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,324 - DEBUG - Marking up chromosome KI270512.1
+2020-08-27 16:54:14,324 - WARNING - The .bam file refers to a chromosome 'KI270512.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,324 - WARNING - The .bam file refers to a chromosome 'KI270512.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,324 - DEBUG - Marking up chromosome KI270448.1
+2020-08-27 16:54:14,324 - WARNING - The .bam file refers to a chromosome 'KI270448.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,324 - WARNING - The .bam file refers to a chromosome 'KI270448.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,324 - DEBUG - Marking up chromosome KI270591.1
+2020-08-27 16:54:14,324 - WARNING - The .bam file refers to a chromosome 'KI270591.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,324 - WARNING - The .bam file refers to a chromosome 'KI270591.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,325 - DEBUG - Marking up chromosome KI270467.1
+2020-08-27 16:54:14,325 - WARNING - The .bam file refers to a chromosome 'KI270467.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,325 - WARNING - The .bam file refers to a chromosome 'KI270467.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,326 - DEBUG - Marking up chromosome KI270330.1
+2020-08-27 16:54:14,326 - WARNING - The .bam file refers to a chromosome 'KI270330.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,326 - WARNING - The .bam file refers to a chromosome 'KI270330.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,327 - DEBUG - Marking up chromosome KI270388.1
+2020-08-27 16:54:14,327 - WARNING - The .bam file refers to a chromosome 'KI270388.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,328 - WARNING - The .bam file refers to a chromosome 'KI270388.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,328 - DEBUG - Marking up chromosome KI270310.1
+2020-08-27 16:54:14,328 - WARNING - The .bam file refers to a chromosome 'KI270310.1+' not present in the annotation (.gtf) file
+2020-08-27 16:54:14,328 - WARNING - The .bam file refers to a chromosome 'KI270310.1-' not present in the annotation (.gtf) file
+2020-08-27 16:54:32,015 - DEBUG - Read first 300 million reads
+2020-08-27 16:54:50,728 - DEBUG - Read first 310 million reads
+2020-08-27 16:55:09,420 - DEBUG - Read first 320 million reads
+2020-08-27 16:55:28,101 - DEBUG - Read first 330 million reads
+2020-08-27 16:55:46,770 - DEBUG - Read first 340 million reads
+2020-08-27 16:56:05,525 - DEBUG - Read first 350 million reads
+2020-08-27 16:56:24,274 - DEBUG - Read first 360 million reads
+2020-08-27 16:56:42,945 - DEBUG - Read first 370 million reads
+2020-08-27 16:57:01,566 - DEBUG - Read first 380 million reads
+2020-08-27 16:57:02,002 - DEBUG - End of file. Reset index: start scanning from initial position.
+2020-08-27 16:57:02,002 - DEBUG - 2262221 reads were skipped because no apropiate cell or umi barcode was found
+2020-08-27 16:57:02,003 - DEBUG - Start molecule counting!
+2020-08-27 16:57:06,216 - DEBUG - Features available for chromosomes : ['1-', '1+', '10-', '10+', '11-', '11+', '12-', '12+', '13-', '13+', '14-', '14+', '15-', '15+', '16-', '16+', '17-', '17+', '18-', '18+', '19-', '19+', '2-', '2+', '20-', '20+', '21-', '21+', '22-', '22+', '3-', '3+', '4-', '4+', '5-', '5+', '6-', '6+', '7-', '7+', '8-', '8+', '9-', '9+', 'GL000009.2-', 'GL000194.1-', 'GL000195.1-', 'GL000195.1+', 'GL000205.2-', 'GL000213.1-', 'GL000218.1-', 'GL000219.1-', 'KI270711.1-', 'KI270713.1-', 'KI270713.1+', 'KI270721.1+', 'KI270726.1+', 'KI270727.1-', 'KI270727.1+', 'KI270728.1-', 'KI270728.1+', 'KI270731.1-', 'KI270734.1-', 'KI270734.1+', 'MT-', 'MT+', 'X-', 'X+', 'Y-', 'Y+']
+2020-08-27 16:57:06,216 - DEBUG - Mask available for chromosomes : []
+2020-08-27 16:57:06,216 - DEBUG - Summarizing the results of intron validation.
+2020-08-27 16:57:06,986 - DEBUG - Validated 291332 introns (of which unique intervals 91963) out of 996444 total possible introns (considering each possible transcript models).
+2020-08-27 16:57:06,987 - DEBUG - Reading /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH049/FEL017022.mRNA/feline_p1722.10x.counts/FEL017_M/outs/cellsorted_possorted_genome_bam.bam
+2020-08-27 16:57:07,039 - DEBUG - Read first 0 million reads
+2020-08-27 16:57:28,988 - DEBUG - Read first 10 million reads
+2020-08-27 16:57:49,935 - DEBUG - Read first 20 million reads
+2020-08-27 16:58:09,177 - DEBUG - Read first 30 million reads
+2020-08-27 16:58:26,884 - DEBUG - Read first 40 million reads
+2020-08-27 16:59:01,943 - DEBUG - Read first 50 million reads
+2020-08-27 16:59:43,668 - DEBUG - Read first 60 million reads
+2020-08-27 17:00:16,253 - DEBUG - Read first 70 million reads
+2020-08-27 17:00:49,297 - DEBUG - Read first 80 million reads
+2020-08-27 17:01:17,268 - DEBUG - Read first 90 million reads
+2020-08-27 17:01:54,993 - DEBUG - Read first 100 million reads
+2020-08-27 17:02:36,242 - DEBUG - Read first 110 million reads
+2020-08-27 17:03:16,680 - DEBUG - Counting for batch 1, containing 100 cells and 8211486 reads
+2020-08-27 17:08:11,975 - DEBUG - 0 reads not considered because fully enclosed in repeat masked regions
+2020-08-27 17:08:57,838 - DEBUG - Read first 120 million reads
+2020-08-27 17:09:31,879 - DEBUG - Read first 130 million reads
+2020-08-27 17:10:05,277 - DEBUG - Read first 140 million reads
+2020-08-27 17:10:38,365 - DEBUG - Read first 150 million reads
+2020-08-27 17:11:09,058 - DEBUG - Read first 160 million reads
+2020-08-27 17:11:44,462 - DEBUG - Read first 170 million reads
+2020-08-27 17:12:23,253 - DEBUG - Read first 180 million reads
+2020-08-27 17:12:27,802 - DEBUG - Counting for batch 2, containing 100 cells and 6529062 reads
+2020-08-27 17:16:19,068 - DEBUG - 0 reads not considered because fully enclosed in repeat masked regions
+2020-08-27 17:17:23,076 - DEBUG - Read first 190 million reads
+2020-08-27 17:18:01,004 - DEBUG - Read first 200 million reads
+2020-08-27 17:18:47,740 - DEBUG - Read first 210 million reads
+2020-08-27 17:19:30,232 - DEBUG - Read first 220 million reads
+2020-08-27 17:20:01,042 - DEBUG - Read first 230 million reads
+2020-08-27 17:20:36,324 - DEBUG - Read first 240 million reads
+2020-08-27 17:20:48,586 - DEBUG - Counting for batch 3, containing 100 cells and 7532460 reads
+2020-08-27 17:25:15,099 - DEBUG - 0 reads not considered because fully enclosed in repeat masked regions
+2020-08-27 17:26:11,507 - DEBUG - Read first 250 million reads
+2020-08-27 17:26:41,499 - DEBUG - Read first 260 million reads
+2020-08-27 17:27:14,052 - DEBUG - Read first 270 million reads
+2020-08-27 17:27:48,819 - DEBUG - Read first 280 million reads
+2020-08-27 17:28:24,465 - DEBUG - Read first 290 million reads
+2020-08-27 17:29:01,451 - DEBUG - Read first 300 million reads
+2020-08-27 17:29:33,055 - DEBUG - Read first 310 million reads
+2020-08-27 17:30:05,758 - DEBUG - Counting for batch 4, containing 100 cells and 6542465 reads
+2020-08-27 17:34:00,606 - DEBUG - 0 reads not considered because fully enclosed in repeat masked regions
+2020-08-27 17:34:39,382 - DEBUG - Read first 320 million reads
+2020-08-27 17:35:11,371 - DEBUG - Read first 330 million reads
+2020-08-27 17:35:49,591 - DEBUG - Read first 340 million reads
+2020-08-27 17:36:24,612 - DEBUG - Read first 350 million reads
+2020-08-27 17:37:01,651 - DEBUG - Read first 360 million reads
+2020-08-27 17:37:37,188 - DEBUG - Read first 370 million reads
+2020-08-27 17:38:08,875 - DEBUG - Read first 380 million reads
+2020-08-27 17:38:09,435 - DEBUG - Counting for batch 5, containing 84 cells and 7361931 reads
+2020-08-27 17:42:26,471 - DEBUG - 0 reads not considered because fully enclosed in repeat masked regions
+2020-08-27 17:43:03,901 - DEBUG - 2262221 reads were skipped because no apropiate cell or umi barcode was found
+2020-08-27 17:43:03,902 - DEBUG - Counting done!
+2020-08-27 17:43:03,934 - DEBUG - Generating output file /net/isi-dcnl/ifs/user_data/abild/Megatron_data/COH049/FEL017022.mRNA/feline_p1722.10x.counts/FEL017_M/velocyto/FEL017_M.loom
+2020-08-27 17:43:03,934 - DEBUG - Collecting row attributes
+2020-08-27 17:43:04,046 - DEBUG - Generating data table
+2020-08-27 17:43:04,208 - DEBUG - Writing loom file
+2020-08-27 17:43:05,850 - DEBUG - Terminated Succesfully!
+Start: 1598571054
+End: 1598575388
+Run time: 4334
+Done
