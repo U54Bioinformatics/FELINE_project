@@ -19,3 +19,6 @@ sbatch --array 1-24 betsy_WGS_tumor_burden_FELINE.sh
 cat FEL0*_tumor_burden.txt/tumor_mutation_burden.txt | head -n 1 > FELINE_tumor_mutation_burden.txt
 cat FEL0*_tumor_burden.txt/tumor_mutation_burden.txt | grep -v "Sample" >> FELINE_tumor_mutation_burden.txt
 mv FEL0*_tumor_burden.txt FELINE_tumor_mutation_burden
+
+echo "count INDELs"
+python Prepare_somatic_variant_count_INDEL.py --input FELINE_patients.list --variant_folder FELINE_variant_calls_filtered/ > FELINE_WES_INDEL_count.txt

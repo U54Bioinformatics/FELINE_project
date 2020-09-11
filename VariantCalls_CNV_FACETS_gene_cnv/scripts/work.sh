@@ -32,6 +32,18 @@ echo "merge gene cnv from all patients samples"
 # sample vs. gene read depth ratio table: FELINE_FACETS.gene_cnv_call.short_list.STable_depthratio.txt
 python FACETS_gene_cnv_merge_all_sample.py --input FELINE_FACETS_gene_cnv --output FELINE_FACETS
 
+echo "merge gene cnv from all patients samples for maftools"
+# output is FELINE_FACETS.gene_cnv_call4maftools.txt 
+#genes   sample_name     CNV
+#AL627309.1      FEL013_E        Amp
+#CICP27  FEL013_E        Amp
+#FAM138A FEL013_E        Amp
+#MIR1302-10      FEL013_E        Amp
+python FACETS_gene_cnv_merge_all_sample4maftools.py --input FELINE_FACETS_gene_cnv --output FELINE_FACETS
+
+
 echo "pie chart of gene cnv in non-responder and responder"
 bash FELINE_gene_cnv_pie.sh
+echo "barplot of gene cnv in non-responder and responder"
+bash FELINE_gene_cnv_barplot.sh
 
