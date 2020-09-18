@@ -22,3 +22,7 @@ mv FEL0*_tumor_burden.txt FELINE_tumor_mutation_burden
 
 echo "count INDELs"
 python Prepare_somatic_variant_count_INDEL.py --input FELINE_patients.list --variant_folder FELINE_variant_calls_filtered/ > FELINE_WES_INDEL_count.txt
+
+echo "merge tumor purity, variants and tumor burden"
+cp ../VariantCalls_CNV_FACETS_gene_cnv/input/FELINE_FACETS_tumor_purity.txt ./
+

@@ -85,9 +85,13 @@ def convert_vcf_gt(betsy_gt):
 #1       809319  C       T                                                                                               60/8/0.118      29/0/0.000      57/7/0.109      ncRNA_intronic  F
 #1       1904429 G       A                                                                                               34/0/0.000      58/0/0.000      42/8/0.160      exonic  CFAP74
 #1       2583843 A       T                                                                                               39/2/0.049      60/3/0.046      25/7/0.219      intronic
-def INDEL_count(infile):
+def INDEL_count(infile, patient):
     count_total = 0
     linen = 0
+    exception = ["FEL036", "FEL044", "FEL045", "FEL046"]
+    
+    count_pre  = 0
+    count_post = 0
     with open (infile, 'r') as filehd:
         for line in filehd:
             line = line.rstrip()
@@ -96,10 +100,24 @@ def INDEL_count(infile):
                 unit = re.split(r'\t', line)
                 try:
                     if len(unit[2]) > 1 or len(unit[3]) > 1:
-                        count_total += 1
+                        vaf_post   = re.split(r'/', unit[15])
+                        if float(vaf_post[2]) > 0.0:
+                            count_post +=1
+                        vaf_pre  = re.split(r'/', unit[16])
+                        if float(vaf_pre[2]) > 0.0:
+                            count_pre +=1
+                        #print unit[15], unit[16]
+                        #count_total += 1
                 except:
                     continue
-    return count_total
+    indel_count = []
+    if patient in exception:
+        indel_count.append("%s_M\t%s" %(patient, count_post))
+        indel_count.append("%s_S\t%s" %(patient, count_pre))
+    else:
+        indel_count.append("%s_E\t%s" %(patient, count_post))
+        indel_count.append("%s_S\t%s" %(patient, count_pre))
+    return indel_count
 
 def main():
     parser = argparse.ArgumentParser()
@@ -116,11 +134,12 @@ def main():
     patients = read_patient_list(args.input)
     folder   = args.variant_folder 
 
-    print 'Patient\tINDEL'
+    print 'Sample\tINDEL'
     for p in patients:
         svm_file = '%s/%s_variant_calls_04_purity40_totalRD20_minread5_minVAF0.05.txt' %(folder, p)
-        indel    = INDEL_count(svm_file)    
-        print '%s\t%s' %(p, indel)
+        indel    = INDEL_count(svm_file, p)  
+        print '%s' %(indel[0])
+        print '%s' %(indel[1])
 if __name__ == '__main__':
     main()
 
