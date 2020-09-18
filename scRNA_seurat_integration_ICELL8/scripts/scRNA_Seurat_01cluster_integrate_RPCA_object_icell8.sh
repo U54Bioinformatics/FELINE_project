@@ -30,17 +30,6 @@ echo "CPU: $CPU"
 echo "N: $N"
 
 
-###########################################
-#input file:
-#10x count file:      FEL011_10x_count01.noaggr.counts.txt
-#Betsy cell metafile: FEL011_10x_cell_metadata.txt
-     
-#output file:
-#singleR cell types:  FEL011_10x_cell_metadata.singleR_annotation.txt
-#seurat project file: FEL011_10x_Seurat_2kgenes_vst_cc.rds
-#seurat plots:        FEL011_10x_Seurat_2kgenes_vst_cc.pdf
-###########################################
-
 sample=FEL001010
 platform=icell8
 

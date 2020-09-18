@@ -1,0 +1,203 @@
+CPU: 1
+N: 1
+plot marker genes: epithelial, immune and stromal
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘SeuratWrappers’
+
+The following objects are masked from ‘package:Seurat’:
+
+    ALRAChooseKPlot, RunALRA
+
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+[1] "Default assay before setting"
+[1] "RNA"
+[1] "Default assay after setting"
+[1] "RNA"
+[1] "counts"        "data"          "scale.data"    "key"          
+[5] "assay.orig"    "var.features"  "meta.features" "misc"         
+[1] "before normalization"
+[1] "counts"        "data"          "scale.data"    "key"          
+[5] "assay.orig"    "var.features"  "meta.features" "misc"         
+5 x 5 sparse Matrix of class "dgCMatrix"
+        ATGCCAGAACGACT CATGGCCTGTGCAT GAACCTGATGAACC TGACTGGATTCTCA
+MS4A1                .              .              .              .
+CD79B                1              .              .              .
+CD79A                .              .              .              .
+HLA-DRA              .              1              .              .
+TCL1A                .              .              .              .
+        AGTCAGACTGCACA
+MS4A1                .
+CD79B                .
+CD79A                .
+HLA-DRA              1
+TCL1A                .
+5 x 5 sparse Matrix of class "dgCMatrix"
+        ATGCCAGAACGACT CATGGCCTGTGCAT GAACCTGATGAACC TGACTGGATTCTCA
+MS4A1         .              .                     .              .
+CD79B         4.968821       .                     .              .
+CD79A         .              .                     .              .
+HLA-DRA       .              4.776153              .              .
+TCL1A         .              .                     .              .
+        AGTCAGACTGCACA
+MS4A1         .       
+CD79B         .       
+CD79A         .       
+HLA-DRA       4.074201
+TCL1A         .       
+Performing log-normalization
+0%   10   20   30   40   50   60   70   80   90   100%
+[----|----|----|----|----|----|----|----|----|----|
+**************************************************|
+[1] "after normalization"
+[1] "counts"        "data"          "scale.data"    "key"          
+[5] "assay.orig"    "var.features"  "meta.features" "misc"         
+5 x 5 sparse Matrix of class "dgCMatrix"
+        ATGCCAGAACGACT CATGGCCTGTGCAT GAACCTGATGAACC TGACTGGATTCTCA
+MS4A1                .              .              .              .
+CD79B                1              .              .              .
+CD79A                .              .              .              .
+HLA-DRA              .              1              .              .
+TCL1A                .              .              .              .
+        AGTCAGACTGCACA
+MS4A1                .
+CD79B                .
+CD79A                .
+HLA-DRA              1
+TCL1A                .
+5 x 5 sparse Matrix of class "dgCMatrix"
+        ATGCCAGAACGACT CATGGCCTGTGCAT GAACCTGATGAACC TGACTGGATTCTCA
+MS4A1         .              .                     .              .
+CD79B         4.968821       .                     .              .
+CD79A         .              .                     .              .
+HLA-DRA       .              4.776153              .              .
+TCL1A         .              .                     .              .
+        AGTCAGACTGCACA
+MS4A1         .       
+CD79B         .       
+CD79A         .       
+HLA-DRA       4.074201
+TCL1A         .       
+[1] "seurat object"
+An object of class Seurat 
+15944 features across 3484 samples within 1 assay 
+Active assay: RNA (15944 features)
+ 2 dimensional reductions calculated: pca, tsne
+[1] "meta"
+                             orig.ident nCount_RNA nFeature_RNA
+FEL001_C25287_104812_C00_R10     FEL001      39373         2637
+FEL001_C25287_104812_C00_R17     FEL001     101196         2178
+FEL001_C25287_104812_C00_R46     FEL001     600970         4807
+FEL001_C25287_104812_C01_R10     FEL001      37321         2988
+FEL001_C25287_104812_C01_R16     FEL001     244683         2512
+FEL001_C25287_104812_C01_R49     FEL001      71100         1439
+                                                  Cell.ID     Sample
+FEL001_C25287_104812_C00_R10 FEL001_C25287_104812_C00_R10 FEL001P120
+FEL001_C25287_104812_C00_R17 FEL001_C25287_104812_C00_R17 FEL001P120
+FEL001_C25287_104812_C00_R46 FEL001_C25287_104812_C00_R46 FEL001P120
+FEL001_C25287_104812_C01_R10 FEL001_C25287_104812_C01_R10 FEL001P120
+FEL001_C25287_104812_C01_R16 FEL001_C25287_104812_C01_R16 FEL001P120
+FEL001_C25287_104812_C01_R49 FEL001_C25287_104812_C01_R49 FEL001P120
+                                         Cell.orig percent.mt    S.Score
+FEL001_C25287_104812_C00_R10 C25287_104812_C00_R10          0  1.8741767
+FEL001_C25287_104812_C00_R17 C25287_104812_C00_R17          0 -4.4038799
+FEL001_C25287_104812_C00_R46 C25287_104812_C00_R46          0 15.8720121
+FEL001_C25287_104812_C01_R10 C25287_104812_C01_R10          0  0.6744878
+FEL001_C25287_104812_C01_R16 C25287_104812_C01_R16          0 19.3120020
+FEL001_C25287_104812_C01_R49 C25287_104812_C01_R49          0 -4.6145867
+                              G2M.Score Phase old.ident RNA_snn_res.0.5
+FEL001_C25287_104812_C00_R10 -1.6161977     S    C25287               5
+FEL001_C25287_104812_C00_R17 -5.4641658    G1    C25287               5
+FEL001_C25287_104812_C00_R46  8.5009371     S    C25287               5
+FEL001_C25287_104812_C01_R10 -0.7076016     S    C25287               5
+FEL001_C25287_104812_C01_R16 -5.7331700     S    C25287               5
+FEL001_C25287_104812_C01_R49 -2.8407070    G1    C25287               5
+                             seurat_clusters   hpca_main_type Encode_main_type
+FEL001_C25287_104812_C00_R10               3 Epithelial_cells Epithelial cells
+FEL001_C25287_104812_C00_R17               3 Epithelial_cells Epithelial cells
+FEL001_C25287_104812_C00_R46               3       Macrophage      Macrophages
+FEL001_C25287_104812_C01_R10               3 Epithelial_cells              HSC
+FEL001_C25287_104812_C01_R16               3 Epithelial_cells Epithelial cells
+FEL001_C25287_104812_C01_R49               3     Chondrocytes       Adipocytes
+                             RNA_snn_res.2 RNA_snn_res.1.2 RNA_snn_res.0.8
+FEL001_C25287_104812_C00_R10             0               2               3
+FEL001_C25287_104812_C00_R17             0               2               3
+FEL001_C25287_104812_C00_R46             0               2               3
+FEL001_C25287_104812_C01_R10             0               2               3
+FEL001_C25287_104812_C01_R16             0               2               3
+FEL001_C25287_104812_C01_R49             0               2               3
+                             Timepoint Day                Celltype
+FEL001_C25287_104812_C00_R10         S   0            Cancer cells
+FEL001_C25287_104812_C00_R17         S   0            Cancer cells
+FEL001_C25287_104812_C00_R46         S   0            Cancer cells
+FEL001_C25287_104812_C01_R10         S   0            Cancer cells
+FEL001_C25287_104812_C01_R16         S   0            Cancer cells
+FEL001_C25287_104812_C01_R49         S   0 Normal epithelial cells
+                                    Celltype_subtype Platform ARM
+FEL001_C25287_104812_C00_R10            Cancer cells   ICELL8   B
+FEL001_C25287_104812_C00_R17            Cancer cells   ICELL8   B
+FEL001_C25287_104812_C00_R46            Cancer cells   ICELL8   B
+FEL001_C25287_104812_C01_R10            Cancer cells   ICELL8   B
+FEL001_C25287_104812_C01_R16            Cancer cells   ICELL8   B
+FEL001_C25287_104812_C01_R49 Normal epithelial cells   ICELL8   B
+                                    Treatment Ki67_Response
+FEL001_C25287_104812_C00_R10 letrozole + ribo     Sensitive
+FEL001_C25287_104812_C00_R17 letrozole + ribo     Sensitive
+FEL001_C25287_104812_C00_R46 letrozole + ribo     Sensitive
+FEL001_C25287_104812_C01_R10 letrozole + ribo     Sensitive
+FEL001_C25287_104812_C01_R16 letrozole + ribo     Sensitive
+FEL001_C25287_104812_C01_R49 letrozole + ribo     Sensitive
+                                            Response_v3b      Response
+FEL001_C25287_104812_C00_R10 Rebound/Progressive disease Non-responder
+FEL001_C25287_104812_C00_R17 Rebound/Progressive disease Non-responder
+FEL001_C25287_104812_C00_R46 Rebound/Progressive disease Non-responder
+FEL001_C25287_104812_C01_R10 Rebound/Progressive disease Non-responder
+FEL001_C25287_104812_C01_R16 Rebound/Progressive disease Non-responder
+FEL001_C25287_104812_C01_R49 Rebound/Progressive disease Non-responder
+                                       Celltype_orig
+FEL001_C25287_104812_C00_R10            Cancer cells
+FEL001_C25287_104812_C00_R17            Cancer cells
+FEL001_C25287_104812_C00_R46            Cancer cells
+FEL001_C25287_104812_C01_R10            Cancer cells
+FEL001_C25287_104812_C01_R16            Cancer cells
+FEL001_C25287_104812_C01_R49 Normal epithelial cells
+Warning message:
+Using `as.character()` on a quosure is deprecated as of rlang 0.3.0.
+Please use `as_label()` or `as_name()` instead.
+This warning is displayed once per session. 
+null device 
+          1 
+null device 
+          1 
+There were 24 warnings (use warnings() to see them)
+Scale for 'colour' is already present. Adding another scale for 'colour',
+which will replace the existing scale.
+null device 
+          1 
+Warning messages:
+1: In FetchData(object = object, vars = c(dims, "ident", features),  :
+  The following requested variables were not found: NK, CD56, CD94, NKP46
+2: In FetchData(object = object, vars = features, slot = slot) :
+  The following requested variables were not found: NK, CD56, CD94, NKP46
+null device 
+          1 
+Start: 1600195077
+End: 1600195223
+Run time: 146
+Done

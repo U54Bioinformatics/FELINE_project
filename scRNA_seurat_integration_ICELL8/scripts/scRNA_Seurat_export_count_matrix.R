@@ -46,7 +46,7 @@ fwrite(out_meta, paste(prefix, "cell_metadata.UMAPcluster.txt", sep="."), sep="\
     mat_raw <- as.data.frame(mat_raw)
     mat_raw <- format(mat_raw, digits=0, nsmall=0)
     out_raw <- cbind(id_raw, mat_raw)
-    fwrite(x = out_raw, row.names = FALSE, sep="\t", file = paste0(prefix, '_gene_symbols.raw.counts.txt'))
+    fwrite(x = out_raw, row.names = FALSE, sep="\t", file = paste0(prefix, '_gene_symbols.counts.txt'))
     #CPM
     mat_cpm <- RelativeCounts(as.matrix(pbmc_small@assays$RNA@counts), scale.factor = 1e6, verbose = TRUE)
     id_cpm <- data.table(Gene.ID = rownames(mat_cpm))

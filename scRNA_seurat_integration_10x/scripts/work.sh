@@ -7,3 +7,6 @@ echo "run integration with seurat for 35 10x patients"
 #    Method used: Reciprocal PCA with few modifications
 # 3. output is FEL011046_10x_Seurat_2kgenes_vst_cc.integrated_RPCA.rds. This file is used for final analyses and fi     gures. Only need to update cell meta file when necessary.  
 sbatch scRNA_Seurat_01cluster_integrate_RPCA_object.sh
+
+echo "Final seurat obj with 35 patients with 10x scRNA data"
+ln -s FEL011046_10x_Seurat_2kgenes_vst_cc.integrated_RPCA.rds FEL011046_10x_Seurat_2kgenes_vst_cc.rds
