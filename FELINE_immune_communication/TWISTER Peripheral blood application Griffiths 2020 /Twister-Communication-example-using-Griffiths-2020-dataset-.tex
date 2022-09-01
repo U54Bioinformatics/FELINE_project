@@ -1,0 +1,935 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Twister example},
+  pdfauthor={Jason Griffiths},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Twister example}
+\author{Jason Griffiths}
+\date{7 February 2022}
+
+\begin{document}
+\maketitle
+
+\hypertarget{background-on-twister}{%
+\subsection{Background on TWISTER}\label{background-on-twister}}
+
+We developed TWISTER to uncover networks of communication pathways
+between populations of cancer and normal cells within a tumor
+microenvironemnt. Using single-cell data, we identify and annotate
+phenotypically distinct cell types and reveal the communication between
+cancer and normal cells. Unlike existing models that measure cell-cell
+communication between individual cells,TWISTER measures ecosystem-wide
+combined signaling to a receiving cell from the diverse normal cell sub-
+populations and heterogeneous cancer lineages. This reveals how both
+phenotypic and compositional changes modify communication and impact
+treatment response. Further, this approach contrasts the communication
+states across many biopsies, rather than being limited to individual
+samples, providing comparative insights into communication trends during
+treatment and identifying pathways that distinguish resistant
+vs.~sensitive tumors.
+
+\begin{figure}
+\centering
+\includegraphics{/Users/jason/Dropbox/2021_CSBC_U54_grant/Michael figures/U54-r1_Figure 5.jpg}
+\caption{Tumor-wide Integration of Signaling to Each Receiver: TWISTER}
+\end{figure}
+
+\hypertarget{the-example-dataset}{%
+\subsection{The example dataset}\label{the-example-dataset}}
+
+To show how the TWISTER communication analysis can be run, we will use
+data from one of our previously published papers exploring the
+phenotypic evolution of circulating immune cells of responsive and
+non-responsive gastro-intestinal tumors during immunotherapy
+(\url{https://www.pnas.org/content/117/27/16072.short}). In this study,
+peripheral blood samples were taken before, during and after treatment
+and single cell RNA sequencing was performed on all samples of a cohort
+of 13 patients.
+
+Cell type identfication and annotation was performed using an immune
+classifier, umap analysis and marker gene assessment. Cell annotations
+were verified using two public datasets, based on the consistency of
+transcriptional profiles. Using this appraoch, cellular phenotypic
+states were defined with high resolution, including a diversity of T
+cell activation states (naive, memory and effector) and different types
+of myeloid cells (monocytes, M1/M2 macrophages and dendritic cells). The
+heterogeneity of cell phenotypes was characterized using UMAP analysis.
+For each of the 70781 cells we have a profile of gene expression, a cell
+type annotation and a umap phenotype characterization.
+
+We can explore communication within these tumors, using this scRNA seq
+information and a data base of cell-cell ligand-receptor interactions
+(published by Ramilowski et al 2015).
+
+\begin{figure}
+\centering
+\includegraphics{/Users/jason/Dropbox/Cancer_pheno_evo/images and presentations/PD1 immune composition figures/F1.ImmunPhenoEvolWorkflow.jpg}
+\caption{Phenotypic evolution of peripheral immune cells during
+immunotherapy}
+\end{figure}
+
+\hypertarget{setting-up-the-r-environment}{%
+\subsection{Setting up the R
+environment}\label{setting-up-the-r-environment}}
+
+Load some packages.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=}\FunctionTok{ls}\NormalTok{())   }
+\FunctionTok{require}\NormalTok{(abind); }\FunctionTok{require}\NormalTok{(data.table); }\FunctionTok{require}\NormalTok{(dplyr); }\FunctionTok{require}\NormalTok{(ggplot2); }\FunctionTok{require}\NormalTok{(tidyr); }\FunctionTok{require}\NormalTok{(igraph); }\FunctionTok{require}\NormalTok{(parallel); }\FunctionTok{require}\NormalTok{(}\StringTok{"ggalluvial"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{reading-in-data}{%
+\subsection{Reading in data}\label{reading-in-data}}
+
+We need the follwoing datasets: 1) A data base of established
+communication pathways indicating the ligand and receptor genes involved
+in each pathway.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\setcounter{enumi}{1}
+\item
+  Cell metadata indiating the fine resolution cell type annotation of
+  each cell in the sample cohort and the clinical metadata that goes
+  with the cells/samples.
+\item
+  Count per million (CPM) gene expression.
+\item
+  Phenotype landscape Umap coordinates.
+\end{enumerate}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load Ligand Receptor database list of Ramilowski et al 2015}
+\FunctionTok{load}\NormalTok{( }\StringTok{"/Users/jason/Dropbox/Cancer\_pheno\_evo/data/FELINE2/LigandReceptor/Filtered\_Human{-}2015{-}Ramilowski{-}LR{-}pairs.RData"}\NormalTok{)}
+\NormalTok{LRgenelist }\OtherTok{\textless{}{-}} \FunctionTok{unique}\NormalTok{( }\FunctionTok{c}\NormalTok{(LRpairsFiltered}\SpecialCharTok{$}\NormalTok{HPMR.Receptor, LRpairsFiltered}\SpecialCharTok{$}\NormalTok{HPMR.Ligand) )}
+\NormalTok{LRpairsFiltered[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{,] }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(Pair.Name, HPMR.Ligand, HPMR.Receptor)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       Pair.Name HPMR.Ligand HPMR.Receptor
+## 1:     A2M_LRP1         A2M          LRP1
+## 2: AANAT_MTNR1A       AANAT        MTNR1A
+## 3: AANAT_MTNR1B       AANAT        MTNR1B
+## 4:    ACE_AGTR2         ACE         AGTR2
+## 5:   ACE_BDKRB2         ACE        BDKRB2
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Load cell metadata with fine resolution cell subtype annotation and clinical information}
+\FunctionTok{load}\NormalTok{( }\AttributeTok{file=} \StringTok{"/Users/jason/Dropbox/PD1 Analysis/Lance/PD1\_combined/PD1\_paper\_cells\_analysed.RData"}\NormalTok{)}
+\NormalTok{Meta.dd2[}\DecValTok{1}\NormalTok{, ]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                        Cell.ID Time.Point     Responder rowID Cluster
+## 1: 14546X1_S1_AAACCTGCAAAGCAAT         C1 Non.Reponsder     1      T0
+##    Patient.ID Major_cluster   Sub_cluster Cell.class.for.normalisation
+## 1:     HJD33E        T_Cell T_Cell_CD4_EM                   lymphocyte
+##    Contaminant Intermediate_classification_AB Intermediate_classification_2_0
+## 1:       FALSE                     T_Cell_CD4                   T_Cell_CD4_EM
+##    Intermediate_Clusters_ML
+## 1:               T_Cell_CD4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Read count per million (CPM) gene expression data and join umap locations to this data or the metadata}
+\NormalTok{CPM  }\OtherTok{\textless{}{-}} \FunctionTok{fread}\NormalTok{(}\AttributeTok{file=} \StringTok{"/Users/jason/Dropbox/PD1 Analysis/Lance/PD1\_combined/Raw Counts/PD1.RawCounts.wUMAPCoords.txt"}\NormalTok{ ) }
+\NormalTok{CPM[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{] }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##         UMAP1       UMAP2                     Cell.ID RP11.34P13.7 RP11.34P13.8
+##  1: -7.049916  6.21744633 14546X1_S1_AAACCTGCAAAGCAAT            0            0
+##  2: -5.962549 -5.81142330 14546X1_S1_AAACCTGCATCGATTG            0            0
+##  3: -4.080601 -1.00315988 14546X1_S1_AAACCTGGTAAGGGCT            0            0
+##  4: -3.504583 -0.98200071 14546X1_S1_AAACGGGTCCAATGGT            0            0
+##  5: -5.601706  6.02359104 14546X1_S1_AAAGATGTCCGAACGC            0            0
+##  6: -3.813487 -0.07468483 14546X1_S1_AAAGATGTCTAGCACA            0            0
+##  7: -2.022975 -6.34682274 14546X1_S1_AAAGCAACACACGCTG            0            0
+##  8: -4.639802  8.28241920 14546X1_S1_AAAGCAACAGGATCGA            0            0
+##  9: -5.118358  8.36736965 14546X1_S1_AAAGTAGCAGGATCGA            0            0
+## 10: -7.230830 -7.69101620 14546X1_S1_AAAGTAGCATTAGCCA            0            0
+##     AL627309.1 AP006222.2 RP4.669L17.10 RP11.206L10.3 RP11.206L10.5
+##  1:          0   0.000000             0             0             0
+##  2:          0   0.000000             0             0             0
+##  3:          0   0.000000             0             0             0
+##  4:          0   0.000000             0             0             0
+##  5:          0   0.000000             0             0             0
+##  6:          0   0.000000             0             0             0
+##  7:          0   0.000000             0             0             0
+##  8:          0   0.000000             0             0             0
+##  9:          0   1.033635             0             0             0
+## 10:          0   0.000000             0             0             0
+\end{verbatim}
+
+\hypertarget{visualize-cellular-phenotypic-heterogeneity}{%
+\subsection{Visualize cellular phenotypic
+heterogeneity}\label{visualize-cellular-phenotypic-heterogeneity}}
+
+Examine the umap phenotype landscape and add cell type annotations.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Visualize cell type heterogeneity at different resolutions}
+\NormalTok{umap\_vis\_dd }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{( CPM }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(Cell.ID, UMAP1, UMAP2) , Meta.dd2 , }\AttributeTok{by=} \StringTok{"Cell.ID"}\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(umap\_vis\_dd, }\FunctionTok{aes}\NormalTok{(UMAP1, UMAP2, }\AttributeTok{col=}\NormalTok{ Sub\_cluster)) }\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=} \FloatTok{0.8}\NormalTok{, }\AttributeTok{size=} \FloatTok{0.5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/vis-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(umap\_vis\_dd, }\FunctionTok{aes}\NormalTok{(UMAP1, UMAP2, }\AttributeTok{col=}\NormalTok{ Cluster)) }\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=} \FloatTok{0.8}\NormalTok{, }\AttributeTok{size=} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position=} \StringTok{"none"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/vis-2.pdf}
+
+\hypertarget{specify-the-patient-and-timepoint-codes-to-select-cells-from-one-sample-of-a-tumor}{%
+\subsection{Specify the patient and timepoint codes to select cells from
+one sample of a
+tumor}\label{specify-the-patient-and-timepoint-codes-to-select-cells-from-one-sample-of-a-tumor}}
+
+This parameter seting can be used to cycle through all samples when
+anaysing a cohort of samples
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pars }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\AttributeTok{Patient =} \StringTok{"HJD33E"}\NormalTok{, }\AttributeTok{TimePoint=}\StringTok{"C1"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{subset-the-data}{%
+\subsection{Subset the data}\label{subset-the-data}}
+
+Extract cell metadata and cpm data for cells from one sample of a tumor.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Extract subset of cells sampled from one patient: meta and CPM data}
+\NormalTok{WhichCells }\OtherTok{\textless{}{-}}\NormalTok{ Meta.dd2[Patient.ID }\SpecialCharTok{\%in\%}\NormalTok{ pars[}\StringTok{"Patient"}\NormalTok{]]}
+\NormalTok{CPMsubset }\OtherTok{\textless{}{-}}\NormalTok{ CPM[Cell.ID }\SpecialCharTok{\%in\%}\NormalTok{ WhichCells}\SpecialCharTok{$}\NormalTok{Cell.ID,] }\CommentTok{\# CPMsubset[1:10,1:10]}
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=}\StringTok{"CPM"}\NormalTok{)}
+
+
+\DocumentationTok{\#\#\# Unique units (uu): clusters of phenotypically similar cells (all cell types) and their umap discretization level}
+\NormalTok{uu }\OtherTok{\textless{}{-}} \FunctionTok{unique}\NormalTok{( WhichCells }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{( }\FunctionTok{c}\NormalTok{(}\StringTok{"Major\_cluster"}\NormalTok{, }\StringTok{"Intermediate\_Clusters\_ML"}\NormalTok{ ,}\StringTok{"Sub\_cluster"}\NormalTok{,}\StringTok{"Cluster"}\NormalTok{) ) ) }
+\FunctionTok{ggplot}\NormalTok{(umap\_vis\_dd[Cell.ID }\SpecialCharTok{\%in\%}\NormalTok{ WhichCells}\SpecialCharTok{$}\NormalTok{Cell.ID,], }\FunctionTok{aes}\NormalTok{(UMAP1, UMAP2, }\AttributeTok{col=}\NormalTok{Cluster))}\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{alpha=}\FloatTok{0.8}\NormalTok{, }\AttributeTok{size=}\NormalTok{.}\DecValTok{5}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position=}\StringTok{"none"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/cellset-1.pdf}
+
+\hypertarget{extract-ligand-receptor-expression-data-to-use-in-communication-analysis-identify-which-communication-pathways-we-can-measure}{%
+\subsection{Extract ligand-receptor expression data to use in
+communication analysis \& identify which communication pathways we can
+measure}\label{extract-ligand-receptor-expression-data-to-use-in-communication-analysis-identify-which-communication-pathways-we-can-measure}}
+
+First extract genes in the CPM data that are listed in the
+ligand-receptor database as being involved in ligand-receptor
+communication pathways. Then check that both the ligand and the receptor
+of each communication pathway are present in the CPM dataset. Keep
+communication pathways for which we have data on both the ligand and
+receptor.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# Extract Ligand and Receptor genes in the L{-}R database that are present in the CPM data}
+\CommentTok{\# Subset Ligand Receptor genes and umap coordinates from CPM data}
+\NormalTok{LRcpm }\OtherTok{\textless{}{-}}\NormalTok{ CPMsubset[, }\FunctionTok{c}\NormalTok{(}\StringTok{"UMAP1"}\NormalTok{, }\StringTok{"UMAP2"}\NormalTok{, }\StringTok{"Cell.ID"}\NormalTok{, LRgenelist[ LRgenelist }\SpecialCharTok{\%in\%} \FunctionTok{names}\NormalTok{(CPMsubset) ]), with}\OtherTok{=} \ConstantTok{FALSE}\NormalTok{] }\CommentTok{\#LRcpm[1:3,1:4]    \# select just the ligand receptor gene expression}
+\CommentTok{\# List the genes in the LR cm dataset}
+\NormalTok{LRGene.ID }\OtherTok{\textless{}{-}}\NormalTok{ LRgenelist[ LRgenelist }\SpecialCharTok{\%in\%} \FunctionTok{names}\NormalTok{(CPMsubset) ] }
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=} \StringTok{"CPMsubset"}\NormalTok{)}
+
+
+\CommentTok{\# Identify which receptor and ligand pairs are both represented in the dataset}
+\CommentTok{\# copy the dataset as we will add to it an indicator if each ligand/receptor is present and then retain those cases where both are present}
+\NormalTok{LRpairsFiltered\_i }\OtherTok{\textless{}{-}}\NormalTok{ LRpairsFiltered   }
+\NormalTok{LRpairsFiltered\_i[, LigandPresent}\SpecialCharTok{:}\ErrorTok{=} \DecValTok{0}\NormalTok{ ]}
+\NormalTok{LRpairsFiltered\_i[, ReceptorPresent}\SpecialCharTok{:}\ErrorTok{=} \DecValTok{0}\NormalTok{ ]}
+\NormalTok{LRpairsFiltered\_i[LRpairsFiltered\_i}\SpecialCharTok{$}\NormalTok{HPMR.Ligand }\SpecialCharTok{\%in\%}\NormalTok{ LRGene.ID, LigandPresent}\SpecialCharTok{:}\ErrorTok{=} \DecValTok{1}\NormalTok{ ]}
+\NormalTok{LRpairsFiltered\_i[LRpairsFiltered\_i}\SpecialCharTok{$}\NormalTok{HPMR.Receptor }\SpecialCharTok{\%in\%}\NormalTok{ LRGene.ID, ReceptorPresent}\SpecialCharTok{:}\ErrorTok{=} \DecValTok{1}\NormalTok{ ]}
+\CommentTok{\# Selecte the ligand{-}receptor gene pairs for which we can calculate communication scores because we have both genes}
+\NormalTok{LRpairsFiltered2\_i }\OtherTok{\textless{}{-}}\NormalTok{ LRpairsFiltered\_i[ LigandPresent}\SpecialCharTok{==} \DecValTok{1} \SpecialCharTok{\&}\NormalTok{ ReceptorPresent}\SpecialCharTok{==} \DecValTok{1}\NormalTok{ ]}
+\NormalTok{LRpairsFiltered2\_i[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        Pair.Name                     Ligand.Name
+##  1:     A2M_LRP1           alpha-2-macroglobulin
+##  2:   ADAM10_AXL ADAM metallopeptidase domain 10
+##  3: ADAM12_ITGA9 ADAM metallopeptidase domain 12
+##  4: ADAM12_ITGB1 ADAM metallopeptidase domain 12
+##  5:  ADAM12_SDC4 ADAM metallopeptidase domain 12
+##  6: ADAM15_ITGA5 ADAM metallopeptidase domain 15
+##  7: ADAM15_ITGA9 ADAM metallopeptidase domain 15
+##  8: ADAM15_ITGAV ADAM metallopeptidase domain 15
+##  9: ADAM15_ITGB1 ADAM metallopeptidase domain 15
+## 10: ADAM15_ITGB3 ADAM metallopeptidase domain 15
+##                                                                                    Receptor.Name
+##  1:                                           low density lipoprotein receptor-related protein 1
+##  2:                                                                 AXL receptor tyrosine kinase
+##  3:                                                                            integrin, alpha 9
+##  4: integrin, beta 1 (fibronectin receptor, beta polypeptide, antigen CD29 includes MDF2, MSK12)
+##  5:                                                                                   syndecan 4
+##  6:                                  integrin, alpha 5 (fibronectin receptor, alpha polypeptide)
+##  7:                                                                            integrin, alpha 9
+##  8:                                                                            integrin, alpha V
+##  9: integrin, beta 1 (fibronectin receptor, beta polypeptide, antigen CD29 includes MDF2, MSK12)
+## 10:                                  integrin, beta 3 (platelet glycoprotein IIIa, antigen CD61)
+##     HPMR.Ligand HPMR.Receptor Pair.Source        Pair.Evidence LigandPresent
+##  1:         A2M          LRP1       known literature supported             1
+##  2:      ADAM10           AXL       novel literature supported             1
+##  3:      ADAM12         ITGA9       known literature supported             1
+##  4:      ADAM12         ITGB1       known literature supported             1
+##  5:      ADAM12          SDC4       known literature supported             1
+##  6:      ADAM15         ITGA5       known literature supported             1
+##  7:      ADAM15         ITGA9       known literature supported             1
+##  8:      ADAM15         ITGAV       novel literature supported             1
+##  9:      ADAM15         ITGB1       known literature supported             1
+## 10:      ADAM15         ITGB3       known literature supported             1
+##     ReceptorPresent
+##  1:               1
+##  2:               1
+##  3:               1
+##  4:               1
+##  5:               1
+##  6:               1
+##  7:               1
+##  8:               1
+##  9:               1
+## 10:               1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# determine the number of pathways}
+\FunctionTok{nrow}\NormalTok{(LRpairsFiltered2\_i)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 655
+\end{verbatim}
+
+\hypertarget{merge-cell-annotation-metadata-and-ligand-receptor-gene-expression-for-cells-from-a-specific-timepoint-and-patient-sample}{%
+\subsection{Merge cell annotation metadata and ligand-receptor gene
+expression for cells from a specific timepoint and patient
+sample}\label{merge-cell-annotation-metadata-and-ligand-receptor-gene-expression-for-cells-from-a-specific-timepoint-and-patient-sample}}
+
+Bring all the different data types together and reorganise the
+structure.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Specify timepoint}
+\NormalTok{tau }\OtherTok{\textless{}{-}}\NormalTok{ pars[}\StringTok{"TimePoint"}\NormalTok{]}
+\CommentTok{\# Phenotype classifications of all cells in the sample of the tumor at this timepoint}
+\NormalTok{phenotypes\_i }\OtherTok{\textless{}{-}}\NormalTok{ WhichCells[Time.Point }\SpecialCharTok{==}\NormalTok{ tau]}
+\DocumentationTok{\#\# Extract clinical data of the patient for merging}
+\NormalTok{clin\_i }\OtherTok{\textless{}{-}}\NormalTok{ phenotypes\_i[}\DecValTok{1}\NormalTok{, ] }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(Patient.ID, Time.Point, Responder)}
+
+\CommentTok{\# Merge cell metadata (annotaitons and umap location), sample information and expression of Ligand{-}Receptor genes}
+\NormalTok{dd2 }\OtherTok{\textless{}{-}}  \FunctionTok{merge}\NormalTok{(phenotypes\_i, LRcpm, }\AttributeTok{by=} \StringTok{"Cell.ID"}\NormalTok{)}
+\CommentTok{\# Count the total number of cells in this sample}
+\NormalTok{dd2[ ,samplesize\_it}\SpecialCharTok{:}\ErrorTok{=} \FunctionTok{nrow}\NormalTok{(dd2) ]   }\CommentTok{\#dd2[,1:40]}
+\CommentTok{\# Gather genes into long format and remove wide copy to save memory}
+\NormalTok{dd3 }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{( }\FunctionTok{gather}\NormalTok{( dd2, gene, expression, }\FunctionTok{all\_of}\NormalTok{(LRGene.ID) ) )}
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=} \FunctionTok{c}\NormalTok{(}\StringTok{"dd2"}\NormalTok{))}
+\NormalTok{dd3[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                        Cell.ID Time.Point     Responder rowID Cluster
+## 1: 14546X1_S1_AAACCTGCAAAGCAAT         C1 Non.Reponsder     1      T0
+## 2: 14546X1_S1_AAACCTGCATCGATTG         C1 Non.Reponsder     2       1
+## 3: 14546X1_S1_AAACCTGGTAAGGGCT         C1 Non.Reponsder     3      T5
+##    Patient.ID Major_cluster     Sub_cluster Cell.class.for.normalisation
+## 1:     HJD33E        T_Cell   T_Cell_CD4_EM                   lymphocyte
+## 2:     HJD33E       NK_Cell NK_Cell_Resting                   lymphocyte
+## 3:     HJD33E        T_Cell   T_Cell_CD8_EM                   lymphocyte
+##    Contaminant Intermediate_classification_AB Intermediate_classification_2_0
+## 1:       FALSE                     T_Cell_CD4                   T_Cell_CD4_EM
+## 2:       FALSE                        NK_Cell                         NK_Cell
+## 3:       FALSE                     T_Cell_CD8                      T_Cell_CD8
+##    Intermediate_Clusters_ML     UMAP1     UMAP2 samplesize_it gene expression
+## 1:               T_Cell_CD4 -7.049916  6.217446          1343 LRP1          0
+## 2:                  NK_Cell -5.962549 -5.811423          1343 LRP1          0
+## 3:               T_Cell_CD8 -4.080601 -1.003160          1343 LRP1          0
+\end{verbatim}
+
+\hypertarget{visualize-expression-of-communication-genes-in-specific-cell-types}{%
+\subsection{Visualize expression of communication genes in specific cell
+types}\label{visualize-expression-of-communication-genes-in-specific-cell-types}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Visualise specific genes as required}
+\FunctionTok{ggplot}\NormalTok{(dd3[gene}\SpecialCharTok{==}\StringTok{"IFNG"}\NormalTok{], }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{ expression, }\AttributeTok{x=}\NormalTok{ Sub\_cluster, }\AttributeTok{col=}\NormalTok{ Major\_cluster) ) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{ylab}\NormalTok{(}\StringTok{"IFNG"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle=}\DecValTok{90}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/visexpress-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dd3[gene}\SpecialCharTok{==}\StringTok{"LRP1"}\NormalTok{], }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{ expression, }\AttributeTok{x=}\NormalTok{ Sub\_cluster, }\AttributeTok{col=}\NormalTok{ Major\_cluster) ) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{ylab}\NormalTok{(}\StringTok{"LRP1"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle=}\DecValTok{90}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/visexpress-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(dd3[gene}\SpecialCharTok{==}\StringTok{"CSF1R"}\NormalTok{], }\FunctionTok{aes}\NormalTok{(}\AttributeTok{y=}\NormalTok{ expression, }\AttributeTok{x=}\NormalTok{ Sub\_cluster, }\AttributeTok{col=}\NormalTok{ Major\_cluster) ) }\SpecialCharTok{+} \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{ylab}\NormalTok{(}\StringTok{"CSF1R"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle=}\DecValTok{90}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/visexpress-3.pdf}
+
+\hypertarget{calculate-the-ligand-and-receptor-expression-within-each-cell-type-and-the-frequency-of-each-cell-type-in-the-sample}{%
+\subsection{Calculate the ligand and receptor expression within each
+cell type and the frequency of each cell type in the
+sample}\label{calculate-the-ligand-and-receptor-expression-within-each-cell-type-and-the-frequency-of-each-cell-type-in-the-sample}}
+
+To circumvent the issues of sparsity/frop out and noise associated with
+low read depth, we calculate the average expression of genes for
+clusters of phenotypically similar cells of each cell type. We track how
+many of each cell type there are because the numerous cell types will
+contribute more to communication that other types that are hardly
+present.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\#\# Summarise the average expression of genes in each cell discretization class      }
+\NormalTok{grps }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"gene"}\NormalTok{, }\StringTok{"samplesize\_it"}\NormalTok{, }\StringTok{"Major\_cluster"}\NormalTok{, }\StringTok{"Intermediate\_Clusters\_ML"}\NormalTok{ , }\StringTok{"Sub\_cluster"}\NormalTok{, }\StringTok{"Cluster"}\NormalTok{)   }
+\NormalTok{dd4 }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{( dd3 }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{group\_by\_}\NormalTok{(}\AttributeTok{.dots =}\NormalTok{ grps) }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{summarise}\NormalTok{( }\AttributeTok{expression\_bar:=} \FunctionTok{mean}\NormalTok{(expression), }\AttributeTok{countofvalues =} \FunctionTok{n}\NormalTok{() ) )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `summarise()` has grouped output by 'gene', 'samplesize_it', 'Major_cluster', 'Intermediate_Clusters_ML', 'Sub_cluster'. You can override using the `.groups` argument.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=} \StringTok{"dd3"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{translate-cell-type-counts-into-relative-abundances-frequencies}{%
+\subsection{Translate cell type counts into relative abundances
+(frequencies)}\label{translate-cell-type-counts-into-relative-abundances-frequencies}}
+
+Add in the clinical data (important for contrastingmany samples) and a
+key for the cell type clusters named ``key\_''. Communication analyses
+will use the key to keep track of who is sending and receiving signals
+from who? At this stage, communication pairs are still not joined and so
+we have a dataset showing the expression of each ligand or receptor in
+each cell type (indicated by key\_) and quantification of the relative
+abundance of cell types.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DocumentationTok{\#\# Merge clinical data with average expression data}
+\NormalTok{dd5 }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{(clin\_i, dd4  )}
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=} \FunctionTok{c}\NormalTok{(}\StringTok{"dd4"}\NormalTok{))}
+
+\CommentTok{\# Add the fraction that each celltype contributes to the total tumor sample}
+\NormalTok{dd5[, FracSample}\SpecialCharTok{:}\ErrorTok{=}\NormalTok{ countofvalues}\SpecialCharTok{/}\NormalTok{samplesize\_it ]}
+\CommentTok{\# Specify that the Cluster column is the key to work with}
+\NormalTok{dd5}\SpecialCharTok{$}\NormalTok{key\_ }\OtherTok{\textless{}{-}} \FunctionTok{as.character}\NormalTok{(dd5}\SpecialCharTok{$}\NormalTok{Cluster)}
+
+\NormalTok{dd5[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     Patient.ID Time.Point     Responder gene samplesize_it       Major_cluster
+##  1:     HJD33E         C1 Non.Reponsder  A2M          1343 Activated_Platelets
+##  2:     HJD33E         C1 Non.Reponsder  A2M          1343              B_Cell
+##  3:     HJD33E         C1 Non.Reponsder  A2M          1343              B_Cell
+##  4:     HJD33E         C1 Non.Reponsder  A2M          1343      Dendritic_Cell
+##  5:     HJD33E         C1 Non.Reponsder  A2M          1343             EB_Cell
+##  6:     HJD33E         C1 Non.Reponsder  A2M          1343            Monocyte
+##  7:     HJD33E         C1 Non.Reponsder  A2M          1343            Monocyte
+##  8:     HJD33E         C1 Non.Reponsder  A2M          1343            Monocyte
+##  9:     HJD33E         C1 Non.Reponsder  A2M          1343            Monocyte
+## 10:     HJD33E         C1 Non.Reponsder  A2M          1343            Monocyte
+##     Intermediate_Clusters_ML         Sub_cluster Cluster expression_bar
+##  1:      Activated_Platelets Activated_Platelets      22              0
+##  2:                   B_Cell       B_Cell_Memory      13              0
+##  3:                   B_Cell        B_Cell_Naive      11              0
+##  4:           Dendritic_Cell      Dendritic_Cell      14              0
+##  5:                  EB_Cell             EB_Cell      20              0
+##  6:                 Monocyte  Monocyte_Classical      10              0
+##  7:                 Monocyte  Monocyte_Classical      15              0
+##  8:                 Monocyte  Monocyte_Classical      18              0
+##  9:                 Monocyte  Monocyte_Classical       2              0
+## 10:                 Monocyte  Monocyte_Classical       3              0
+##     countofvalues   FracSample key_
+##  1:             2 0.0014892033   22
+##  2:            69 0.0513775130   13
+##  3:             8 0.0059568131   11
+##  4:             7 0.0052122115   14
+##  5:             2 0.0014892033   20
+##  6:             3 0.0022338049   10
+##  7:             1 0.0007446016   15
+##  8:             2 0.0014892033   18
+##  9:            35 0.0260610573    2
+## 10:            31 0.0230826508    3
+\end{verbatim}
+
+\hypertarget{visualize-cell-type-composition-of-tumor-sample}{%
+\subsection{Visualize cell type composition of tumor
+sample}\label{visualize-cell-type-composition-of-tumor-sample}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Composition visualization}
+\FunctionTok{ggplot}\NormalTok{( dd5[gene}\SpecialCharTok{==}\NormalTok{ dd5}\SpecialCharTok{$}\NormalTok{gene[}\DecValTok{1}\NormalTok{]] , }\FunctionTok{aes}\NormalTok{( }\AttributeTok{x=}\NormalTok{ FracSample, }\AttributeTok{y=} \FunctionTok{paste}\NormalTok{( Patient.ID, Time.Point,}\AttributeTok{sep=}\StringTok{"\_"}\NormalTok{), }\AttributeTok{fill=}\NormalTok{ Major\_cluster)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat=} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Sample"}\NormalTok{) }\SpecialCharTok{+}\FunctionTok{xlab}\NormalTok{(}\StringTok{"Fraction"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/compositionplot-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{( dd5[gene}\SpecialCharTok{==}\NormalTok{ dd5}\SpecialCharTok{$}\NormalTok{gene[}\DecValTok{1}\NormalTok{]] , }\FunctionTok{aes}\NormalTok{( }\AttributeTok{x=}\NormalTok{ FracSample, }\AttributeTok{y=} \FunctionTok{paste}\NormalTok{( Patient.ID, Time.Point,}\AttributeTok{sep=}\StringTok{"\_"}\NormalTok{), }\AttributeTok{fill=}\NormalTok{ Sub\_cluster)) }\SpecialCharTok{+} \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat=} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}\FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{(}\StringTok{"Sample"}\NormalTok{)}\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{"Fraction"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/compositionplot-2.pdf}
+
+\hypertarget{measuring-communication}{%
+\subsection{Measuring communication}\label{measuring-communication}}
+
+Quantification of communication via each Ligand-Receptor communication
+pathway is done sequentially by measuring the receiving cell type's
+receptor expression and the production of ligands by each other cell
+type (given their relative abundance in the tumor).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Run communication analysis}
+\DocumentationTok{\#\# Pre{-}define look ups for all of the combinations of gene and cell types (discretization class) }
+\CommentTok{\# Two copies of the look up of unique units (uu) where we will modify column names in 2 different ways}
+\NormalTok{lu2 }\OtherTok{\textless{}{-}}\NormalTok{ uu }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(}\StringTok{"Intermediate\_Clusters\_ML"}\NormalTok{ , }\StringTok{"Sub\_cluster"}\NormalTok{, }\StringTok{"Cluster"}\NormalTok{)}
+\FunctionTok{setnames}\NormalTok{(lu2, }\AttributeTok{old=} \FunctionTok{c}\NormalTok{(}\StringTok{"Cluster"}\NormalTok{, }\StringTok{"Sub\_cluster"}\NormalTok{, }\StringTok{"Intermediate\_Clusters\_ML"}\NormalTok{), }\AttributeTok{new=} \FunctionTok{c}\NormalTok{(}\StringTok{"Receptor"}\NormalTok{, }\StringTok{"ReceptorCelltype"}\NormalTok{, }\StringTok{"ReceptorPhenoCelltype"}\NormalTok{))}
+\NormalTok{lu2i }\OtherTok{\textless{}{-}}\NormalTok{ uu }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(}\StringTok{"Intermediate\_Clusters\_ML"}\NormalTok{ , }\StringTok{"Sub\_cluster"}\NormalTok{, }\StringTok{"Cluster"}\NormalTok{)}
+\FunctionTok{setnames}\NormalTok{(lu2i, }\AttributeTok{old=} \FunctionTok{c}\NormalTok{(}\StringTok{"Cluster"}\NormalTok{, }\StringTok{"Sub\_cluster"}\NormalTok{, }\StringTok{"Intermediate\_Clusters\_ML"}\NormalTok{), }\AttributeTok{new=} \FunctionTok{c}\NormalTok{(}\StringTok{"Ligand"}\NormalTok{, }\StringTok{"LigandCelltype"}\NormalTok{, }\StringTok{"LigandPhenoCelltype"}\NormalTok{))}
+\NormalTok{lu2[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    ReceptorPhenoCelltype ReceptorCelltype Receptor
+## 1:            T_Cell_CD4    T_Cell_CD4_EM       T0
+## 2:               NK_Cell  NK_Cell_Resting        1
+## 3:            T_Cell_CD8    T_Cell_CD8_EM       T5
+## 4:            T_Cell_CD8 T_Cell_CD8_TEMRA      T10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{lu2i[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{4}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    LigandPhenoCelltype   LigandCelltype Ligand
+## 1:          T_Cell_CD4    T_Cell_CD4_EM     T0
+## 2:             NK_Cell  NK_Cell_Resting      1
+## 3:          T_Cell_CD8    T_Cell_CD8_EM     T5
+## 4:          T_Cell_CD8 T_Cell_CD8_TEMRA    T10
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Perform communication analysis}
+\NormalTok{Communication }\OtherTok{\textless{}{-}} \FunctionTok{rbindlist}\NormalTok{(}\FunctionTok{mclapply}\NormalTok{( }\DecValTok{1}\SpecialCharTok{:}\FunctionTok{nrow}\NormalTok{(LRpairsFiltered2\_i)   , }\ControlFlowTok{function}\NormalTok{(p)\{   }
+  \CommentTok{\# Names of ligand and receptor}
+\NormalTok{  LRnms }\OtherTok{\textless{}{-}} \FunctionTok{unname}\NormalTok{( }\FunctionTok{unlist}\NormalTok{( LRpairsFiltered2\_i[p][ , HPMR.Receptor, HPMR.Ligand ] ) )}
+  \CommentTok{\# Select expression of the pair in each cell subtype}
+\NormalTok{  LRpair\_it\_dd }\OtherTok{\textless{}{-}}  \FunctionTok{data.table}\NormalTok{( dd5[gene }\SpecialCharTok{\%in\%}\NormalTok{ LRnms ] }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{spread}\NormalTok{(gene, expression\_bar) ,  LRpairsFiltered2\_i[p] }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(HPMR.Receptor, HPMR.Ligand, Pair.Name))}
+  \FunctionTok{setnames}\NormalTok{(LRpair\_it\_dd , }\AttributeTok{old=}\NormalTok{ LRnms, }\AttributeTok{new=} \FunctionTok{c}\NormalTok{(}\StringTok{"Ligand"}\NormalTok{, }\StringTok{"Receptor"}\NormalTok{))}
+  \FunctionTok{setcolorder}\NormalTok{(LRpair\_it\_dd,}\FunctionTok{c}\NormalTok{( }\FunctionTok{names}\NormalTok{(dd5[}\DecValTok{1}\NormalTok{] }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{c}\NormalTok{(}\StringTok{"gene"}\NormalTok{, }\StringTok{"expression\_bar"}\NormalTok{))), }\StringTok{"Ligand"}\NormalTok{, }\StringTok{"Receptor"}\NormalTok{, }\StringTok{"HPMR.Receptor"}\NormalTok{, }\StringTok{"HPMR.Ligand"}\NormalTok{, }\StringTok{"Pair.Name"}\NormalTok{ )  )}
+  
+  \CommentTok{\# Calculate the expression of the signaller cell type by multiplying single cell average expression by the cell number}
+\NormalTok{  LRpair\_it\_dd[ , Ligand\_N}\SpecialCharTok{:}\ErrorTok{=}\NormalTok{ Ligand }\SpecialCharTok{*}\NormalTok{ FracSample]}
+  
+  \CommentTok{\# Caclulate ligand{-}receptor signalling between each cell type: outer product matrix {-}\textgreater{} Signaler on the cols and receiver cell class on the rows}
+\NormalTok{  Rmat }\OtherTok{\textless{}{-}}\NormalTok{ LRpair\_it\_dd[, Receptor] }\SpecialCharTok{\%*\%} \FunctionTok{t}\NormalTok{( }\FunctionTok{unlist}\NormalTok{( LRpair\_it\_dd[, }\StringTok{"Ligand\_N"}\NormalTok{] ) )}
+  \FunctionTok{rownames}\NormalTok{(Rmat) }\OtherTok{\textless{}{-}} \FunctionTok{colnames}\NormalTok{(Rmat) }\OtherTok{\textless{}{-}}\NormalTok{ LRpair\_it\_dd}\SpecialCharTok{$}\NormalTok{key\_}
+\NormalTok{  RmatperSignaller }\OtherTok{\textless{}{-}}\NormalTok{ LRpair\_it\_dd[, Receptor] }\SpecialCharTok{\%*\%} \FunctionTok{t}\NormalTok{( }\FunctionTok{unlist}\NormalTok{( LRpair\_it\_dd[, }\StringTok{"Ligand"}\NormalTok{] ) )}
+  \FunctionTok{rownames}\NormalTok{(RmatperSignaller) }\OtherTok{\textless{}{-}} \FunctionTok{colnames}\NormalTok{(RmatperSignaller) }\OtherTok{\textless{}{-}}\NormalTok{ LRpair\_it\_dd}\SpecialCharTok{$}\NormalTok{key\_}
+  
+  \CommentTok{\# Marginalise signalling matrix to calculate signal transduction to cells of each receiver cell type}
+\NormalTok{  LRpair\_it\_dd[ , Transduction }\SpecialCharTok{:}\ErrorTok{=} \FunctionTok{rowSums}\NormalTok{(Rmat) ]}
+\NormalTok{  LRpair\_it\_dd[ , TransductionperSignaller }\SpecialCharTok{:}\ErrorTok{=} \FunctionTok{rowSums}\NormalTok{(RmatperSignaller) ]}
+  
+  \CommentTok{\# Reformat the ligand{-}receptor signalling matrix into a long dataframe}
+\NormalTok{  Rmatlong }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{( }\FunctionTok{gather}\NormalTok{(}\FunctionTok{as.data.table}\NormalTok{(Rmat, }\AttributeTok{keep.rownames =}\NormalTok{ T), Ligand, Signal, }\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{) )[Signal }\SpecialCharTok{\textgreater{}} \DecValTok{0}\NormalTok{]}
+  \FunctionTok{setnames}\NormalTok{(Rmatlong, }\AttributeTok{old=} \StringTok{"rn"}\NormalTok{, }\AttributeTok{new=} \StringTok{"Receptor"}\NormalTok{)}
+  
+  \CommentTok{\# Merge ligand{-}receptor signalling with cell type information}
+\NormalTok{  Rmatlong2 }\OtherTok{\textless{}{-}} \FunctionTok{merge}\NormalTok{( }\FunctionTok{merge}\NormalTok{(Rmatlong, lu2, }\AttributeTok{by=} \StringTok{"Receptor"}\NormalTok{), lu2i , }\AttributeTok{by=} \StringTok{"Ligand"}\NormalTok{)}
+  \CommentTok{\# Merge ligand{-}receptor signalling with transduction data and all clinical information}
+  \FunctionTok{setnames}\NormalTok{(Rmatlong2, }\AttributeTok{old=} \FunctionTok{c}\NormalTok{(}\StringTok{"Ligand"}\NormalTok{, }\StringTok{"Receptor"}\NormalTok{),}\AttributeTok{new=} \FunctionTok{c}\NormalTok{(}\StringTok{"key\_signaller"}\NormalTok{, }\StringTok{"key\_"}\NormalTok{))}
+\NormalTok{  output }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{( }\FunctionTok{merge}\NormalTok{( LRpair\_it\_dd, Rmatlong2, }\AttributeTok{by=} \StringTok{"key\_"}\NormalTok{, }\AttributeTok{all.x=}\NormalTok{ T )  )}
+  \FunctionTok{return}\NormalTok{( output )}
+  \CommentTok{\#cat(p);cat("    ")}
+\NormalTok{\},}\AttributeTok{mc.cores=} \FunctionTok{detectCores}\NormalTok{()}\SpecialCharTok{{-}}\DecValTok{2}\NormalTok{))}
+\NormalTok{PatientID }\OtherTok{\textless{}{-}}\NormalTok{ Communication[}\DecValTok{1}\NormalTok{]}\SpecialCharTok{$}\NormalTok{Patient.ID}
+\FunctionTok{cat}\NormalTok{(}\StringTok{"Saving output for :        patient "}\NormalTok{); }\FunctionTok{cat}\NormalTok{(PatientID); }\FunctionTok{cat}\NormalTok{(}\StringTok{"       time     "}\NormalTok{) ; }\FunctionTok{cat}\NormalTok{(tau)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Saving output for :        patient
+\end{verbatim}
+
+\begin{verbatim}
+## HJD33E
+\end{verbatim}
+
+\begin{verbatim}
+##        time
+\end{verbatim}
+
+\begin{verbatim}
+## C1
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{savenm }\OtherTok{\textless{}{-}} \FunctionTok{paste0}\NormalTok{(}\StringTok{"ImmuneCommunicationResults\_\_"}\NormalTok{,}\StringTok{"PatientID\_"}\NormalTok{,PatientID,}\StringTok{"\_\_"}\NormalTok{, }\StringTok{"Day\_"}\NormalTok{,tau,}\StringTok{".RData"}\NormalTok{)}
+\NormalTok{saveloc }\OtherTok{\textless{}{-}} \StringTok{"/Users/jason/Dropbox/Cancer\_pheno\_evo/data/FELINE2/ImmuneCommunicationOutput2/"}
+\CommentTok{\#save( PatientID, Communication, tau,  uu, dd5,file=paste0(saveloc,savenm))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{explore-communication-ouput}{%
+\subsection{Explore communication
+ouput}\label{explore-communication-ouput}}
+
+Here I am choosing a very specific example to show how the data is
+structured. However, the output produces communication scores for all
+pathways of communication between cell types.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#na.omit(Communication)[1:11]}
+\FunctionTok{na.omit}\NormalTok{(Communication)[Pair.Name}\SpecialCharTok{==}\StringTok{"TNF\_TNFRSF1A"}\NormalTok{][ReceptorCelltype}\SpecialCharTok{==}\StringTok{"Monocyte\_Classical"}\NormalTok{][LigandCelltype}\SpecialCharTok{==}\StringTok{"Monocyte\_Classical"}\NormalTok{][key\_}\SpecialCharTok{==}\DecValTok{2}\SpecialCharTok{\&}\NormalTok{key\_signaller}\SpecialCharTok{==}\DecValTok{2}\NormalTok{]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    key_ Patient.ID Time.Point     Responder samplesize_it Major_cluster
+## 1:    2     HJD33E         C1 Non.Reponsder          1343      Monocyte
+##    Intermediate_Clusters_ML        Sub_cluster Cluster countofvalues FracSample
+## 1:                 Monocyte Monocyte_Classical       2            35 0.02606106
+##        Ligand  Receptor HPMR.Receptor HPMR.Ligand    Pair.Name     Ligand_N
+## 1: 0.02930103 0.5883893      TNFRSF1A         TNF TNF_TNFRSF1A 0.0007636158
+##    Transduction TransductionperSignaller key_signaller       Signal
+## 1:   0.01465986                0.2416826             2 0.0004493033
+##    ReceptorPhenoCelltype   ReceptorCelltype LigandPhenoCelltype
+## 1:              Monocyte Monocyte_Classical            Monocyte
+##        LigandCelltype
+## 1: Monocyte_Classical
+\end{verbatim}
+
+\hypertarget{exemplify-the-communication-network}{%
+\subsection{Exemplify the communication
+network}\label{exemplify-the-communication-network}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+ \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{na.omit}\NormalTok{(Communication)[Pair.Name}\SpecialCharTok{==}\StringTok{"TNF\_TNFRSF1A"}\NormalTok{] ,}
+        \FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ Signal, }\AttributeTok{axis1 =}\NormalTok{ key\_signaller, }\AttributeTok{axis2 =}\NormalTok{ key\_,}\AttributeTok{fill=}\NormalTok{ key\_)) }\SpecialCharTok{+}\FunctionTok{theme\_classic}\NormalTok{()}\SpecialCharTok{+}
+   \FunctionTok{geom\_alluvium}\NormalTok{( }\AttributeTok{width =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{) }\SpecialCharTok{+}\CommentTok{\#aes(fill = Admit),}
+   \FunctionTok{geom\_stratum}\NormalTok{(}\AttributeTok{width =} \DecValTok{1}\SpecialCharTok{/}\DecValTok{12}\NormalTok{,  }\AttributeTok{color =} \StringTok{"grey"}\NormalTok{)}\SpecialCharTok{+}
+   \FunctionTok{scale\_fill\_brewer}\NormalTok{(}\AttributeTok{type =} \StringTok{"qual"}\NormalTok{, }\AttributeTok{palette =} \StringTok{"Set1"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/commNet-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{rm}\NormalTok{(}\AttributeTok{list=}\FunctionTok{c}\NormalTok{(}\StringTok{"dd5"}\NormalTok{, }\StringTok{"lu2"}\NormalTok{, }\StringTok{"lu2i"}\NormalTok{, }\StringTok{"Communication"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+In this dataset, the ``Ligand'' and ``Recpetor'' columns indicate the
+average ligand and receptor expression of the focal cell type. The
+FracSample column indicatses the relative frequency of the cell type.
+
+key\_ = the identifier of the focal signal receiving cells.
+
+key\_signaller = the identifier of the signal sending cell population.
+
+Ligand\_N = the total signal sent by all cells of that cell type =
+Ligand*FracSample.
+
+Signal = the communication that the fcal cell receives from
+communication with a given cell type = Receptor*Ligand\_N
+
+Transduction = the total signal received by the focal cell type from all
+cell types = sum of all signals from all cell types
+
+TransductionperSignaller= individual level variation of this calcualtion
+= sum\_j(Receptor*Ligand\_j)
+
+The last four columns are essential for keeping trck of who is
+communicating with who (ReceptorPhenoCelltype:LigandCelltype).
+
+\hypertarget{calculate-community-wide-communication-to-individuals-of-the-receiving-cell-type}{%
+\subsection{Calculate community wide communication to individuals of the
+receiving cell
+type}\label{calculate-community-wide-communication-to-individuals-of-the-receiving-cell-type}}
+
+The community-wide communication information (CCI) database summarises
+communications from all cell types to individual cells of all other cell
+types via each LR communication pathway.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# For each sample in the communication output folder, calulate the strength of communciation between each cell type via each communication pathway}
+\NormalTok{filenamesCCI }\OtherTok{\textless{}{-}} \FunctionTok{list.files}\NormalTok{(saveloc)}
+\NormalTok{CCI }\OtherTok{\textless{}{-}} \FunctionTok{rbindlist}\NormalTok{(}\FunctionTok{lapply}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\FunctionTok{length}\NormalTok{(filenamesCCI), }\ControlFlowTok{function}\NormalTok{(ii)\{}
+  \FunctionTok{load}\NormalTok{(}\AttributeTok{file=} \FunctionTok{paste0}\NormalTok{(saveloc, filenamesCCI[ii]))}
+  \FunctionTok{cat}\NormalTok{(ii);}
+\NormalTok{  SumComm }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{( Communication }\SpecialCharTok{\%\textgreater{}\%}
+                           \FunctionTok{group\_by}\NormalTok{(Patient.ID, LigandPhenoCelltype, ReceptorPhenoCelltype,    Time.Point , Pair.Name, Responder)}\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{                           dplyr}\SpecialCharTok{::}\FunctionTok{summarise}\NormalTok{(}\AttributeTok{TransductionMu=} \FunctionTok{weighted.mean}\NormalTok{(Signal,countofvalues),  }\AttributeTok{Receptor=} \FunctionTok{weighted.mean}\NormalTok{(Receptor), }\AttributeTok{Ligandtot=} \FunctionTok{sum}\NormalTok{(Ligand), }\AttributeTok{Ligand\_Ntot=} \FunctionTok{sum}\NormalTok{(Ligand\_N))  )[}\SpecialCharTok{!}\NormalTok{( }\FunctionTok{is.na}\NormalTok{(LigandPhenoCelltype)}\SpecialCharTok{|}\FunctionTok{is.na}\NormalTok{(ReceptorPhenoCelltype) ) ]}
+\NormalTok{\}))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 1
+\end{verbatim}
+
+\begin{verbatim}
+## `summarise()` has grouped output by 'Patient.ID', 'LigandPhenoCelltype', 'ReceptorPhenoCelltype', 'Time.Point', 'Pair.Name'. You can override using the `.groups` argument.
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Scale TME wide communication data (TransductionMu) for each communication pathway to make data comparable across communication types}
+\NormalTok{CCI[, scaleTransduction}\SpecialCharTok{:}\ErrorTok{=} \FunctionTok{scale}\NormalTok{(TransductionMu, }\AttributeTok{center=}\NormalTok{F), by}\OtherTok{=} \FunctionTok{c}\NormalTok{(}\StringTok{"Pair.Name"}\NormalTok{)] }
+\NormalTok{CCI[}\SpecialCharTok{!}\FunctionTok{is.finite}\NormalTok{(TransductionMu), scaleTransduction}\SpecialCharTok{:}\ErrorTok{=} \DecValTok{0}\NormalTok{]}
+\CommentTok{\#save(CCI,WhichCells, uu, perIndiv, file ="/Users/jason/Dropbox/Cancer\_pheno\_evo/data/FELINE2/Communication output merged/PopulationCommunicationMerged.RData" )}
+\NormalTok{CCI[}\DecValTok{1}\NormalTok{,]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    Patient.ID LigandPhenoCelltype ReceptorPhenoCelltype Time.Point   Pair.Name
+## 1:     HJD33E Activated_Platelets   Activated_Platelets         C1 CALR_ITGA2B
+##        Responder TransductionMu Receptor Ligandtot Ligand_Ntot
+## 1: Non.Reponsder    0.003985008 2.013365  1.329085 0.001979277
+##    scaleTransduction
+## 1:        0.07976069
+\end{verbatim}
+
+The most important columns are: 1) TransductionMu This is the amount of
+communication the average cell of the receiving cell type (indicated by
+the ReceptorPhenoCelltype column) gets from the population of cells of
+the signal sending cell type (indicated by the LigandPhenoCelltype). 2)
+scaleTransduction This standardizes the TransductionMu score to make
+different communication pathways comparable within the dataset.
+
+\hypertarget{visualize-tme-communication}{%
+\subsection{Visualize TME
+communication}\label{visualize-tme-communication}}
+
+Using the CCI database of communication, we can now start asking many
+different biological questions. One example is to ask: which cell types
+are communicating most strongly with a given cell type; say CD8 T cells?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#For a given receiver cell type, plot the strength of communications sent by other cell types via all the differnt pathways.}
+\FunctionTok{ggplot}\NormalTok{(CCI[ReceptorPhenoCelltype}\SpecialCharTok{==} \StringTok{"T\_Cell\_CD8"}\NormalTok{],}
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{y=} \FunctionTok{log}\NormalTok{(}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ scaleTransduction), }\AttributeTok{x=}\NormalTok{ LigandPhenoCelltype , }\AttributeTok{col=}\NormalTok{ LigandPhenoCelltype ,}\AttributeTok{fill=}\NormalTok{ LigandPhenoCelltype) ) }\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_violin}\NormalTok{(}\AttributeTok{scale =} \StringTok{"width"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{pch=}\DecValTok{21}\NormalTok{, }\AttributeTok{col=} \StringTok{"black"}\NormalTok{, }\AttributeTok{size=} \FloatTok{2.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=} \StringTok{"Tumor wide communication to CD8 T cells"}\NormalTok{,}\AttributeTok{x=}\StringTok{"Signal sender"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle=}\DecValTok{90}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/CD8totcomm-1.pdf}
+
+Another example is to ask who is sending a signal via a certain
+communication pathway to a focal cell type (e.g who sends IFNgamma
+signals to CD8 T cells)?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(CCI[Pair.Name}\SpecialCharTok{==} \StringTok{"IFNG\_IFNGR1"}\NormalTok{][ReceptorPhenoCelltype}\SpecialCharTok{==} \StringTok{"T\_Cell\_CD8"}\NormalTok{],}
+       \FunctionTok{aes}\NormalTok{(}\AttributeTok{y=} \FunctionTok{log}\NormalTok{(}\DecValTok{1} \SpecialCharTok{+}\NormalTok{ scaleTransduction), }\AttributeTok{x=}\NormalTok{ LigandPhenoCelltype ,}\AttributeTok{col=}\NormalTok{ LigandPhenoCelltype ,}\AttributeTok{fill=}\NormalTok{ LigandPhenoCelltype) ) }\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{(}\AttributeTok{pch=} \DecValTok{21}\NormalTok{, }\AttributeTok{col=} \StringTok{"black"}\NormalTok{,}\AttributeTok{size=} \FloatTok{4.5}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position=} \StringTok{"none"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{y=} \StringTok{"Tumor wide IFNG\_IFNGR1 communication to CD8 T cells"}\NormalTok{,}\AttributeTok{x=} \StringTok{"Signal sender"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle=}\DecValTok{90}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/CD8IFN-1.pdf}
+
+\hypertarget{visualize-tme-wide-communication}{%
+\subsection{Visualize TME wide
+communication}\label{visualize-tme-wide-communication}}
+
+Use network graphs to visualize comunication. First define a network
+with nodes that are the cell types and edges that represent
+communication. The edges are directed, meaning that the communication
+goes from one cell type to another and is not equal in both directions.
+We add weights to the edges to represent the strength of communiction
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# Select data to plot}
+\NormalTok{CCI\_plot }\OtherTok{\textless{}{-}}\NormalTok{ CCI[][Time.Point}\SpecialCharTok{==}\NormalTok{ pars[}\StringTok{"TimePoint"}\NormalTok{]][][ }\FunctionTok{order}\NormalTok{(LigandPhenoCelltype, ReceptorPhenoCelltype) ]}
+
+\CommentTok{\# Construct directed graph}
+\NormalTok{g }\OtherTok{\textless{}{-}} \FunctionTok{graph.data.frame}\NormalTok{(CCI\_plot }\SpecialCharTok{\%\textgreater{}\%}\NormalTok{ dplyr}\SpecialCharTok{::}\FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{Patient.ID), }\AttributeTok{directed=} \ConstantTok{TRUE}\NormalTok{)}
+\CommentTok{\# Add weights to edges of the graph }
+\FunctionTok{E}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{weight }\OtherTok{\textless{}{-}}\NormalTok{ CCI\_plot}\SpecialCharTok{$}\NormalTok{scaleTransduction  }
+\CommentTok{\# Specifcy color of nodes}
+\FunctionTok{V}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{color }\OtherTok{\textless{}{-}}\NormalTok{ ggsci}\SpecialCharTok{::}\FunctionTok{pal\_npg}\NormalTok{(}\StringTok{"nrc"}\NormalTok{)(}\DecValTok{1}\NormalTok{) }
+\CommentTok{\# Generate circle layout}
+\NormalTok{n }\OtherTok{\textless{}{-}} \FunctionTok{length}\NormalTok{( }\FunctionTok{unique}\NormalTok{(CCI\_plot}\SpecialCharTok{$}\NormalTok{ReceptorPhenoCelltype) ) }\SpecialCharTok{{-}}\DecValTok{1}
+\NormalTok{pts.circle }\OtherTok{\textless{}{-}} \FunctionTok{t}\NormalTok{( }\FunctionTok{sapply}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\NormalTok{n, }\ControlFlowTok{function}\NormalTok{(r)}\FunctionTok{c}\NormalTok{(}\FunctionTok{cos}\NormalTok{(}\DecValTok{2}\SpecialCharTok{*}\NormalTok{r}\SpecialCharTok{*}\NormalTok{pi}\SpecialCharTok{/}\NormalTok{n), }\FunctionTok{sin}\NormalTok{(}\DecValTok{2}\SpecialCharTok{*}\NormalTok{r}\SpecialCharTok{*}\NormalTok{pi}\SpecialCharTok{/}\NormalTok{n))) )}
+\NormalTok{NodeList }\OtherTok{\textless{}{-}} \FunctionTok{data.table}\NormalTok{( }\FunctionTok{c}\NormalTok{(}\StringTok{"Dendritic\_Cell"}\NormalTok{, }\StringTok{"Monocyte"}\NormalTok{, }\StringTok{"T\_Cell\_CD4"}\NormalTok{, }\StringTok{"T\_Cell\_CD8"}\NormalTok{, }\StringTok{"NK\_Cell"}\NormalTok{, }\StringTok{"B\_Cell"}\NormalTok{, }\StringTok{"EB\_Cell"}\NormalTok{ ,}\StringTok{"Activated\_Platelets"}\NormalTok{, }\StringTok{"Unknown"}\NormalTok{ ) ,}
+                        \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, pts.circle[,}\DecValTok{1}\NormalTok{] )  ,  }\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, pts.circle[,}\DecValTok{2}\NormalTok{] ) )}
+\NormalTok{presloc }\OtherTok{\textless{}{-}}\NormalTok{ NodeList[}\FunctionTok{na.omit}\NormalTok{((}\FunctionTok{match}\NormalTok{(}\FunctionTok{names}\NormalTok{(}\FunctionTok{V}\NormalTok{(g) ), NodeList}\SpecialCharTok{$}\NormalTok{V1  ))), ]}
+
+\CommentTok{\# Visualize communication with weighted graph}
+\FunctionTok{plot.igraph}\NormalTok{(g, }\AttributeTok{rescale=} \ConstantTok{FALSE}\NormalTok{,}
+            \AttributeTok{layout =} \FunctionTok{as.matrix}\NormalTok{(presloc }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{V1))   , }
+            \AttributeTok{xlim =} \FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{), }\AttributeTok{ylim =}\FunctionTok{c}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{1}\NormalTok{,}\DecValTok{1}\NormalTok{),}
+            \AttributeTok{vertices=}\NormalTok{ NodeList[V1 }\SpecialCharTok{\%in\%}\NormalTok{ presloc}\SpecialCharTok{$}\NormalTok{V1],}
+            \AttributeTok{edge.label.color =} \FunctionTok{adjustcolor}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\FloatTok{0.5}\NormalTok{),}
+            \AttributeTok{edge.color=} \FunctionTok{adjustcolor}\NormalTok{(}\StringTok{"black"}\NormalTok{, }\FloatTok{0.5}\NormalTok{),}
+            \AttributeTok{edge.width=} \FloatTok{0.1}\SpecialCharTok{*}\FunctionTok{E}\NormalTok{(g)}\SpecialCharTok{$}\NormalTok{weight )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Twister-Communication-example-using-Griffiths-2020-dataset-_files/figure-latex/TMEwidecomm-1.pdf}
+
+\end{document}
