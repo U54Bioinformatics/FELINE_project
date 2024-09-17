@@ -7,12 +7,26 @@ require(ggsci)
 require(lmerTest)
 
 load( file=paste0("~/Dropbox/Cancer_pheno_evo/data/FELINE2/PhenotypesAllArmsCohort2/CPMPhenotpyeLandscape_C2ProjectC2RevisednewMacrophagesDC.RData"))#C1umap,u_dat,DAY,cell_types_all,ARMS,Subtype,
-Val_u_dat<- u_dat
+Val_u_dat <- u_dat
 rm(list=c("ARMS","C1umap","cell_types_all", "DAY","Subtype","u_dat"  ))
 ## Load saved data
 load(file="/Users/jason/Dropbox/Cancer_pheno_evo/data/FELINE2/UMAP genes macrophage only ALLARMS/UMAP genes macrophage only ALLARMS.RData")
-Disc_u_dat<- u_dat
+Disc_u_dat <- u_dat
 rm(list=c("fulldd","gene_summary", "inflammationList","macrocelldd","u_dat","umap_in" ,"umap_in2" ,"umap_mod2", "umap_mod5"  ))
+
+Disc_u_dat[,Cohort:="Discovery"]
+Val_u_dat[,Cohort:="Validation"]
+
+joint_dd <- intersect( names(Disc_u_dat),names(Val_u_dat) )[c(8695:8699,1:8694 )]
+
+orderedrows<-c(joint_dd[1:15],sort(joint_dd[-c(1:15)]) )
+
+myeloidUMAP <- rbind( data.table(Disc_u_dat %>%select( orderedrows )) , 
+                          data.table(Val_u_dat %>%select( orderedrows )) )
+myeloidUMAP[,dynamic_class:=NULL]
+setnames(myeloidUMAP,old=paste0("V",1:4),new=paste0("UMAP",1:4))
+
+#write.csv(myeloidUMAP,file="/Users/jason/Jason Griffiths Dropbox/jason griffiths/FELINE Project (1)/Manuscript  Feline immune communication/Nature communications submission docs/Revision and submission folder/Source Data/Figure4/SourceData_Figure4_MyeloidGeneUMAP.csv")
 
 sz <- 1.25
 ggplot( Disc_u_dat[!(Celltype_subtype!="DC"&V1>2&V2< -1)],aes(-V1,V2,col=  Celltype_subtype)) +  

@@ -2,22 +2,11 @@ rm(list=ls())
 require(data.table);require(dplyr);require(ggplot2);require(tidyr);
 require(mgcv);
 require(ggsci)
- load(file="~/Jason Griffiths Dropbox/jason griffiths/R Analysis/Cancer_Tcell_Experiments/Exp52/Modeling_JG/data/INTENSITYSubsetParsedprocessed_dataFinal.RData")
 
-expt52dd<- expt52dd[TCellPrep != "Stained"]
-expt52dd[ ,Expt:="expt52"]
-expt52dd[ ,IL15Level:= paste0("IL-15: ",IL15_ngmL," ngmL")]
+savloc<- "/Users/jgriffiths/Jason Griffiths Dropbox/jason griffiths/FELINE Project (1)/Manuscript  Feline immune communication/Nature communications submission docs/Revision and submission folder/Source Data/Figure6/"
+alldd <- data.table(read.csv(file=paste0(savloc,"SourceData_Figure6_TcellCocultureDrugImpact.csv")))
 
-load(file="~/Jason Griffiths Dropbox/jason griffiths/R Analysis/Cancer_Tcell_Experiments/Exp51/Modeling_JG/data/INTENSITYSubsetParsedprocessed_data.RData")
-expt51dd <- expt51dd[TCellPrep != "Stained"]
-expt51dd[ ,Expt:="expt51"]
-expt51dd[ ,IL15Level:= paste0("IL-15: ",IL15_ngmL," ngmL")]
-
-alldd<-rbind(expt51dd%>%dplyr::select(Expt,CellLine,RepID,Rep,Count,Hour,Ribociclib_uM,IL15_ngmL,Treatlab,Lineagelab,Composition,InitialTcellFraction,IL15Level),
-             expt52dd[]%>%dplyr::select(Expt,CellLine,RepID,Rep,Count,Hour,Ribociclib_uM,IL15_ngmL,Treatlab,Lineagelab,Composition,InitialTcellFraction,IL15Level))# 
-
-savloc <- "/Users/jason/Jason Griffiths Dropbox/jason griffiths/FELINE Project (1)/Manuscript  Feline immune communication/Nature communications submission docs/Revision and submission folder/Source Data/Figure6/"
-write.csv(alldd,file=paste0(savloc,"SourceData_Figure6_TcellCocultureDrugImpact.csv"))
+# order label information
 alldd[,Cellcatlab:=  paste(CellLine,Lineagelab,sep=" ")]
 
 alldd$Cellcatlab <- factor(alldd$Cellcatlab , levels=c(
@@ -35,16 +24,16 @@ alldd$IL15Level <- factor(alldd$IL15Level , levels=c(
   "IL-15: 1 ngmL","IL-15: 2.5 ngmL","IL-15: 5 ngmL","IL-15: 10 ngmL"  
 ))
 
+# order composition
 alldd$Composition <- factor(alldd$Composition , levels=c(  "Cancer and T cells","Cancer alone" ))
 alldd$InitialTcellFraction<- round(alldd$InitialTcellFraction,2)
 
 alldd[,MaxHour:=max(Hour), by=c("Expt","CellLine","RepID","Rep")]
 alldd[,MinHour:=min(Hour), by=c("Expt","CellLine","RepID","Rep")]
 
-svloc0<-"~/Jason Griffiths Dropbox/jason griffiths/Cancer_pheno_evo/images and presentations/FELINE 2/Paper figures Cancer immune communication/"
 ggplot(alldd[][InitialTcellFraction%in%c(0,0.2)][Ribociclib_uM%in%c(0,1)][IL15_ngmL%in%c(0,1,5)], aes(x = Hour, y= log(1+Count), col= Treatlab)) +
   geom_point(size=3,aes(shape=Composition,
-                 col = Treatlab)) +
+                        col = Treatlab)) +
   geom_path(aes(linetype=Composition,
                 group=interaction(RepID,Cellcatlab)))+
   facet_grid(Cellcatlab~paste0("IL-15:",IL15_ngmL,"(ngmL)"))+ 
@@ -54,16 +43,15 @@ ggplot(alldd[][InitialTcellFraction%in%c(0,0.2)][Ribociclib_uM%in%c(0,1)][IL15_n
   scale_color_jco(name="Treatment")+  scale_fill_jco(name="Treatment")+
   theme_classic(base_size=26)+
   theme(aspect.ratio=1)
-
-ggsave(file=paste0(svloc0,"TcellcocultureTimeCourse_IL15_ribo.png"), dpi=320,width=16,height=16)
+#ggsave(file=paste0(svloc0,"TcellcocultureTimeCourse_IL15_ribo.png"), dpi=320,width=16,height=16)
 
 ggplot(alldd[][InitialTcellFraction%in%c(0,0.2)][Ribociclib_uM%in%c(0,1)][IL15_ngmL%in%c(0,1,5)], aes(x = Hour, y= log(1+Count), col= Treatlab)) +
   geom_point(size=3,aes(shape=Composition,
                         col = Treatlab)) +
   facet_grid(Cellcatlab~paste0("IL-15:",IL15_ngmL,"(ngmL)"))+ 
   geom_smooth(aes(fill=(Treatlab),linetype=Composition,group=interaction(Treatlab,Composition)
-                  ),
-              method="gam",alpha=0.4, formula=y~s(x,k=3))+
+  ),
+  method="gam",alpha=0.4, formula=y~s(x,k=3))+
   labs(x= "Time (Hours)", y= "Cancer cell number (log(1+x))")+
   scale_color_jco(name="Treatment")+  scale_fill_jco(name="Treatment")+
   theme_classic(base_size=26)+
@@ -86,10 +74,11 @@ ggplot(alldd[][InitialTcellFraction%in%c(0,0.2)][Ribociclib_uM%in%c(0,1)][], aes
   scale_color_jco(name="Treatment")+  scale_fill_jco(name="Treatment")+
   theme_classic(base_size=26)+
   theme(aspect.ratio=1)
+#ggsave(file=paste0(svloc0,"TcellcocultureTimeCourseSmoothed_IL15_riboFull.png"), dpi=320,width=20.5,height=20.5)
 
-
-ggsave(file=paste0(svloc0,"TcellcocultureTimeCourseSmoothed_IL15_riboFull.png"), dpi=320,width=20.5,height=20.5)
-
+FS18dd<-alldd[][InitialTcellFraction%in%c(0,0.2)][Ribociclib_uM%in%c(0,1)]
+savloc<-"/Users/jason/Jason Griffiths Dropbox/jason griffiths/FELINE Project (1)/Manuscript  Feline immune communication/Nature communications submission docs/Revision and submission folder/Source Data/SI data/FigureS18/"
+write.csv(FS18dd,file=paste0(savloc,"SourceData_FigureS18_CocultureCancerTcellGrowthIL15Ribo.csv"))
 # Calculate average growth rate of cancer population throughout treatment
 alldd[,Count0:=sum((Hour==MinHour)*Count,na.rm=T),by=c("Expt","CellLine","RepID","Rep") ]
 Finaldd <- alldd[Ribociclib_uM%in%c(0,1)][Hour==MaxHour]
@@ -103,9 +92,9 @@ Finaldd[,FactorCellLineID:=as.factor(Cellcatlab)]
 # Image of all the data
 ggplot(Finaldd[InitialTcellFraction%in%c(0,0.2)],
        aes( y= RGR, x = sqrt_IL15, col = Treatlab,fill=Treatlab, 
-           group=interaction(Treatlab,Composition,
-                             InitialTcellFraction,CellLine,Lineagelab)
-           )) +
+            group=interaction(Treatlab,Composition,
+                              InitialTcellFraction,CellLine,Lineagelab)
+       )) +
   geom_smooth(aes(linetype=Composition),method="gam",alpha=0.4, formula=y~s(x,k=3))+
   geom_point(aes(col = Treatlab, shape=Composition,group=RepID),size=3) +
   facet_grid(CellLine~Lineagelab, scale="free")+theme_classic(base_size=26)+
@@ -113,7 +102,10 @@ ggplot(Finaldd[InitialTcellFraction%in%c(0,0.2)],
   labs(y="Cancer cell growth rate (mean(cells/cell/day))", x="IL-15 (ngmL)")+ 
   theme(aspect.ratio=1)+scale_linewidth(range=c(1,2))+scale_size( range = c(1.5, 4.5))
 
-ggsave(file=paste0(svloc0,"SI TcellcocultureRGR_IL15_ribo_FitRAWgrowth.png"), dpi=320,width=16,height=16)
+#ggsave(file=paste0(svloc0,"SI TcellcocultureRGR_IL15_ribo_FitRAWgrowth.png"), dpi=320,width=16,height=16)
+FS19dd<-Finaldd[InitialTcellFraction%in%c(0,0.2)]
+savloc<-"/Users/jason/Jason Griffiths Dropbox/jason griffiths/FELINE Project (1)/Manuscript  Feline immune communication/Nature communications submission docs/Revision and submission folder/Source Data/SI data/FigureS19/"
+write.csv(FS19dd,file=paste0(savloc,"SourceData_FigureS19_MonoandCoculture_CancerGrowthRateIL15Ribo.csv"))
 
 ####################################
 # Analysis of the data
@@ -134,14 +126,14 @@ statsdata[, isControl:=0]
 statsdata[Treatlab!="Ribociclib", isControl:=1]
 
 
-#######
+####### GAM model and prediction
 ModOut<-lapply(unique(statsdata$FactorCellLineID),function(x){
   cellXanalysis <- statsdata[FactorCellLineID==x][InitialTcellFraction%in%c(0,0.2)]
-
+  
   cellXanalysis[, Ribo__sqrt_IL15:=RiboTreated*sqrt_IL15]#*(InitialTcellFraction==0)]
   cellXanalysis[, isCoculture_sqrt_IL15:=isCoculture*sqrt_IL15]
   cellXanalysis[, Ribo__isCoculture_sqrt_IL15:=RiboTreated*isCoculture*sqrt_IL15]
-
+  
   gam0 <- gam(RGR~ RiboTreated+  # Monoculture ribo effect
                 s(sqrt_IL15, k=3,bs="ts")+  # Monoculture IL-15 effect
                 s(Ribo__sqrt_IL15, k=3,bs="ts")+ # Monoculture ribo + IL-15 synergy
@@ -162,8 +154,8 @@ ModOut<-lapply(unique(statsdata$FactorCellLineID),function(x){
   
   # Make fine scale predictions
   lu<- data.table(sqrt_IL15= unique(c(seq(min(cellXanalysisTerms$sqrt_IL15),max(cellXanalysisTerms$sqrt_IL15),length=50),
-                  unique(cellXanalysisTerms$sqrt_IL15)))
-                              )
+                                      unique(cellXanalysisTerms$sqrt_IL15)))
+  )
   meta2<-unique(cellXanalysis%>%dplyr::select(Lineagelab,CellLine,RiboTreated,Treatlab,Composition,isCoculture))
   
   predsdd<- rbindlist(lapply(1:nrow(lu),function(i){
@@ -182,7 +174,7 @@ ModOut<-lapply(unique(statsdata$FactorCellLineID),function(x){
   list(gam0,cellXanalysisTerms,meta2,predsdd)
   
 })
-  
+
 
 allgammods<- lapply(ModOut,"[[",1)
 
@@ -235,7 +227,7 @@ ggplot(allXanalysisTermsB,
   scale_x_continuous(labels = c(0,0.5,1,2,4), breaks=sqrt(c(0,0.5,1,2,4)) )+
   labs(y="Cancer growth rate \n (relative to ribociclib treatment \n monoculture mean of IL-15 control)", x="IL-15 (ngmL)")+ 
   theme(aspect.ratio=1)
-ggsave(file= paste0(svloc00,"TcellcocultureRGR_IL15_ribo_FitRelativegrowth.png"), dpi=320,width=11,height=11)
+#ggsave(file= paste0(svloc00,"TcellcocultureRGR_IL15_ribo_FitRelativegrowth.png"), dpi=320,width=11,height=11)
 
 ggplot(allXanalysisTermsB,
        aes( y= RGR-predsNorm, x = sqrt_IL15, col = Treatlab,fill=Treatlab, 
@@ -255,8 +247,15 @@ ggplot(allXanalysisTermsB,
         strip.background = element_blank(),
         strip.text= element_blank(),
         legend.position = "none")
-ggsave(file=paste0(svloc00,"BLANK_TcellcocultureRGR_IL15_ribo_FitRelativegrowth.png"), dpi=320,width=8,height=8)
+#ggsave(file=paste0(svloc00,"BLANK_TcellcocultureRGR_IL15_ribo_FitRelativegrowth.png"), dpi=320,width=8,height=8)
 
+
+
+
+resout<-allXanalysisTermsB%>%dplyr::select(CellLine,Lineagelab,Treatlab,Composition,RepID ,Rep,
+                                           RiboTreated, sqrt_IL15, InitialTcellFraction,
+                                           RGR,predsNorm,preds,ucl,lcl)
+write.csv(resout,file=paste0(savloc,"Outputs/","SourceData_Figure6_TcellCocultureDrugImpact_Out.csv"))
 
 
 
@@ -295,7 +294,7 @@ ggplot(allXanalysisTerms,
   scale_size_manual(values=c(4,2))+
   theme(axis.text.x=element_text(size=rel(0.9)))
 
-ggsave(file=paste0(svloc00,"SI TcellcocultureRGR_IL15_ribo_Fit.png"), dpi=320,width=11,height=11)
+#ggsave(file=paste0(svloc00,"SI TcellcocultureRGR_IL15_ribo_Fit.png"), dpi=320,width=11,height=11)
 
 
 ggplot(allXanalysisTerms,
@@ -326,8 +325,8 @@ ggsave(file=paste0(svloc,"BLANK_TcellcocultureRGR_IL15_ribo_Fit.png"), dpi=320,w
 ss1<-rbindlist( lapply(1:length(allgammods), function(g){
   data.table( ModOut[[g]][[2]][1] %>%dplyr::select(Cellcatlab:FactorCellLineID),
               data.table(summary(allgammods[[g]])$s.table,keep.rownames = T)[rn=="s(isCoculture_sqrt_IL15)"]
-)
-  }) )
+  )
+}) )
 
 ss2<-rbindlist( lapply(1:length(allgammods), function(g){
   data.table( ModOut[[g]][[2]][1] %>%dplyr::select(Cellcatlab:FactorCellLineID),

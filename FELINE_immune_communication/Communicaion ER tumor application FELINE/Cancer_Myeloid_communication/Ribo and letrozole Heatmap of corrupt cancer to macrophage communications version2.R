@@ -138,6 +138,8 @@ assessmentSupervised$adjust.p.val <- NULL
 assessmentSupervised$i <- NULL
 assessmentSupervised$adj.r.squared <- NULL
 write.csv(assessmentSupervised,file="/Users/jason/Dropbox/Cancer_pheno_evo/data/FELINE2/Final communication files/Cancer to macropage communication supervised analysis/Version2Letrozole Cancer to macropage M2 stimulating communication supervised analysis.csv")
+#selectedLR<- read.csv(file="/Users/jason/Dropbox/Cancer_pheno_evo/data/FELINE2/Final communication files/Cancer to macropage communication supervised analysis/Version2Letrozole Cancer to macropage M2 stimulating communication supervised analysis.csv") %>%select(Pair.Name, LigandPhenoCelltype, ReceptorPhenoCelltype)
+write.csv(assessmentSupervised,file="/Users/jason/Dropbox/Cancer_pheno_evo/data/FELINE2/Final communication files/Cancer to macropage communication supervised analysis/Version2Letrozole Cancer to macropage M2 stimulating communication supervised analysis.csv")
 
 # Select cancer - macrophage communications for communication pathways linked to M2 differentiation.
 corruptsigs<-CCI[Day!=180][Treat!="CombinationRibo"][LigandPhenoCelltype=="Cancer cells"][ReceptorPhenoCelltype=="Macrophages"]
