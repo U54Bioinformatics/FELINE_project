@@ -42,7 +42,7 @@ The following software is required:
 # Data availablity
 Raw single cell RNA-seq data are available through GEO under accession code GSE211434. Source data are provided with the accompanying manuscript. For each main results figure (Figs 2-6), source data (named: SourceData_Figure#_BriefTitle.csv) is  provided within the source data folder. This input csv file provides the data used in each analysis of the figure. We also provide the output dataset produced by the analysis conducted to generate each subpanel (files in the Outputs subfolder with the suffix “_Output.csv”). Source data has been provided for all main and supplementary figures. Other available data supporting findings are available from the corresponding authors on reasonable request.
 
-These scRNAseq analyses use three main data inputs: 
+These scRNAseq analyses use three main data inputs (detailed below): 
 * Tumor microenvironment cell type annotations (composition input: Figure 2/5)
 * Cell type gene expression profiles (phenotype input: Figure 4/5)
 * Ligand-receptor expression profiles (communication input: Figure 3-5)
@@ -82,13 +82,15 @@ https://github.com/U54Bioinformatics/FELINE_project/tree/master/FELINE_immune_co
 This example uses publically available data from Griffiths et al. (2020) as an input to generate tumor-wide communication scores between cell type populations. Manuscripts source data provides this data in the required input format.A curated Ligand-receptor communication database (Ramilowski 2015) defined a set of LR communication pathways (C_jk (x_k,y_jk )) based on known protein-protein interactions. The set of 1444 LR communications measured from FELINE scRNA data are listed in the source data for figure S4.
 
 
-# Performing analyses
+# Perform analyses within the "Source code" folder
 The above listed input data should be accessed via the manuscript source data folder.
 Code in the "Source code" folder of this repository performs analyses presented in the manuscript. Code is partitioned into separate scripts to perform analyses relating to each subpanel of the paper's figures. 
 
 Set the working directory, by changing the file path defined at the begining of each script, to  the location of the source data folder on your machine. Ensure the file path correctly points to the folder containing the  indicated input file (using file.exists(#filepath#)).
 
 Code should not need to be run in the order presented in the figures, as provided input data is sufficient. However, many supplementary figures were generated during the workflow presented in the main figures and are supportive of those findings. Therefore, those analyses remain integrated within the code for the main figures. Code to perform seperate supplementary analyses are provided in the "Supplementary Information analyses" folder.
+
+
 
 
 
