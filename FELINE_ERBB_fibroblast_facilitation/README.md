@@ -78,7 +78,7 @@ Granular immune subtype annotations were obtained using the ImmClassifier machin
 Code to conduct these analyses are available here:
 https://github.com/xliu-uth/ImmClassifier
 
-Cell type annotations for each single cell across the temporal patient tumor samples from the discovery and validation data sets are provided in source data of Griffiths et al.2022.
+Cell type and subtype annotations for each single cell across the temporal patient tumor samples from the discovery and validation data sets are provided in source data of Griffiths et al. (2022). Cells within the dataset annotated as fibroblasts or cancer cells are listed in source data for figure 2A and 3C.
 
 
 ## Cell type gene expression profiling
