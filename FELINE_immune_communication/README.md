@@ -1,6 +1,6 @@
 # Breast cancer cells communicate with macrophages to prevent T cell activation during development of cell cycle therapy resistance 
 
-This repository contains code accompanying the manuscript: "Breast cancer cells communicate with macrophages to prevent T cell activation during development of cell cycle therapy resistance". It provides code used to analyze the breast tumor composition, explore cellular phenotypes linked to treatment resistance and decipher tumor-wide communications from phenotypically diverse populations of cancer and non-cancer cells within the tumor microenvironment (TME). Serial ER+ breaast tumor biopsies from of post-menopausal women on the FELINE clinical trial (clinicaltrials.gov # NCT02712723) were profiled using single cell RNA-seq (scRNAseq). Tumor samples from two cohorts of patients were independently examined, with the first discovery cohort used to identify tumor features promoting treatment resistance. The second cohort was used to validate discoveries and critical predictions. 
+This repository contains code accompanying the manuscript: "Breast cancer cells communicate with macrophages to prevent T cell activation during development of cell cycle therapy resistance". It provides code used to analyze the breast tumor composition, explore cellular phenotypes linked to treatment resistance and decipher tumor-wide communications from phenotypically diverse populations of cancer and non-cancer cells within the tumor microenvironment (TME). Serial ER+ breast tumor biopsies from of post-menopausal women on the FELINE clinical trial (clinicaltrials.gov # NCT02712723) were profiled using single cell RNA-seq (scRNAseq). Tumor samples from two cohorts of patients were independently examined, with the first discovery cohort used to identify tumor features promoting treatment resistance. The second cohort was used to validate discoveries and critical predictions. 
 
 
 Related publications (Please consult and cite accordingly when using this repository):
@@ -79,16 +79,16 @@ Measurements of tumor-wide signaling from diverse non-cancer cell sub-population
 
 https://github.com/U54Bioinformatics/FELINE_project/tree/master/FELINE_immune_communication/Communication%20Peripheral%20blood%20application%20Griffiths%202020%20
 
-This example uses publically available data from Griffiths et al. (2020) as an input to generate tumor-wide communication scores between cell type populations. Manuscripts source data provides this data in the required input format.A curated Ligand-receptor communication database (Ramilowski 2015) defined a set of LR communication pathways (C_jk (x_k,y_jk )) based on known protein-protein interactions. The set of 1444 LR communications measured from FELINE scRNA data are listed in the source data for figure S4.
+This example uses publically available data from Griffiths et al. (2020) as an input to generate tumor-wide communication scores between cell type populations. Manuscripts source data provides this data in the required input format.A curated ligand-receptor communication database (Ramilowski 2015) defined a set of LR communication pathways (C_jk (x_k,y_jk )) based on known protein-protein interactions. The set of 1444 LR communications measured from FELINE scRNA data are listed in the source data for figure S4.
 
 
 # Perform analyses within the "Source code" folder
 The above listed input data should be accessed via the manuscript source data folder.
 Code in the "Source code" folder of this repository performs analyses presented in the manuscript. Code is partitioned into separate scripts to perform analyses relating to each subpanel of the paper's figures. 
 
-Set the working directory, by changing the file path defined at the begining of each script, to  the location of the source data folder on your machine. Ensure the file path correctly points to the folder containing the  indicated input file (using file.exists(#filepath#)).
+Set the working directory, by changing the file path defined at the beginning of each script, to  the location of the source data folder on your machine. Ensure the file path correctly points to the folder containing the  indicated input file (using file.exists(#filepath#)).
 
-Code should not need to be run in the order presented in the figures, as provided input data is sufficient. However, many supplementary figures were generated during the workflow presented in the main figures and are supportive of those findings. Therefore, those analyses remain integrated within the code for the main figures. Code to perform seperate supplementary analyses are provided in the "Supplementary Information analyses" folder.
+Code should not need to be run in the order presented in the figures, as provided input data is sufficient. However, many supplementary figures were generated during the workflow presented in the main figures and are supportive of those findings. Therefore, those analyses remain integrated within the code for the main figures. Code to perform separate supplementary analyses are provided in the "Supplementary Information analyses" folder.
 
 
 
