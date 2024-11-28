@@ -109,12 +109,12 @@ To assess the ability of fibroblasts to facilitate cancer growth, we co-cultured
 
 
 # Perform analyses within the "Source code" folder
-The above mentioned input data should be accessed via the manuscript source data folder.
-Code in the "Source code" folder of this repository performs analyses presented in the manuscript. Code is partitioned into separate scripts which each perform an analysis relating to a specific subpanel within a manuscript figure.
+The above mentioned input data should be accessed via the manuscript source data folder (with Raw data at GEO GSE211434). 
+Code in the "Source code" folder of this repository performs analyses presented in the manuscript. Code is partitioned into separate scripts which each perform an analysis relating to a specific subpanel within a manuscript figure. Code names begin with a string that indicates the figure panel.
 
-Edit the file path defined at the beginning of each script ("SourceDataLoc") to match the location of the source data folder on your machine. Ensure the file path correctly points to the folder containing the indicated input file (using file.exists(#filepath#)).
+Edit the file path defined at the beginning of each script ("SourceDataLoc") to match the location of the source data folder on your machine. Ensure the file path correctly points to the folder containing the indicated input file (using file.exists(#filepath#)). Packages required are listed at the top of each script and need installation prior to running. Code to save output is currently commented out (users should indicate appropriate output file locations).
 
-Scripts should not need to be run in the order presented in the figures, as the provided input data is sufficient. However, supplementary figures were generated during the workflow presented in the main figures and are supportive of those findings. Therefore, those analyses remain integrated within the code for the main figures. 
+Scripts should not need to be run in the order presented in the figures, as the provided input data is sufficient. However, supplementary figures were generated during the workflow presented in the manuscript and are supportive of those findings. Therefore, those analyses remain integrated within the code for the main figures. 
 
 
 
