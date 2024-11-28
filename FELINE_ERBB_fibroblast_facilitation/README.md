@@ -105,7 +105,7 @@ Immunoblotting was applied to assess  endocrine (fulvestrant) induced ERBB prote
 
 
 ## Co-cultured cancer and non-cancer population growth rate 
-To assess the ability of fibroblasts to facilitate cancer growth, we co-cultured these cell types (flourescently labelled) in 3D spheroids and measured log linear population growth over time (relative growth rate:RGR) using repeated fluorescence imaging (Figure 5-6)
+To assess the ability of fibroblasts to facilitate cancer growth, we co-cultured these cell types (fluorescently labelled) in 3D spheroids and measured log linear population growth over time (relative growth rate:RGR) using repeated fluorescence imaging (Figure 5-6)
 
 
 # Perform analyses within the "Source code" folder
